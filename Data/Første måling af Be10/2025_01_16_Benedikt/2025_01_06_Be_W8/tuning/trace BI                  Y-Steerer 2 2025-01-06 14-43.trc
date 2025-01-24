@@ -1,0 +1,32 @@
+TRACING ASCII File
+Created by AMS program
+COMMENT
+
+HEADER
+Start at: 	2025-01-06 14:43
+Timebase: 	1 sec.
+Operator: 	BI                  Y-Steerer 2
+Operator units: 	V
+Monitor1: 	HE OFC Moveable
+Monitor1 units: 	%
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DATA
+O setting 	M1 reading 	
+67.6 	20.8	 -	-	-	-	
+87.6 	22.2	 -	-	-	-	
+107.6 	23.1	 -	-	-	-	
+127.6 	23.9	 -	-	-	-	
+147.6 	24.1	 -	-	-	-	
+167.6 	24.2	 -	-	-	-	
+187.6 	24.1	 -	-	-	-	
+207.6 	23.8	 -	-	-	-	
+227.6 	23.2	 -	-	-	-	
+247.6 	22.3	 -	-	-	-	
+267.6 	20.9	 -	-	-	-	

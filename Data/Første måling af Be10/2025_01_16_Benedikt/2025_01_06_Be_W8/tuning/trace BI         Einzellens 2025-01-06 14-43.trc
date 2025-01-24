@@ -1,0 +1,32 @@
+TRACING ASCII File
+Created by AMS program
+COMMENT
+
+HEADER
+Start at: 	2025-01-06 14:44
+Timebase: 	1 sec.
+Operator: 	BI         Einzellens
+Operator units: 	kV
+Monitor1: 	HE OFC Moveable
+Monitor1 units: 	%
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DATA
+O setting 	M1 reading 	
+19.498 	5.1	 -	-	-	-	
+20.098 	6.8	 -	-	-	-	
+20.698 	9.3	 -	-	-	-	
+21.298 	18.3	 -	-	-	-	
+21.898 	24.4	 -	-	-	-	
+22.498 	24.4	 -	-	-	-	
+23.098 	21.1	 -	-	-	-	
+23.698 	16.4	 -	-	-	-	
+24.298 	9.8	 -	-	-	-	
+24.898 	5.2	 -	-	-	-	
+25.498 	2.4	 -	-	-	-	

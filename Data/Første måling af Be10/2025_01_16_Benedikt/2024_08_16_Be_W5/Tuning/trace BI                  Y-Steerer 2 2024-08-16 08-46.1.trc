@@ -1,0 +1,72 @@
+TRACING ASCII File
+Created by AMS program
+COMMENT
+
+HEADER
+Start at: 	2024-08-16 08:46
+Timebase: 	1 sec.
+Operator: 	BI                  Y-Steerer 2
+Operator units: 	V
+Monitor1: 	Current Converter 1
+Monitor1 units: 	A
+Monitor2: 	HE OFC Moveable
+Monitor2 units: 	%
+ 
+ 
+ 
+ 
+ 
+ 
+DATA
+O setting 	M1 reading 	Current Converter target 	M2 reading 	
+67.6 	-4.676e-006	 BI OFC Out	 47873	 21.3	 -	-	-	
+71.6 	-4.676e-006	 BI OFC Out	 47873	 21.8	 -	-	-	
+75.6 	-4.676e-006	 BI OFC Out	 47873	 22.2	 -	-	-	
+79.6 	-4.672e-006	 BI OFC Out	 47873	 22.8	 -	-	-	
+83.6 	-4.679e-006	 BI OFC Out	 47873	 23.2	 -	-	-	
+87.6 	-4.681e-006	 BI OFC Out	 47873	 23.6	 -	-	-	
+91.6 	-4.681e-006	 BI OFC Out	 47873	 23.9	 -	-	-	
+95.6 	-4.686e-006	 BI OFC Out	 47873	 24.2	 -	-	-	
+99.6 	-4.684e-006	 BI OFC Out	 47873	 24.5	 -	-	-	
+103.6 	-4.686e-006	 BI OFC Out	 47873	 24.8	 -	-	-	
+107.6 	-4.686e-006	 BI OFC Out	 47873	 25.0	 -	-	-	
+111.6 	-4.686e-006	 BI OFC Out	 47873	 25.2	 -	-	-	
+115.6 	-4.686e-006	 BI OFC Out	 47873	 25.3	 -	-	-	
+119.6 	-4.686e-006	 BI OFC Out	 47873	 25.5	 -	-	-	
+123.6 	-4.686e-006	 BI OFC Out	 47873	 25.6	 -	-	-	
+127.6 	-4.689e-006	 BI OFC Out	 47873	 25.7	 -	-	-	
+131.6 	-4.691e-006	 BI OFC Out	 47873	 25.8	 -	-	-	
+135.6 	-4.691e-006	 BI OFC Out	 47873	 25.9	 -	-	-	
+139.6 	-4.691e-006	 BI OFC Out	 47873	 26.0	 -	-	-	
+143.6 	-4.691e-006	 BI OFC Out	 47873	 26.1	 -	-	-	
+147.6 	-4.691e-006	 BI OFC Out	 47873	 26.1	 -	-	-	
+151.6 	-4.691e-006	 BI OFC Out	 47873	 26.1	 -	-	-	
+155.6 	-4.691e-006	 BI OFC Out	 47873	 26.1	 -	-	-	
+159.6 	-4.694e-006	 BI OFC Out	 47873	 26.1	 -	-	-	
+163.6 	-4.689e-006	 BI OFC Out	 47873	 26.1	 -	-	-	
+167.6 	-4.689e-006	 BI OFC Out	 47873	 26.1	 -	-	-	
+171.6 	-4.694e-006	 BI OFC Out	 47873	 26.1	 -	-	-	
+175.6 	-4.691e-006	 BI OFC Out	 47873	 26.1	 -	-	-	
+179.6 	-4.691e-006	 BI OFC Out	 47873	 26.0	 -	-	-	
+183.6 	-4.694e-006	 BI OFC Out	 47873	 26.0	 -	-	-	
+187.6 	-4.691e-006	 BI OFC Out	 47873	 26.0	 -	-	-	
+191.6 	-4.689e-006	 BI OFC Out	 47873	 25.9	 -	-	-	
+195.6 	-4.689e-006	 BI OFC Out	 47873	 25.8	 -	-	-	
+199.6 	-4.689e-006	 BI OFC Out	 47873	 25.7	 -	-	-	
+203.6 	-4.686e-006	 BI OFC Out	 47873	 25.6	 -	-	-	
+207.6 	-4.667e-006	 BI OFC Out	 47873	 25.5	 -	-	-	
+211.6 	-4.662e-006	 BI OFC Out	 47873	 25.3	 -	-	-	
+215.6 	-4.664e-006	 BI OFC Out	 47873	 25.1	 -	-	-	
+219.6 	-4.654e-006	 BI OFC Out	 47873	 24.9	 -	-	-	
+223.6 	-4.657e-006	 BI OFC Out	 47873	 24.8	 -	-	-	
+227.6 	-4.652e-006	 BI OFC Out	 47873	 24.5	 -	-	-	
+231.6 	-4.647e-006	 BI OFC Out	 47873	 24.2	 -	-	-	
+235.6 	-4.645e-006	 BI OFC Out	 47873	 24.0	 -	-	-	
+239.6 	-4.647e-006	 BI OFC Out	 47873	 23.7	 -	-	-	
+243.6 	-4.654e-006	 BI OFC Out	 47873	 23.4	 -	-	-	
+247.6 	-4.662e-006	 BI OFC Out	 47873	 23.1	 -	-	-	
+251.6 	-4.662e-006	 BI OFC Out	 47873	 22.7	 -	-	-	
+255.6 	-4.657e-006	 BI OFC Out	 47873	 22.3	 -	-	-	
+259.6 	-4.652e-006	 BI OFC Out	 47873	 21.7	 -	-	-	
+263.6 	-4.652e-006	 BI OFC Out	 47873	 21.2	 -	-	-	
+267.6 	-4.650e-006	 BI OFC Out	 47873	 20.7	 -	-	-	

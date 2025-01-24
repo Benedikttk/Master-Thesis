@@ -1,0 +1,32 @@
+TRACING ASCII File
+Created by AMS program
+COMMENT
+
+HEADER
+Start at: 	2025-01-06 14:59
+Timebase: 	2 sec.
+Operator: 	HE            Magnet
+Operator units: 	A
+Monitor1: 	Detector Window Counts
+Monitor1 units: 	counts
+Monitor2: 	ACC            T.V. Slit Error
+Monitor2 units: 	%
+ 
+ 
+ 
+ 
+ 
+ 
+DATA
+O setting 	M1 reading 	M2 reading 	
+174.800 	0	 -0.8	 -	-	-	
+174.900 	0	 -1.9	 -	-	-	
+175.000 	1	 -3.3	 -	-	-	
+175.100 	3	 -3.9	 -	-	-	
+175.200 	15	 -3.6	 -	-	-	
+175.300 	26	 -2.6	 -	-	-	
+175.400 	66	 0.0	 -	-	-	
+175.500 	51	 2.6	 -	-	-	
+175.600 	19	 3.8	 -	-	-	
+175.700 	7	 4.2	 -	-	-	
+175.800 	2	 3.8	 -	-	-	

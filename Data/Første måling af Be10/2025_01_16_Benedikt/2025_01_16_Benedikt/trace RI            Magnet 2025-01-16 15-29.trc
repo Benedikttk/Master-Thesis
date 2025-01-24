@@ -1,0 +1,31 @@
+TRACING ASCII File
+Created by AMS program
+COMMENT
+
+HEADER
+Start at: 	2025-01-16 15:30
+Timebase: 	2 sec.
+Operator: 	RI            Magnet
+Operator units: 	A
+Monitor1: 	Detector Window Counts
+Monitor1 units: 	counts
+Monitor2: 	RI Probe
+Monitor2 units: 	T
+ 
+ 
+ 
+ 
+ 
+ 
+DATA
+O setting 	M1 reading 	M2 reading 	
+45.700 	0	 0.298670	 -	-	-	
+46.144 	0	 0.301250	 -	-	-	
+46.589 	0	 0.303920	 -	-	-	
+47.033 	5	 0.306660	 -	-	-	
+47.478 	9	 0.309480	 -	-	-	
+47.922 	11	 0.312300	 -	-	-	
+48.367 	17	 0.315130	 -	-	-	
+48.811 	6	 0.318000	 -	-	-	
+49.256 	2	 0.320840	 -	-	-	
+49.700 	1	 0.323680	 -	-	-	

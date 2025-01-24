@@ -1,0 +1,2447 @@
+FSI Batch started at        : 2025-01-10 10:35:45
+ 
+[1]
+Id                          : sSIDBe2718_UNK_BER_2410
+Description                 :  NaN_AARNaN
+10Be counts                 : 105
+Total counts                : 2192
+9Be current [A]             : 2.18384e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.64143e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.55502e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.99721e-001
+9BeO / none                 : 0.00000e+000
+
+[2]
+Id                          : sSIDBe2719_mBLK_BeB-136
+Description                 :  NaN_AARNaN
+10Be counts                 : 0
+Total counts                : 5770
+9Be current [A]             : 2.05814e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.43183e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 0.00000e+000
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.99721e-001
+9BeO / none                 : 0.00000e+000
+
+[3]
+Id                          : sSIDBe2720_STD-pri_Be54-283
+Description                 :  NaN_AARNaN
+10Be counts                 : 1373
+Total counts                : 2873
+9Be current [A]             : 2.40472e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.06698e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 4.74931e-013
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.91278e-001
+9BeO / none                 : 0.00000e+000
+
+[4]
+Id                          : sSIDBe2721_UNK_BER_2411
+Description                 :  NaN_AARNaN
+10Be counts                 : 93
+Total counts                : 4949
+9Be current [A]             : 1.70638e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.86284e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.76284e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.96044e-001
+9BeO / none                 : 0.00000e+000
+
+[5]
+Id                          : sSIDBe2722_UNK_BER_2412
+Description                 :  NaN_AARNaN
+10Be counts                 : 45
+Total counts                : 4525
+9Be current [A]             : 1.81189e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.10948e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 8.03307e-015
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.82697e-001
+9BeO / none                 : 0.00000e+000
+
+[6]
+Id                          : sSIDBe2723_UNK_BER_2413
+Description                 :  NaN_AARNaN
+10Be counts                 : 83
+Total counts                : 7522
+9Be current [A]             : 1.64908e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.95130e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.62806e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.58765e-001
+9BeO / none                 : 0.00000e+000
+
+[7]
+Id                          : sSIDBe2724_UNK_BER_2414
+Description                 :  NaN_AARNaN
+10Be counts                 : 99
+Total counts                : 6007
+9Be current [A]             : 1.88772e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.16863e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.69639e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.95751e-001
+9BeO / none                 : 0.00000e+000
+
+[8]
+Id                          : sSIDBe2725_UNK_BER_2415
+Description                 :  NaN_AARNaN
+10Be counts                 : 92
+Total counts                : 4726
+9Be current [A]             : 1.80079e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.00244e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.65246e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.99775e-001
+9BeO / none                 : 0.00000e+000
+
+[9]
+Id                          : sSIDBe2726_UNK_BER_2416
+Description                 :  NaN_AARNaN
+10Be counts                 : 75
+Total counts                : 4155
+9Be current [A]             : 1.68416e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.80138e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.44042e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 6.01188e-001
+9BeO / none                 : 0.00000e+000
+
+[10]
+Id                          : sSIDBe2727_UNK_BER_2417
+Description                 :  NaN_AARNaN
+10Be counts                 : 128
+Total counts                : 2972
+9Be current [A]             : 2.85465e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.78727e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.45019e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.96300e-001
+9BeO / none                 : 0.00000e+000
+
+[11]
+Id                          : sSIDBe2728_UNK_BER_2418
+Description                 :  NaN_AARNaN
+10Be counts                 : 89
+Total counts                : 4718
+9Be current [A]             : 1.66171e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.80600e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.73237e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.92201e-001
+9BeO / none                 : 0.00000e+000
+
+[12]
+Id                          : sSIDBe2729_UNK_BER_2419
+Description                 :  NaN_AARNaN
+10Be counts                 : 57
+Total counts                : 3937
+9Be current [A]             : 1.31570e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.33171e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.40130e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.64264e-001
+9BeO / none                 : 0.00000e+000
+
+[13]
+Id                          : sSIDBe2718_UNK_BER_2410
+Description                 :  NaN_AARNaN
+10Be counts                 : 107
+Total counts                : 2866
+9Be current [A]             : 2.60709e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.36630e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.32741e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.97093e-001
+9BeO / none                 : 0.00000e+000
+
+[14]
+Id                          : sSIDBe2719_mBLK_BeB-136
+Description                 :  NaN_AARNaN
+10Be counts                 : 1
+Total counts                : 5937
+9Be current [A]             : 2.34476e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.92104e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.37951e-016
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.97995e-001
+9BeO / none                 : 0.00000e+000
+
+[15]
+Id                          : sSIDBe2720_STD-pri_Be54-283
+Description                 :  NaN_AARNaN
+10Be counts                 : 1465
+Total counts                : 2763
+9Be current [A]             : 2.66895e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.48875e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 4.56578e-013
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.94588e-001
+9BeO / none                 : 0.00000e+000
+
+[16]
+Id                          : sSIDBe2721_UNK_BER_2411
+Description                 :  NaN_AARNaN
+10Be counts                 : 140
+Total counts                : 2815
+9Be current [A]             : 2.14502e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.56085e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 2.11095e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 6.02390e-001
+9BeO / none                 : 0.00000e+000
+
+[17]
+Id                          : sSIDBe2722_UNK_BER_2412
+Description                 :  NaN_AARNaN
+10Be counts                 : 61
+Total counts                : 2927
+9Be current [A]             : 2.28784e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.82960e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 8.62361e-015
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.97408e-001
+9BeO / none                 : 0.00000e+000
+
+[18]
+Id                          : sSIDBe2723_UNK_BER_2413
+Description                 :  NaN_AARNaN
+10Be counts                 : 101
+Total counts                : 6027
+9Be current [A]             : 2.08054e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.63723e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.57025e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.72014e-001
+9BeO / none                 : 0.00000e+000
+
+[19]
+Id                          : sSIDBe2724_UNK_BER_2414
+Description                 :  NaN_AARNaN
+10Be counts                 : 121
+Total counts                : 2834
+9Be current [A]             : 2.44100e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.06783e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.60323e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 6.00074e-001
+9BeO / none                 : 0.00000e+000
+
+[20]
+Id                          : sSIDBe2725_UNK_BER_2415
+Description                 :  NaN_AARNaN
+10Be counts                 : 103
+Total counts                : 2508
+9Be current [A]             : 2.21317e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.69421e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.50521e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.99091e-001
+9BeO / none                 : 0.00000e+000
+
+[21]
+Id                          : sSIDBe2726_UNK_BER_2416
+Description                 :  NaN_AARNaN
+10Be counts                 : 70
+Total counts                : 2547
+9Be current [A]             : 1.72139e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.86990e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.31522e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.99810e-001
+9BeO / none                 : 0.00000e+000
+
+[22]
+Id                          : sSIDBe2727_UNK_BER_2417
+Description                 :  NaN_AARNaN
+10Be counts                 : 142
+Total counts                : 6631
+9Be current [A]             : 2.72790e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.51838e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.68380e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 6.03734e-001
+9BeO / none                 : 0.00000e+000
+
+[23]
+Id                          : sSIDBe2728_UNK_BER_2418
+Description                 :  NaN_AARNaN
+10Be counts                 : 88
+Total counts                : 2733
+9Be current [A]             : 2.18348e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.64442e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.30353e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.99130e-001
+9BeO / none                 : 0.00000e+000
+
+[24]
+Id                          : sSIDBe2729_UNK_BER_2419
+Description                 :  NaN_AARNaN
+10Be counts                 : 78
+Total counts                : 3010
+9Be current [A]             : 1.81491e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.09198e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.39004e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.86973e-001
+9BeO / none                 : 0.00000e+000
+
+[25]
+Id                          : sSIDBe2718_UNK_BER_2410
+Description                 :  NaN_AARNaN
+10Be counts                 : 126
+Total counts                : 3176
+9Be current [A]             : 2.85783e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.80125e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.42601e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.95226e-001
+9BeO / none                 : 0.00000e+000
+
+[26]
+Id                          : sSIDBe2719_mBLK_BeB-136
+Description                 :  NaN_AARNaN
+10Be counts                 : 0
+Total counts                : 5576
+9Be current [A]             : 2.56813e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.34758e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 0.00000e+000
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.90703e-001
+9BeO / none                 : 0.00000e+000
+
+[27]
+Id                          : sSIDBe2720_STD-pri_Be54-283
+Description                 :  NaN_AARNaN
+10Be counts                 : 1360
+Total counts                : 2474
+9Be current [A]             : 2.74236e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.61131e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 4.81282e-013
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.94703e-001
+9BeO / none                 : 0.00000e+000
+
+[28]
+Id                          : sSIDBe2721_UNK_BER_2411
+Description                 :  NaN_AARNaN
+10Be counts                 : 144
+Total counts                : 2563
+9Be current [A]             : 2.44473e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.08425e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.90506e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.98574e-001
+9BeO / none                 : 0.00000e+000
+
+[29]
+Id                          : sSIDBe2722_UNK_BER_2412
+Description                 :  NaN_AARNaN
+10Be counts                 : 57
+Total counts                : 3012
+9Be current [A]             : 2.46159e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.10935e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 7.48939e-015
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.99023e-001
+9BeO / none                 : 0.00000e+000
+
+[30]
+Id                          : sSIDBe2723_UNK_BER_2413
+Description                 :  NaN_AARNaN
+10Be counts                 : 107
+Total counts                : 4240
+9Be current [A]             : 2.36450e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.02795e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.46368e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.87023e-001
+9BeO / none                 : 0.00000e+000
+
+[31]
+Id                          : sSIDBe2724_UNK_BER_2414
+Description                 :  NaN_AARNaN
+10Be counts                 : 129
+Total counts                : 3050
+9Be current [A]             : 2.72861e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.56356e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.52909e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.97913e-001
+9BeO / none                 : 0.00000e+000
+
+[32]
+Id                          : sSIDBe2725_UNK_BER_2415
+Description                 :  NaN_AARNaN
+10Be counts                 : 107
+Total counts                : 3181
+9Be current [A]             : 2.46303e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.12821e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.40512e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.96635e-001
+9BeO / none                 : 0.00000e+000
+
+[33]
+Id                          : sSIDBe2726_UNK_BER_2416
+Description                 :  NaN_AARNaN
+10Be counts                 : 95
+Total counts                : 3680
+9Be current [A]             : 1.78243e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.97463e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.72386e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.99210e-001
+9BeO / none                 : 0.00000e+000
+
+[34]
+Id                          : sSIDBe2727_UNK_BER_2417
+Description                 :  NaN_AARNaN
+10Be counts                 : 83
+Total counts                : 12430
+9Be current [A]             : 2.18031e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.72527e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.23159e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.85275e-001
+9BeO / none                 : 0.00000e+000
+
+[35]
+Id                          : sSIDBe2728_UNK_BER_2418
+Description                 :  NaN_AARNaN
+10Be counts                 : 105
+Total counts                : 2689
+9Be current [A]             : 2.43235e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.06878e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.39617e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.97809e-001
+9BeO / none                 : 0.00000e+000
+
+[36]
+Id                          : sSIDBe2729_UNK_BER_2419
+Description                 :  NaN_AARNaN
+10Be counts                 : 87
+Total counts                : 3424
+9Be current [A]             : 2.47826e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.16266e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.13544e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.95354e-001
+9BeO / none                 : 0.00000e+000
+
+[37]
+Id                          : sSIDBe2718_UNK_BER_2410
+Description                 :  NaN_AARNaN
+10Be counts                 : 119
+Total counts                : 6700
+9Be current [A]             : 2.55630e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.24936e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.50575e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 6.01573e-001
+9BeO / none                 : 0.00000e+000
+
+[38]
+Id                          : sSIDBe2719_mBLK_BeB-136
+Description                 :  NaN_AARNaN
+10Be counts                 : 1
+Total counts                : 5762
+9Be current [A]             : 2.78664e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.73341e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.16073e-016
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.88716e-001
+9BeO / none                 : 0.00000e+000
+
+[39]
+Id                          : sSIDBe2720_STD-pri_Be54-283
+Description                 :  NaN_AARNaN
+10Be counts                 : 1353
+Total counts                : 2198
+9Be current [A]             : 2.78676e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.66585e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 4.71146e-013
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.97266e-001
+9BeO / none                 : 0.00000e+000
+
+[40]
+Id                          : sSIDBe2721_UNK_BER_2411
+Description                 :  NaN_AARNaN
+10Be counts                 : 156
+Total counts                : 2730
+9Be current [A]             : 2.72199e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.57821e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.85357e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.94554e-001
+9BeO / none                 : 0.00000e+000
+
+[41]
+Id                          : sSIDBe2722_UNK_BER_2412
+Description                 :  NaN_AARNaN
+10Be counts                 : 69
+Total counts                : 2696
+9Be current [A]             : 2.70209e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.52354e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 8.25902e-015
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.97341e-001
+9BeO / none                 : 0.00000e+000
+
+[42]
+Id                          : sSIDBe2723_UNK_BER_2413
+Description                 :  NaN_AARNaN
+10Be counts                 : 87
+Total counts                : 3614
+9Be current [A]             : 1.69158e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.01926e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.66350e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.60262e-001
+9BeO / none                 : 0.00000e+000
+
+[43]
+Id                          : sSIDBe2724_UNK_BER_2414
+Description                 :  NaN_AARNaN
+10Be counts                 : 146
+Total counts                : 2974
+9Be current [A]             : 2.89687e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.86189e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.63007e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.95832e-001
+9BeO / none                 : 0.00000e+000
+
+[44]
+Id                          : sSIDBe2725_UNK_BER_2415
+Description                 :  NaN_AARNaN
+10Be counts                 : 104
+Total counts                : 2716
+9Be current [A]             : 2.66624e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.47565e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.26155e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.95722e-001
+9BeO / none                 : 0.00000e+000
+
+[45]
+Id                          : sSIDBe2726_UNK_BER_2416
+Description                 :  NaN_AARNaN
+10Be counts                 : 69
+Total counts                : 6657
+9Be current [A]             : 1.34240e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.33727e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.66263e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.74345e-001
+9BeO / none                 : 0.00000e+000
+
+[46]
+Id                          : sSIDBe2727_UNK_BER_2417
+Description                 :  NaN_AARNaN
+10Be counts                 : 69
+Total counts                : 16520
+9Be current [A]             : 1.51488e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.94804e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.47377e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.13861e-001
+9BeO / none                 : 0.00000e+000
+
+[47]
+Id                          : sSIDBe2728_UNK_BER_2418
+Description                 :  NaN_AARNaN
+10Be counts                 : 127
+Total counts                : 2559
+9Be current [A]             : 2.67769e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.49925e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.53396e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.95142e-001
+9BeO / none                 : 0.00000e+000
+
+[48]
+Id                          : sSIDBe2729_UNK_BER_2419
+Description                 :  NaN_AARNaN
+10Be counts                 : 127
+Total counts                : 2828
+9Be current [A]             : 2.73099e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.58432e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.50406e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.95724e-001
+9BeO / none                 : 0.00000e+000
+
+[49]
+Id                          : sSIDBe2718_UNK_BER_2410
+Description                 :  NaN_AARNaN
+10Be counts                 : 55
+Total counts                : 12483
+9Be current [A]             : 1.73251e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.12088e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.02705e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.55136e-001
+9BeO / none                 : 0.00000e+000
+
+[50]
+Id                          : sSIDBe2719_mBLK_BeB-136
+Description                 :  NaN_AARNaN
+10Be counts                 : 2
+Total counts                : 7220
+9Be current [A]             : 2.82988e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.77357e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 2.28617e-016
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.92822e-001
+9BeO / none                 : 0.00000e+000
+
+[51]
+Id                          : sSIDBe2720_STD-pri_Be54-283
+Description                 :  NaN_AARNaN
+10Be counts                 : 1342
+Total counts                : 2190
+9Be current [A]             : 2.75179e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.60440e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 4.73261e-013
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.97645e-001
+9BeO / none                 : 0.00000e+000
+
+[52]
+Id                          : sSIDBe2721_UNK_BER_2411
+Description                 :  NaN_AARNaN
+10Be counts                 : 167
+Total counts                : 3219
+9Be current [A]             : 2.91269e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.88333e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.85442e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.96457e-001
+9BeO / none                 : 0.00000e+000
+
+[53]
+Id                          : sSIDBe2722_UNK_BER_2412
+Description                 :  NaN_AARNaN
+10Be counts                 : 69
+Total counts                : 4143
+9Be current [A]             : 2.80257e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.66124e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 7.96340e-015
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 6.01249e-001
+9BeO / none                 : 0.00000e+000
+
+[54]
+Id                          : sSIDBe2723_UNK_BER_2413
+Description                 :  NaN_AARNaN
+10Be counts                 : 32
+Total counts                : 2456
+9Be current [A]             : 6.44807e-007
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 1.50604e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.60509e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 4.28148e-001
+9BeO / none                 : 0.00000e+000
+
+[55]
+Id                          : sSIDBe2724_UNK_BER_2414
+Description                 :  NaN_AARNaN
+10Be counts                 : 136
+Total counts                : 4735
+9Be current [A]             : 2.99145e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.96554e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.47048e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 6.02442e-001
+9BeO / none                 : 0.00000e+000
+
+[56]
+Id                          : sSIDBe2725_UNK_BER_2415
+Description                 :  NaN_AARNaN
+10Be counts                 : 133
+Total counts                : 3550
+9Be current [A]             : 2.86571e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.79881e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.50110e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.97172e-001
+9BeO / none                 : 0.00000e+000
+
+[57]
+Id                          : sSIDBe2726_UNK_BER_2416
+Description                 :  NaN_AARNaN
+10Be counts                 : 28
+Total counts                : 11361
+9Be current [A]             : 5.84118e-007
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 1.24454e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.55083e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 4.69345e-001
+9BeO / none                 : 0.00000e+000
+
+[58]
+Id                          : sSIDBe2727_UNK_BER_2417
+Description                 :  NaN_AARNaN
+10Be counts                 : 33
+Total counts                : 20350
+9Be current [A]             : 9.07541e-007
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.18261e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.17675e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 4.15806e-001
+9BeO / none                 : 0.00000e+000
+
+[59]
+Id                          : sSIDBe2728_UNK_BER_2418
+Description                 :  NaN_AARNaN
+10Be counts                 : 135
+Total counts                : 3428
+9Be current [A]             : 2.92564e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.92593e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.49245e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.93926e-001
+9BeO / none                 : 0.00000e+000
+
+[60]
+Id                          : sSIDBe2729_UNK_BER_2419
+Description                 :  NaN_AARNaN
+10Be counts                 : 99
+Total counts                : 5991
+9Be current [A]             : 2.58100e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.27527e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.24075e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 6.03704e-001
+9BeO / none                 : 0.00000e+000
+
+[61]
+Id                          : sSIDBe2718_UNK_BER_2410
+Description                 :  NaN_AARNaN
+10Be counts                 : 45
+Total counts                : 17980
+9Be current [A]             : 1.02092e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.20106e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.42631e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 4.63830e-001
+9BeO / none                 : 0.00000e+000
+
+[62]
+Id                          : sSIDBe2719_mBLK_BeB-136
+Description                 :  NaN_AARNaN
+10Be counts                 : 0
+Total counts                : 10258
+9Be current [A]             : 2.41873e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.01655e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 0.00000e+000
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 6.02190e-001
+9BeO / none                 : 0.00000e+000
+
+[63]
+Id                          : sSIDBe2720_STD-pri_Be54-283
+Description                 :  NaN_AARNaN
+10Be counts                 : 1344
+Total counts                : 2098
+9Be current [A]             : 2.76186e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.63370e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 4.72216e-013
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.96038e-001
+9BeO / none                 : 0.00000e+000
+
+[64]
+Id                          : sSIDBe2721_UNK_BER_2411
+Description                 :  NaN_AARNaN
+10Be counts                 : 157
+Total counts                : 6751
+9Be current [A]             : 2.63736e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.39126e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.92560e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 6.00592e-001
+9BeO / none                 : 0.00000e+000
+
+[65]
+Id                          : sSIDBe2722_UNK_BER_2412
+Description                 :  NaN_AARNaN
+10Be counts                 : 57
+Total counts                : 8789
+9Be current [A]             : 2.23171e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.74006e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 8.26194e-015
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.96705e-001
+9BeO / none                 : 0.00000e+000
+
+[66]
+Id                          : sSIDBe2723_UNK_BER_2413
+Description                 :  NaN_AARNaN
+10Be counts                 : 15
+Total counts                : 2090
+9Be current [A]             : 2.71123e-007
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 8.02442e-007
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.78936e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 3.37872e-001
+9BeO / none                 : 0.00000e+000
+
+[67]
+Id                          : sSIDBe2724_UNK_BER_2414
+Description                 :  NaN_AARNaN
+10Be counts                 : 127
+Total counts                : 9335
+9Be current [A]             : 2.56091e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.25071e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.60417e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 6.02467e-001
+9BeO / none                 : 0.00000e+000
+
+[68]
+Id                          : sSIDBe2725_UNK_BER_2415
+Description                 :  NaN_AARNaN
+10Be counts                 : 117
+Total counts                : 6488
+9Be current [A]             : 2.64244e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.38190e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.43224e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 6.03036e-001
+9BeO / none                 : 0.00000e+000
+
+[69]
+Id                          : sSIDBe2726_UNK_BER_2416
+Description                 :  NaN_AARNaN
+10Be counts                 : 11
+Total counts                : 13779
+9Be current [A]             : 2.12916e-007
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 5.87817e-007
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.67158e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 3.62215e-001
+9BeO / none                 : 0.00000e+000
+
+[70]
+Id                          : sSIDBe2727_UNK_BER_2417
+Description                 :  NaN_AARNaN
+10Be counts                 : 25
+Total counts                : 22255
+9Be current [A]             : 5.53063e-007
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 1.62434e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.46292e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 3.40485e-001
+9BeO / none                 : 0.00000e+000
+
+[71]
+Id                          : sSIDBe2728_UNK_BER_2418
+Description                 :  NaN_AARNaN
+10Be counts                 : 121
+Total counts                : 5712
+9Be current [A]             : 2.80967e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.67684e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.39298e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 6.00763e-001
+9BeO / none                 : 0.00000e+000
+
+[72]
+Id                          : sSIDBe2729_UNK_BER_2419
+Description                 :  NaN_AARNaN
+10Be counts                 : 64
+Total counts                : 13036
+9Be current [A]             : 1.59029e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.77439e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.30202e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.73204e-001
+9BeO / none                 : 0.00000e+000
+
+[73]
+Id                          : sSIDBe2730_pBLK_UiB 2405
+Description                 :  NaN_AARNaN
+10Be counts                 : 0
+Total counts                : 4203
+9Be current [A]             : 1.13924e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.28653e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 0.00000e+000
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 4.98241e-001
+9BeO / none                 : 0.00000e+000
+
+[74]
+Id                          : sSIDBe2731_STD-pri_Be54-254
+Description                 :  NaN_AARNaN
+10Be counts                 : 1305
+Total counts                : 4236
+9Be current [A]             : 2.26949e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.82418e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 4.78330e-013
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.93459e-001
+9BeO / none                 : 0.00000e+000
+
+[75]
+Id                          : sSIDBe2732_UNK_BER_2420
+Description                 :  NaN_AARNaN
+10Be counts                 : 83
+Total counts                : 5615
+9Be current [A]             : 1.64103e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.84683e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.63599e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.76440e-001
+9BeO / none                 : 0.00000e+000
+
+[76]
+Id                          : sSIDBe2733_UNK_BER_2421
+Description                 :  NaN_AARNaN
+10Be counts                 : 100
+Total counts                : 3911
+9Be current [A]             : 1.65727e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.77791e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.95162e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.96590e-001
+9BeO / none                 : 0.00000e+000
+
+[77]
+Id                          : sSIDBe2734_UNK_BER_2422
+Description                 :  NaN_AARNaN
+10Be counts                 : 90
+Total counts                : 4945
+9Be current [A]             : 1.63872e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.74237e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.77641e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.97555e-001
+9BeO / none                 : 0.00000e+000
+
+[78]
+Id                          : sSIDBe2735_UNK_BER_2423
+Description                 :  NaN_AARNaN
+10Be counts                 : 84
+Total counts                : 4399
+9Be current [A]             : 1.64378e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.14435e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.65286e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.22774e-001
+9BeO / none                 : 0.00000e+000
+
+[79]
+Id                          : sSIDBe2736_UNK_BER_2424
+Description                 :  NaN_AARNaN
+10Be counts                 : 86
+Total counts                : 6163
+9Be current [A]             : 1.68904e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.81875e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.64698e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.99214e-001
+9BeO / none                 : 0.00000e+000
+
+[80]
+Id                          : sSIDBe2737_UNK_BER_2425
+Description                 :  NaN_AARNaN
+10Be counts                 : 77
+Total counts                : 3884
+9Be current [A]             : 1.52272e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.86474e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.63558e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.31539e-001
+9BeO / none                 : 0.00000e+000
+
+[81]
+Id                          : sSIDBe2730_pBLK_UiB 2405
+Description                 :  NaN_AARNaN
+10Be counts                 : 0
+Total counts                : 2247
+9Be current [A]             : 1.56407e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.76489e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 0.00000e+000
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.65690e-001
+9BeO / none                 : 0.00000e+000
+
+[82]
+Id                          : sSIDBe2731_STD-pri_Be54-254
+Description                 :  NaN_AARNaN
+10Be counts                 : 1265
+Total counts                : 2367
+9Be current [A]             : 2.58192e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.33211e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 4.75452e-013
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.95996e-001
+9BeO / none                 : 0.00000e+000
+
+[83]
+Id                          : sSIDBe2732_UNK_BER_2420
+Description                 :  NaN_AARNaN
+10Be counts                 : 101
+Total counts                : 2613
+9Be current [A]             : 2.09966e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.49410e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.55579e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 6.00917e-001
+9BeO / none                 : 0.00000e+000
+
+[84]
+Id                          : sSIDBe2733_UNK_BER_2421
+Description                 :  NaN_AARNaN
+10Be counts                 : 123
+Total counts                : 2696
+9Be current [A]             : 2.08491e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.46995e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.90805e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 6.00847e-001
+9BeO / none                 : 0.00000e+000
+
+[85]
+Id                          : sSIDBe2734_UNK_BER_2422
+Description                 :  NaN_AARNaN
+10Be counts                 : 137
+Total counts                : 2869
+9Be current [A]             : 2.13893e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.57441e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 2.07163e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.98401e-001
+9BeO / none                 : 0.00000e+000
+
+[86]
+Id                          : sSIDBe2735_UNK_BER_2423
+Description                 :  NaN_AARNaN
+10Be counts                 : 114
+Total counts                : 3624
+9Be current [A]             : 2.31426e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.96500e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.59321e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.83673e-001
+9BeO / none                 : 0.00000e+000
+
+[87]
+Id                          : sSIDBe2736_UNK_BER_2424
+Description                 :  NaN_AARNaN
+10Be counts                 : 100
+Total counts                : 2832
+9Be current [A]             : 2.10205e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.48202e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.53867e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 6.03685e-001
+9BeO / none                 : 0.00000e+000
+
+[88]
+Id                          : sSIDBe2737_UNK_BER_2425
+Description                 :  NaN_AARNaN
+10Be counts                 : 90
+Total counts                : 2933
+9Be current [A]             : 2.09271e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.60440e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.39093e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.80600e-001
+9BeO / none                 : 0.00000e+000
+
+[89]
+Id                          : sSIDBe2730_pBLK_UiB 2405
+Description                 :  NaN_AARNaN
+10Be counts                 : 0
+Total counts                : 2124
+9Be current [A]             : 1.90909e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.21368e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 0.00000e+000
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.94051e-001
+9BeO / none                 : 0.00000e+000
+
+[90]
+Id                          : sSIDBe2731_STD-pri_Be54-254
+Description                 :  NaN_AARNaN
+10Be counts                 : 1386
+Total counts                : 2349
+9Be current [A]             : 2.70686e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.54253e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 4.96916e-013
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.95892e-001
+9BeO / none                 : 0.00000e+000
+
+[91]
+Id                          : sSIDBe2732_UNK_BER_2420
+Description                 :  NaN_AARNaN
+10Be counts                 : 128
+Total counts                : 3138
+9Be current [A]             : 2.41913e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.02863e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.71132e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 6.00484e-001
+9BeO / none                 : 0.00000e+000
+
+[92]
+Id                          : sSIDBe2733_UNK_BER_2421
+Description                 :  NaN_AARNaN
+10Be counts                 : 131
+Total counts                : 2766
+9Be current [A]             : 2.35984e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.92972e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.79545e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 6.00510e-001
+9BeO / none                 : 0.00000e+000
+
+[93]
+Id                          : sSIDBe2734_UNK_BER_2422
+Description                 :  NaN_AARNaN
+10Be counts                 : 148
+Total counts                : 2438
+9Be current [A]             : 2.44799e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.09849e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.95536e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.97289e-001
+9BeO / none                 : 0.00000e+000
+
+[94]
+Id                          : sSIDBe2735_UNK_BER_2423
+Description                 :  NaN_AARNaN
+10Be counts                 : 95
+Total counts                : 3009
+9Be current [A]             : 2.54659e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.29765e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.20653e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.92554e-001
+9BeO / none                 : 0.00000e+000
+
+[95]
+Id                          : sSIDBe2736_UNK_BER_2424
+Description                 :  NaN_AARNaN
+10Be counts                 : 108
+Total counts                : 2581
+9Be current [A]             : 2.31098e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.83801e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.51149e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 6.02129e-001
+9BeO / none                 : 0.00000e+000
+
+[96]
+Id                          : sSIDBe2737_UNK_BER_2425
+Description                 :  NaN_AARNaN
+10Be counts                 : 97
+Total counts                : 3034
+9Be current [A]             : 2.41140e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.05752e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.30105e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.94304e-001
+9BeO / none                 : 0.00000e+000
+
+[97]
+Id                          : sSIDBe2730_pBLK_UiB 2405
+Description                 :  NaN_AARNaN
+10Be counts                 : 2
+Total counts                : 3432
+9Be current [A]             : 2.14040e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.58255e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 3.02225e-016
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.97452e-001
+9BeO / none                 : 0.00000e+000
+
+[98]
+Id                          : sSIDBe2731_STD-pri_Be54-254
+Description                 :  NaN_AARNaN
+10Be counts                 : 1297
+Total counts                : 2081
+9Be current [A]             : 2.76435e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.64754e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 4.55292e-013
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.94799e-001
+9BeO / none                 : 0.00000e+000
+
+[99]
+Id                          : sSIDBe2732_UNK_BER_2420
+Description                 :  NaN_AARNaN
+10Be counts                 : 94
+Total counts                : 3150
+9Be current [A]             : 2.58848e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.32777e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.17454e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.98110e-001
+9BeO / none                 : 0.00000e+000
+
+[100]
+Id                          : sSIDBe2733_UNK_BER_2421
+Description                 :  NaN_AARNaN
+10Be counts                 : 150
+Total counts                : 2861
+9Be current [A]             : 2.57589e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.29874e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.88338e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.99221e-001
+9BeO / none                 : 0.00000e+000
+
+[101]
+Id                          : sSIDBe2734_UNK_BER_2422
+Description                 :  NaN_AARNaN
+10Be counts                 : 149
+Total counts                : 2997
+9Be current [A]             : 2.70989e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.58215e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.77835e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.91403e-001
+9BeO / none                 : 0.00000e+000
+
+[102]
+Id                          : sSIDBe2735_UNK_BER_2423
+Description                 :  NaN_AARNaN
+10Be counts                 : 119
+Total counts                : 3596
+9Be current [A]             : 2.44179e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.04857e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.57628e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 6.03125e-001
+9BeO / none                 : 0.00000e+000
+
+[103]
+Id                          : sSIDBe2736_UNK_BER_2424
+Description                 :  NaN_AARNaN
+10Be counts                 : 100
+Total counts                : 2440
+9Be current [A]             : 2.51762e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.21232e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.28467e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.97681e-001
+9BeO / none                 : 0.00000e+000
+
+[104]
+Id                          : sSIDBe2737_UNK_BER_2425
+Description                 :  NaN_AARNaN
+10Be counts                 : 111
+Total counts                : 5060
+9Be current [A]             : 2.21878e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.66897e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.61817e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 6.04742e-001
+9BeO / none                 : 0.00000e+000
+
+[105]
+Id                          : sSIDBe2730_pBLK_UiB 2405
+Description                 :  NaN_AARNaN
+10Be counts                 : 0
+Total counts                : 11518
+9Be current [A]             : 1.78193e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.01886e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 0.00000e+000
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.90268e-001
+9BeO / none                 : 0.00000e+000
+
+[106]
+Id                          : sSIDBe2731_STD-pri_Be54-254
+Description                 :  NaN_AARNaN
+10Be counts                 : 1427
+Total counts                : 2172
+9Be current [A]             : 2.83331e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.76231e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 4.88728e-013
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.94945e-001
+9BeO / none                 : 0.00000e+000
+
+[107]
+Id                          : sSIDBe2732_UNK_BER_2420
+Description                 :  NaN_AARNaN
+10Be counts                 : 88
+Total counts                : 9564
+9Be current [A]             : 2.06093e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.42070e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.38130e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 6.02489e-001
+9BeO / none                 : 0.00000e+000
+
+[108]
+Id                          : sSIDBe2733_UNK_BER_2421
+Description                 :  NaN_AARNaN
+10Be counts                 : 138
+Total counts                : 5695
+9Be current [A]             : 2.35042e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.89011e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.89917e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 6.04205e-001
+9BeO / none                 : 0.00000e+000
+
+[109]
+Id                          : sSIDBe2734_UNK_BER_2422
+Description                 :  NaN_AARNaN
+10Be counts                 : 158
+Total counts                : 6149
+9Be current [A]             : 2.70878e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.53344e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.88681e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.97511e-001
+9BeO / none                 : 0.00000e+000
+
+[110]
+Id                          : sSIDBe2735_UNK_BER_2423
+Description                 :  NaN_AARNaN
+10Be counts                 : 67
+Total counts                : 3378
+9Be current [A]             : 1.72279e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.97314e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.25784e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.79453e-001
+9BeO / none                 : 0.00000e+000
+
+[111]
+Id                          : sSIDBe2736_UNK_BER_2424
+Description                 :  NaN_AARNaN
+10Be counts                 : 121
+Total counts                : 2718
+9Be current [A]             : 2.78301e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.67766e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.40618e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.94958e-001
+9BeO / none                 : 0.00000e+000
+
+[112]
+Id                          : sSIDBe2737_UNK_BER_2425
+Description                 :  NaN_AARNaN
+10Be counts                 : 74
+Total counts                : 11060
+9Be current [A]             : 1.30018e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.35897e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.84128e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.51161e-001
+9BeO / none                 : 0.00000e+000
+
+[113]
+Id                          : sSIDBe2730_pBLK_UiB 2405
+Description                 :  NaN_AARNaN
+10Be counts                 : 0
+Total counts                : 17863
+9Be current [A]             : 1.16435e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.21571e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 0.00000e+000
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.25498e-001
+9BeO / none                 : 0.00000e+000
+
+[114]
+Id                          : sSIDBe2731_STD-pri_Be54-254
+Description                 :  NaN_AARNaN
+10Be counts                 : 1465
+Total counts                : 2235
+9Be current [A]             : 2.95394e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.98372e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 4.81275e-013
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.92717e-001
+9BeO / none                 : 0.00000e+000
+
+[115]
+Id                          : sSIDBe2732_UNK_BER_2420
+Description                 :  NaN_AARNaN
+10Be counts                 : 63
+Total counts                : 16781
+9Be current [A]             : 1.28220e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.31190e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.58980e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.54611e-001
+9BeO / none                 : 0.00000e+000
+
+[116]
+Id                          : sSIDBe2733_UNK_BER_2421
+Description                 :  NaN_AARNaN
+10Be counts                 : 100
+Total counts                : 11543
+9Be current [A]             : 1.69960e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.94641e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.90349e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.76837e-001
+9BeO / none                 : 0.00000e+000
+
+[117]
+Id                          : sSIDBe2734_UNK_BER_2422
+Description                 :  NaN_AARNaN
+10Be counts                 : 129
+Total counts                : 13338
+9Be current [A]             : 2.25629e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.75119e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.84974e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 6.01487e-001
+9BeO / none                 : 0.00000e+000
+
+[118]
+Id                          : sSIDBe2735_UNK_BER_2423
+Description                 :  NaN_AARNaN
+10Be counts                 : 44
+Total counts                : 2908
+9Be current [A]             : 9.43312e-007
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 1.99335e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.50864e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 4.73229e-001
+9BeO / none                 : 0.00000e+000
+
+[119]
+Id                          : sSIDBe2736_UNK_BER_2424
+Description                 :  NaN_AARNaN
+10Be counts                 : 117
+Total counts                : 5590
+9Be current [A]             : 2.50194e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.16999e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.51265e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.99987e-001
+9BeO / none                 : 0.00000e+000
+
+[120]
+Id                          : sSIDBe2737_UNK_BER_2425
+Description                 :  NaN_AARNaN
+10Be counts                 : 25
+Total counts                : 14435
+9Be current [A]             : 5.99808e-007
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 1.35626e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.34855e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 4.42252e-001
+9BeO / none                 : 0.00000e+000
+
+[121]
+Id                          : sSIDBe2738_UNK_BER_2426
+Description                 :  NaN_AARNaN
+10Be counts                 : 87
+Total counts                : 3114
+9Be current [A]             : 1.43923e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.45150e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.95511e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.87082e-001
+9BeO / none                 : 0.00000e+000
+
+[122]
+Id                          : sSIDBe2739_UNK_BER_2427
+Description                 :  NaN_AARNaN
+10Be counts                 : 19
+Total counts                : 2875
+9Be current [A]             : 5.95585e-007
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 1.10864e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.03177e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.37220e-001
+9BeO / none                 : 0.00000e+000
+
+[123]
+Id                          : sSIDBe2740_UNK_BER_2428
+Description                 :  NaN_AARNaN
+10Be counts                 : 100
+Total counts                : 4243
+9Be current [A]             : 1.72862e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.87817e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.87117e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 6.00596e-001
+9BeO / none                 : 0.00000e+000
+
+[124]
+Id                          : sSIDBe2741_pBLK_BER_2429
+Description                 :  NaN_AARNaN
+10Be counts                 : 17
+Total counts                : 1788
+9Be current [A]             : 1.72459e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.92247e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.43489e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.90114e-001
+9BeO / none                 : 0.00000e+000
+
+[125]
+Id                          : sSIDBe2742_STD-sec_CoQtz-N 2402
+Description                 :  NaN_AARNaN
+10Be counts                 : 598
+Total counts                : 3286
+9Be current [A]             : 1.46711e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.69217e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.31832e-013
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.44954e-001
+9BeO / none                 : 0.00000e+000
+
+[126]
+Id                          : sSIDBe2743_STD-pri_Be54-285
+Description                 :  NaN_AARNaN
+10Be counts                 : 1337
+Total counts                : 9562
+9Be current [A]             : 1.83620e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.06960e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 4.71212e-013
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.98189e-001
+9BeO / none                 : 0.00000e+000
+
+[127]
+Id                          : sSIDBe2744_STD-sec_Be62-127
+Description                 :  NaN_AARNaN
+10Be counts                 : 443
+Total counts                : 6039
+9Be current [A]             : 1.74838e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.99430e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 8.19587e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.83902e-001
+9BeO / none                 : 0.00000e+000
+
+[128]
+Id                          : sSIDBe2738_UNK_BER_2426
+Description                 :  NaN_AARNaN
+10Be counts                 : 81
+Total counts                : 2233
+9Be current [A]             : 1.94280e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.29263e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.34844e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.90044e-001
+9BeO / none                 : 0.00000e+000
+
+[129]
+Id                          : sSIDBe2739_UNK_BER_2427
+Description                 :  NaN_AARNaN
+10Be counts                 : 26
+Total counts                : 1534
+9Be current [A]             : 6.19956e-007
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 1.20282e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.35635e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.15418e-001
+9BeO / none                 : 0.00000e+000
+
+[130]
+Id                          : sSIDBe2740_UNK_BER_2428
+Description                 :  NaN_AARNaN
+10Be counts                 : 126
+Total counts                : 3561
+9Be current [A]             : 2.14206e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.57401e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.90251e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.99345e-001
+9BeO / none                 : 0.00000e+000
+
+[131]
+Id                          : sSIDBe2741_pBLK_BER_2429
+Description                 :  NaN_AARNaN
+10Be counts                 : 19
+Total counts                : 685
+9Be current [A]             : 2.05042e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.41718e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.79834e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 6.00035e-001
+9BeO / none                 : 0.00000e+000
+
+[132]
+Id                          : sSIDBe2742_STD-sec_CoQtz-N 2402
+Description                 :  NaN_AARNaN
+10Be counts                 : 783
+Total counts                : 2739
+9Be current [A]             : 1.91093e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.34459e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.32526e-013
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.71348e-001
+9BeO / none                 : 0.00000e+000
+
+[133]
+Id                          : sSIDBe2743_STD-pri_Be54-285
+Description                 :  NaN_AARNaN
+10Be counts                 : 1400
+Total counts                : 4685
+9Be current [A]             : 2.23070e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.70971e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 4.56832e-013
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 6.01314e-001
+9BeO / none                 : 0.00000e+000
+
+[134]
+Id                          : sSIDBe2744_STD-sec_Be62-127
+Description                 :  NaN_AARNaN
+10Be counts                 : 574
+Total counts                : 2824
+9Be current [A]             : 2.07648e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.50617e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 8.94040e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.92237e-001
+9BeO / none                 : 0.00000e+000
+
+[135]
+Id                          : sSIDBe2738_UNK_BER_2426
+Description                 :  NaN_AARNaN
+10Be counts                 : 104
+Total counts                : 2219
+9Be current [A]             : 2.23970e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.78212e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.50181e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.92183e-001
+9BeO / none                 : 0.00000e+000
+
+[136]
+Id                          : sSIDBe2739_UNK_BER_2427
+Description                 :  NaN_AARNaN
+10Be counts                 : 23
+Total counts                : 2070
+9Be current [A]             : 6.57917e-007
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 1.37973e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.13063e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 4.76844e-001
+9BeO / none                 : 0.00000e+000
+
+[137]
+Id                          : sSIDBe2740_UNK_BER_2428
+Description                 :  NaN_AARNaN
+10Be counts                 : 123
+Total counts                : 2749
+9Be current [A]             : 2.36533e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.98074e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.68187e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.94194e-001
+9BeO / none                 : 0.00000e+000
+
+[138]
+Id                          : sSIDBe2741_pBLK_BER_2429
+Description                 :  NaN_AARNaN
+10Be counts                 : 18
+Total counts                : 576
+9Be current [A]             : 2.16460e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.60521e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.61373e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 6.00408e-001
+9BeO / none                 : 0.00000e+000
+
+[139]
+Id                          : sSIDBe2742_STD-sec_CoQtz-N 2402
+Description                 :  NaN_AARNaN
+10Be counts                 : 837
+Total counts                : 3200
+9Be current [A]             : 2.25143e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.83123e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.20242e-013
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.87652e-001
+9BeO / none                 : 0.00000e+000
+
+[140]
+Id                          : sSIDBe2743_STD-pri_Be54-285
+Description                 :  NaN_AARNaN
+10Be counts                 : 1328
+Total counts                : 3114
+9Be current [A]             : 2.37087e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.98744e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 4.65931e-013
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.94586e-001
+9BeO / none                 : 0.00000e+000
+
+[141]
+Id                          : sSIDBe2744_STD-sec_Be62-127
+Description                 :  NaN_AARNaN
+10Be counts                 : 612
+Total counts                : 3006
+9Be current [A]             : 2.22765e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.78605e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 8.88566e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.88383e-001
+9BeO / none                 : 0.00000e+000
+
+[142]
+Id                          : sSIDBe2738_UNK_BER_2426
+Description                 :  NaN_AARNaN
+10Be counts                 : 91
+Total counts                : 6578
+9Be current [A]             : 2.19531e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.71361e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.34083e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.91154e-001
+9BeO / none                 : 0.00000e+000
+
+[143]
+Id                          : sSIDBe2739_UNK_BER_2427
+Description                 :  NaN_AARNaN
+10Be counts                 : 43
+Total counts                : 1860
+9Be current [A]             : 8.09742e-007
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 1.69556e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.71746e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 4.77565e-001
+9BeO / none                 : 0.00000e+000
+
+[144]
+Id                          : sSIDBe2740_UNK_BER_2428
+Description                 :  NaN_AARNaN
+10Be counts                 : 132
+Total counts                : 3379
+9Be current [A]             : 2.57213e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.33795e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.65989e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.92936e-001
+9BeO / none                 : 0.00000e+000
+
+[145]
+Id                          : sSIDBe2741_pBLK_BER_2429
+Description                 :  NaN_AARNaN
+10Be counts                 : 20
+Total counts                : 496
+9Be current [A]             : 2.27500e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.79406e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.70610e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.99623e-001
+9BeO / none                 : 0.00000e+000
+
+[146]
+Id                          : sSIDBe2742_STD-sec_CoQtz-N 2402
+Description                 :  NaN_AARNaN
+10Be counts                 : 975
+Total counts                : 3260
+9Be current [A]             : 2.68796e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.55352e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.17321e-013
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.90304e-001
+9BeO / none                 : 0.00000e+000
+
+[147]
+Id                          : sSIDBe2743_STD-pri_Be54-285
+Description                 :  NaN_AARNaN
+10Be counts                 : 1258
+Total counts                : 2681
+9Be current [A]             : 2.52040e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.26659e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 4.84345e-013
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.90729e-001
+9BeO / none                 : 0.00000e+000
+
+[148]
+Id                          : sSIDBe2744_STD-sec_Be62-127
+Description                 :  NaN_AARNaN
+10Be counts                 : 611
+Total counts                : 2054
+9Be current [A]             : 2.26450e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.84059e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 8.72653e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.89624e-001
+9BeO / none                 : 0.00000e+000
+
+[149]
+Id                          : sSIDBe2738_UNK_BER_2426
+Description                 :  NaN_AARNaN
+10Be counts                 : 42
+Total counts                : 16601
+9Be current [A]             : 1.39831e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.63546e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 9.71901e-015
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.30576e-001
+9BeO / none                 : 0.00000e+000
+
+[150]
+Id                          : sSIDBe2739_UNK_BER_2427
+Description                 :  NaN_AARNaN
+10Be counts                 : 46
+Total counts                : 2228
+9Be current [A]             : 1.10130e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.14869e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.35094e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.12544e-001
+9BeO / none                 : 0.00000e+000
+
+[151]
+Id                          : sSIDBe2740_UNK_BER_2428
+Description                 :  NaN_AARNaN
+10Be counts                 : 154
+Total counts                : 3689
+9Be current [A]             : 2.67458e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.50020e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.86232e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.94324e-001
+9BeO / none                 : 0.00000e+000
+
+[152]
+Id                          : sSIDBe2741_pBLK_BER_2429
+Description                 :  NaN_AARNaN
+10Be counts                 : 19
+Total counts                : 361
+9Be current [A]             : 2.31225e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.84860e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 2.39195e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 6.00803e-001
+9BeO / none                 : 0.00000e+000
+
+[153]
+Id                          : sSIDBe2742_STD-sec_CoQtz-N 2402
+Description                 :  NaN_AARNaN
+10Be counts                 : 998
+Total counts                : 5713
+9Be current [A]             : 2.74696e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.61511e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.17517e-013
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.95209e-001
+9BeO / none                 : 0.00000e+000
+
+[154]
+Id                          : sSIDBe2743_STD-pri_Be54-285
+Description                 :  NaN_AARNaN
+10Be counts                 : 1401
+Total counts                : 2821
+9Be current [A]             : 2.60131e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.39246e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 4.47998e-013
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.92221e-001
+9BeO / none                 : 0.00000e+000
+
+[155]
+Id                          : sSIDBe2744_STD-sec_Be62-127
+Description                 :  NaN_AARNaN
+10Be counts                 : 600
+Total counts                : 2715
+9Be current [A]             : 2.39885e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.04925e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 8.08961e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.92418e-001
+9BeO / none                 : 0.00000e+000
+
+[156]
+Id                          : sSIDBe2738_UNK_BER_2426
+Description                 :  NaN_AARNaN
+10Be counts                 : 22
+Total counts                : 24703
+9Be current [A]             : 6.02329e-007
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 1.56220e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.18209e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 3.85564e-001
+9BeO / none                 : 0.00000e+000
+
+[157]
+Id                          : sSIDBe2739_UNK_BER_2427
+Description                 :  NaN_AARNaN
+10Be counts                 : 40
+Total counts                : 2527
+9Be current [A]             : 1.23094e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 2.27473e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.05099e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.41136e-001
+9BeO / none                 : 0.00000e+000
+
+[158]
+Id                          : sSIDBe2740_UNK_BER_2428
+Description                 :  NaN_AARNaN
+10Be counts                 : 107
+Total counts                : 6752
+9Be current [A]             : 2.31817e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.88957e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.49300e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.95997e-001
+9BeO / none                 : 0.00000e+000
+
+[159]
+Id                          : sSIDBe2741_pBLK_BER_2429
+Description                 :  NaN_AARNaN
+10Be counts                 : 17
+Total counts                : 298
+9Be current [A]             : 2.37014e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.94383e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 2.08774e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 6.00974e-001
+9BeO / none                 : 0.00000e+000
+
+[160]
+Id                          : sSIDBe2742_STD-sec_CoQtz-N 2402
+Description                 :  NaN_AARNaN
+10Be counts                 : 868
+Total counts                : 8997
+9Be current [A]             : 2.24552e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 3.76720e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 1.25044e-013
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.96073e-001
+9BeO / none                 : 0.00000e+000
+
+[161]
+Id                          : sSIDBe2743_STD-pri_Be54-285
+Description                 :  NaN_AARNaN
+10Be counts                 : 1260
+Total counts                : 2363
+9Be current [A]             : 2.67749e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.49613e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 4.56667e-013
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.95509e-001
+9BeO / none                 : 0.00000e+000
+
+[162]
+Id                          : sSIDBe2744_STD-sec_Be62-127
+Description                 :  NaN_AARNaN
+10Be counts                 : 679
+Total counts                : 2974
+9Be current [A]             : 2.57158e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 4.31122e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 8.53984e-014
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.96484e-001
+9BeO / none                 : 0.00000e+000
+
+[163]
+Id                          : sSIDBe2703_STD-pri_Be54-281
+Description                 :  NaN_AARNaN
+10Be counts                 : 1255
+Total counts                : 1885
+9Be current [A]             : 3.10491e-006
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 5.26252e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 4.70683e-013
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.90006e-001
+9BeO / none                 : 0.00000e+000
+

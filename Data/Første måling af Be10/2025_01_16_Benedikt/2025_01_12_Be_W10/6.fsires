@@ -1,0 +1,81 @@
+AMS result file created by AMS FSI-analysis utility
+ 
+[Filing]
+Measuring date, time               : 2025-01-12 21:20:49
+Files                              : C:\AMS-71\FSI-BATCH\2025_01_12_Be_W10\6
+ 
+[Sample]
+Sample Id                          : sSIDBe2746_STD-sec_Be51-67
+Sample description                 :  NaN_AARNaN
+Sample position                    : 2
+ 
+[Isotope names]
+DET ROI1                           : 10Be
+DET ROI2                           : Total
+DET ROI3                           : 10B
+DET ROI4                           : 
+DET ROI5                           : 
+BI OFC Out                         : 9BeO
+BI OFC Inn                         : none
+HEM OFC 1                          : 9Be
+HEM OFC 2                          : none
+ 
+[Settings]
+Bouncer file                       : c:\AMS-71\BOUNCER\Beryllium.bnc
+MPA file                           : c:\MPA3\config\Beryllium.mpa
+BI OFC Out range [A]               : 1.0e-005
+BI OFC Inn range [A]               : 1.0e-004
+HEM OFC 1 range [A]                : 1.0e-005
+HEM OFC 2 range [A]                : 1.0e-003
+HEM OFC 1 charge state             : 1
+HEM OFC 2 charge state             : 1
+Ion source                         : SO110-2
+ 
+[Timing]
+Block time                         : 30
+ISO 1 duty                         : 9.17431e-001
+ISO 2 duty                         : 9.17431e-003
+ 
+ISO 1 delay [s]                    : 2.500e-007
+ISO 2 delay [s]                    : 2.500e-007
+ 
+Gate delay [s]                     : 1.000e-005
+ 
+[Measurement]
+Stop condition                     : 1250 counts or 18 blocks
+Number of blocks                   : 2
+Run time [s]                       : 83.938
+Detector live time [s]             : 54.997
+Detector dead time [%]             : 0.089
+10Be counts                        : 2395
+10Be count rate (Hz)               : 43.548
+10Be statistical error (%)         : 2.043
+Total counts                       : 3475
+10B counts                         : 1050
+ counts                            : 3475
+ counts                            : 3475
+9Be current [A]                    : 1.58247e-006
+none current [A]                   : 0.00000e+000
+9BeO current [A]                   : 2.64835e-006
+none current [A]                   : 0.00000e+000
+Target current [A]                 : 6.032e-001
+ 
+[Isotopic ratios]
+10Be/none ratio                    : 0.00000e+000
+10Be/9Be ratio                     : 4.40903e-012
+9Be/none ratio                     : 0.00000e+000
+9Be/9BeO ratio                     : 5.97529e-001
+none/none ratio                    : 0.00000e+000
+9BeO/none ratio                    : 0.00000e+000
+10Be/none rel std dev (%)          : 0.00000e+000
+10Be/9Be rel std dev (%)           : 1.30970e+000
+9Be/none rel std dev (%)           : 0.00000e+000
+9Be/9BeO rel std dev (%)          : 6.77390e-001
+none/none rel std dev (%)          : 0.00000e+000
+9BeO / none rel std dev (%)        : NaN
+10Be avg stat block error (%)      : 2.890
+ 
+[BLOCK DATA]
+Blk 10Becnts Totalcnts 10Bcnts cnts cnts LiveTime 10Becps 9Becur nonecur 9BeOcur nonecur 10Be/9Be 10Be/none 9Be/none 9Be/9BeO none/none 9BeO/none TargetCur Flags
+1 1183 1781 579 1781 1781 2.75039e+001 4.30120e+001 1.57764e-006 0.00000e+000 2.62759e-006 0.00000e+000 4.36809e-012 0.00000e+000 0.00000e+000 6.00414e-001 0.00000e+000 Infinity 0.61 000
+2 1212 1694 471 1694 1694 2.74929e+001 4.40841e+001 1.58729e-006 0.00000e+000 2.66911e-006 0.00000e+000 4.44975e-012 0.00000e+000 0.00000e+000 5.94689e-001 0.00000e+000 Infinity 0.60 000

@@ -1,0 +1,89 @@
+AMS result file created by AMS FSI-analysis utility
+ 
+[Filing]
+Measuring date, time               : 2025-01-13 21:22:07
+Files                              : C:\AMS-71\FSI-BATCH\2025_01_12_Be_W10\164
+ 
+[Sample]
+Sample Id                          : sSIDBe2773_STD-pri_Be54-289
+Sample description                 :  NaN_AARNaN
+Sample position                    : 29
+ 
+[Isotope names]
+DET ROI1                           : 10Be
+DET ROI2                           : Total
+DET ROI3                           : 10B
+DET ROI4                           : 
+DET ROI5                           : 
+BI OFC Out                         : 9BeO
+BI OFC Inn                         : none
+HEM OFC 1                          : 9Be
+HEM OFC 2                          : none
+ 
+[Settings]
+Bouncer file                       : c:\AMS-71\BOUNCER\Beryllium.bnc
+MPA file                           : c:\MPA3\config\Beryllium.mpa
+BI OFC Out range [A]               : 1.0e-005
+BI OFC Inn range [A]               : 1.0e-004
+HEM OFC 1 range [A]                : 1.0e-005
+HEM OFC 2 range [A]                : 1.0e-003
+HEM OFC 1 charge state             : 1
+HEM OFC 2 charge state             : 1
+Ion source                         : SO110-2
+ 
+[Timing]
+Block time                         : 30
+ISO 1 duty                         : 9.17431e-001
+ISO 2 duty                         : 9.17431e-003
+ 
+ISO 1 delay [s]                    : 2.500e-007
+ISO 2 delay [s]                    : 2.500e-007
+ 
+Gate delay [s]                     : 1.000e-005
+ 
+[Measurement]
+Stop condition                     : 1250 counts or 18 blocks
+Number of blocks                   : 10
+Run time [s]                       : 338.703
+Detector live time [s]             : 275.160
+Detector dead time [%]             : 0.025
+10Be counts                        : 1401
+10Be count rate (Hz)               : 5.092
+10Be statistical error (%)         : 2.672
+Total counts                       : 4822
+10B counts                         : 3345
+ counts                            : 4822
+ counts                            : 4822
+9Be current [A]                    : 1.77525e-006
+none current [A]                   : 0.00000e+000
+9BeO current [A]                   : 2.96581e-006
+none current [A]                   : 0.00000e+000
+Target current [A]                 : 7.116e-001
+ 
+[Isotopic ratios]
+10Be/none ratio                    : 0.00000e+000
+10Be/9Be ratio                     : 4.59518e-013
+9Be/none ratio                     : 0.00000e+000
+9Be/9BeO ratio                     : 5.98572e-001
+none/none ratio                    : 0.00000e+000
+9BeO/none ratio                    : 0.00000e+000
+10Be/none rel std dev (%)          : 0.00000e+000
+10Be/9Be rel std dev (%)           : 3.87684e+000
+9Be/none rel std dev (%)           : 0.00000e+000
+9Be/9BeO rel std dev (%)          : 4.17332e-001
+none/none rel std dev (%)          : 0.00000e+000
+9BeO / none rel std dev (%)        : NaN
+10Be avg stat block error (%)      : 8.452
+ 
+[BLOCK DATA]
+Blk 10Becnts Totalcnts 10Bcnts cnts cnts LiveTime 10Becps 9Becur nonecur 9BeOcur nonecur 10Be/9Be 10Be/none 9Be/none 9Be/9BeO none/none 9BeO/none TargetCur Flags
+1 124 762 624 762 762 2.75129e+001 4.50697e+000 1.59545e-006 0.00000e+000 2.66422e-006 0.00000e+000 4.52597e-013 0.00000e+000 0.00000e+000 5.98843e-001 0.00000e+000 Infinity 0.78 000
+2 131 603 465 603 603 2.75169e+001 4.76070e+000 1.63854e-006 0.00000e+000 2.74237e-006 0.00000e+000 4.65504e-013 0.00000e+000 0.00000e+000 5.97492e-001 0.00000e+000 Infinity 0.75 000
+3 126 547 412 547 547 2.75129e+001 4.57966e+000 1.67495e-006 0.00000e+000 2.77656e-006 0.00000e+000 4.38070e-013 0.00000e+000 0.00000e+000 6.03245e-001 0.00000e+000 Infinity 0.72 000
+4 132 467 327 467 467 2.75189e+001 4.79670e+000 1.69184e-006 0.00000e+000 2.81319e-006 0.00000e+000 4.54249e-013 0.00000e+000 0.00000e+000 6.01395e-001 0.00000e+000 Infinity 0.70 000
+5 139 486 336 486 486 2.75159e+001 5.05162e+000 1.72688e-006 0.00000e+000 2.88889e-006 0.00000e+000 4.68683e-013 0.00000e+000 0.00000e+000 5.97765e-001 0.00000e+000 Infinity 0.69 000
+6 140 450 300 450 450 2.75159e+001 5.08796e+000 1.78051e-006 0.00000e+000 2.99145e-006 0.00000e+000 4.57835e-013 0.00000e+000 0.00000e+000 5.95200e-001 0.00000e+000 Infinity 0.69 000
+7 150 410 257 410 410 2.75159e+001 5.45139e+000 1.84246e-006 0.00000e+000 3.08913e-006 0.00000e+000 4.74046e-013 0.00000e+000 0.00000e+000 5.96431e-001 0.00000e+000 Infinity 0.70 000
+8 159 377 212 377 377 2.75189e+001 5.77784e+000 1.89005e-006 0.00000e+000 3.16239e-006 0.00000e+000 4.89783e-013 0.00000e+000 0.00000e+000 5.97663e-001 0.00000e+000 Infinity 0.70 000
+9 142 360 216 360 360 2.75119e+001 5.16140e+000 1.93509e-006 0.00000e+000 3.24054e-006 0.00000e+000 4.27342e-013 0.00000e+000 0.00000e+000 5.97152e-001 0.00000e+000 Infinity 0.70 000
+10 158 360 196 360 360 2.75199e+001 5.74129e+000 1.97677e-006 0.00000e+000 3.28938e-006 0.00000e+000 4.65332e-013 0.00000e+000 0.00000e+000 6.00957e-001 0.00000e+000 Infinity 0.70 000
