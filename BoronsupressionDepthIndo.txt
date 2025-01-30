@@ -1,0 +1,10 @@
+----------------Information-------------------
+The cutoff depth for B10 is 18600.00 Angstrom
+The fraction of Be10 ions that penetrates the cutoff is 98.70%
+The fraction of B10 ions that is stopped before the cutoff is 92.90%
+Optimized cutoff depth: 17215.39 Angstrom
+The fraction of Be10 ions that penetrates the optimized cutoff is 98.70%
+The fraction of B10 ions that penetrates the optimized cutoff is 7.10%
+Total count of particles to the right of the optimized cutoff: 352666.5900000001
+Fraction of particles to the right of the optimized cutoff that are Be10: 93.29%
+Fraction of particles to the right of the optimized cutoff that are B10: 6.71%

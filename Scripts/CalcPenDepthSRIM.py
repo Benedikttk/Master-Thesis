@@ -7,11 +7,6 @@ from ReadingFromSRIMfile import process_file
 file_path_Be10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE_1400_ion_1000Be10.txt"
 file_path_B10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE_1400_ion_1000B10.txt"
 
-#file_path_Be10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE_2400_be.txt"
-#file_path_B10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE.txt"
-
-
-
 
 df_SRIM_depth_Be10 = process_file(file_path_Be10, 'Be')
 df_SRIM_depth_B10 = process_file(file_path_B10, 'B')
@@ -54,10 +49,7 @@ B10_before_cutoff = df_SRIM_depth_B10[df_SRIM_depth_B10['Depth (Angstrom)'] <= c
 Be10_fraction = Be10_after_cutoff / total_ions_Be10
 B10_fraction = B10_before_cutoff / total_ions_B10
 
-print('----------------Information-------------------')
-print(f"The cutoff depth for B10 is {cutoff_depth:.2f} Angstrom")
-print(f"The fraction of Be10 ions that penetrates the cutoff is {Be10_fraction*100:.2f}%")
-print(f"The fraction of B10 ions that is stopped before the cutoff is {B10_fraction*100:.2f}%")
+
 
 # Function to calculate the fraction of Be10 and B10 ions based on a given cutoff depth
 def calculate_fractions(cutoff_depth, df_SRIM_depth_Be10, df_SRIM_depth_B10):
@@ -84,9 +76,7 @@ for depth in np.linspace(df_SRIM_depth_B10['Depth (Angstrom)'].min(), df_SRIM_de
 # Recalculate fractions with the optimized cutoff depth
 Be10_fraction, B10_fraction = calculate_fractions(best_cutoff_depth, df_SRIM_depth_Be10, df_SRIM_depth_B10)
 
-print(f"Optimized cutoff depth: {best_cutoff_depth:.2f} Angstrom")
-print(f"The fraction of Be10 ions that penetrates the optimized cutoff is {Be10_fraction*100:.2f}%")
-print(f"The fraction of B10 ions that penetrates the optimized cutoff is {100-B10_fraction*100:.2f}%")
+
 
 # Plot the optimized cutoff
 plt.axvline(x=best_cutoff_depth, color='green', linestyle='--', label='Optimized Cutoff')
@@ -106,8 +96,35 @@ total_count_after_cutoff = df_SRIM_depth_Be10[df_SRIM_depth_Be10['Depth (Angstro
 Be10_after_cutoff_fraction = df_SRIM_depth_Be10[df_SRIM_depth_Be10['Depth (Angstrom)'] > best_cutoff_depth]['Be Ions'].sum() / total_count_after_cutoff
 B10_after_cutoff_fraction = df_SRIM_depth_B10[df_SRIM_depth_B10['Depth (Angstrom)'] > best_cutoff_depth]['B Ions'].sum() / total_count_after_cutoff
 
+
+
+print('----------------Information-------------------')
+print(f"The cutoff depth for B10 is {cutoff_depth:.2f} Angstrom")
+print(f"The fraction of Be10 ions that penetrates the cutoff is {Be10_fraction*100:.2f}%")
+print(f"The fraction of B10 ions that is stopped before the cutoff is {B10_fraction*100:.2f}%")
+print(f"Optimized cutoff depth: {best_cutoff_depth:.2f} Angstrom")
+print(f"The fraction of Be10 ions that penetrates the optimized cutoff is {Be10_fraction*100:.2f}%")
+print(f"The fraction of B10 ions that penetrates the optimized cutoff is {100-B10_fraction*100:.2f}%")
 print(f"Total count of particles to the right of the optimized cutoff: {total_count_after_cutoff}")
 print(f"Fraction of particles to the right of the optimized cutoff that are Be10: {Be10_after_cutoff_fraction*100:.2f}%")
 print(f"Fraction of particles to the right of the optimized cutoff that are B10: {B10_after_cutoff_fraction*100:.2f}%")
+
+
+
+with open('BoronsupressionDepthIndo.txt', 'w') as file:
+    file.write('----------------Information-------------------\n')
+    file.write(f"The cutoff depth for B10 is {cutoff_depth:.2f} Angstrom\n")
+    file.write(f"The fraction of Be10 ions that penetrates the cutoff is {Be10_fraction*100:.2f}%\n")
+    file.write(f"The fraction of B10 ions that is stopped before the cutoff is {B10_fraction*100:.2f}%\n")
+    file.write(f"Optimized cutoff depth: {best_cutoff_depth:.2f} Angstrom\n")
+    file.write(f"The fraction of Be10 ions that penetrates the optimized cutoff is {Be10_fraction*100:.2f}%\n")
+    file.write(f"The fraction of B10 ions that penetrates the optimized cutoff is {100-B10_fraction*100:.2f}%\n")
+    file.write(f"Total count of particles to the right of the optimized cutoff: {total_count_after_cutoff}\n")
+    file.write(f"Fraction of particles to the right of the optimized cutoff that are Be10: {Be10_after_cutoff_fraction*100:.2f}%\n")
+    file.write(f"Fraction of particles to the right of the optimized cutoff that are B10: {B10_after_cutoff_fraction*100:.2f}%\n")
+
+billeder_path = r'C:\Users\benja\Desktop\Speciale\Billeder'
+
+plt.savefig(f'{billeder_path}\\BoronSupressionDepth.pdf')
 
 plt.show()

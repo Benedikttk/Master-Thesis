@@ -8,10 +8,7 @@ fig, axs = plt.subplots()
 
 img = mpimg.imread(r'C:\Users\benja\Desktop\Speciale\Billeder\DetectorFigure.png')
 
-axs.imshow(img, extent=[-200, 400, -300, 300])
-
-
-
+axs.imshow(img, extent=[-190,410,-300,300]) #[x højre, , y ned, y op]
 
 #trajectories of ions
 file_path = r"C:\Users\benja\Desktop\Speciale\Data\EXYZs\EXYZ1.txt"  
@@ -31,10 +28,16 @@ for ion_number in df["Ion Number"].unique():
 
     # Plot Depth X (in mm) vs Depth Y (in mm) for the current ion number
     axs.plot(filtered_df['Depth (X) (mm)'], filtered_df['Y (mm)'], label=f'Ion {ion_number}')
+    print(max(filtered_df['Depth (X) (mm)']))
 
 
 # Labels and title
 plt.xlabel('Depth X (mm)')
 plt.ylabel('Depth Y (mm)')
 plt.tight_layout()
+plt.axis('off')
+
+billeder_path = r'C:\Users\benja\Desktop\Speciale\Billeder'
+
+plt.savefig(f'{billeder_path}\\SRIM_Detector_SIMS.pdf')
 plt.show()
