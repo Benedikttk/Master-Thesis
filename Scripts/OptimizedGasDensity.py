@@ -90,5 +90,8 @@ if density_values:
 
     plt.tight_layout()
     plt.show()
+    billeder_path = r'C:\Users\benja\Desktop\Speciale\Billeder'
+
+    plt.savefig(f'{billeder_path}\\SRIM_OptimizedGasDensity_SIMS.pdf')
 else:
     print("No valid files found.")
