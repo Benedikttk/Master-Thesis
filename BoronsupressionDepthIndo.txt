@@ -1,10 +1,1 @@
-----------------Information-------------------
-The cutoff depth for B10 is 18600.00 Angstrom
-The fraction of Be10 ions that penetrates the cutoff is 98.70%
-The fraction of B10 ions that is stopped before the cutoff is 92.90%
-Optimized cutoff depth: 17215.39 Angstrom
-The fraction of Be10 ions that penetrates the optimized cutoff is 98.70%
-The fraction of B10 ions that penetrates the optimized cutoff is 7.10%
-Total count of particles to the right of the optimized cutoff: 352666.5900000001
-Fraction of particles to the right of the optimized cutoff that are Be10: 93.29%
-Fraction of particles to the right of the optimized cutoff that are B10: 6.71%
+Density: 3e-06, Valid Ions: 138, Avg Length: 2629142028.985507, Uncertainty: ± 375737403.83326423Density: 3.1e-06, Valid Ions: 159, Avg Length: 2624122012.578616, Uncertainty: ± 423081881.04538995Density: 3.2e-06, Valid Ions: 178, Avg Length: 2605066292.1348314, Uncertainty: ± 366330402.5160894Density: 3.3e-06, Valid Ions: 188, Avg Length: 2547328723.4042554, Uncertainty: ± 362261696.7620556Density: 3.4e-06, Valid Ions: 189, Avg Length: 2475656613.7566137, Uncertainty: ± 353498545.26415986Density: 3.5e-06, Valid Ions: 190, Avg Length: 2408758421.0526314, Uncertainty: ± 346526523.4894977Density: 3.6e-06, Valid Ions: 191, Avg Length: 2345968586.3874345, Uncertainty: ± 340788451.61097354Density: 3.7e-06, Valid Ions: 191, Avg Length: 2282564397.9057593, Uncertainty: ± 331574524.23237437Density: 3.8e-06, Valid Ions: 191, Avg Length: 2222500000.0, Uncertainty: ± 322852228.3665648Density: 3.9e-06, Valid Ions: 191, Avg Length: 2165513612.565445, Uncertainty: ± 314575033.91288847Density: 4e-06, Valid Ions: 190, Avg Length: 2116981052.631579, Uncertainty: ± 297586993.66553634Density: 4.5e-06, Valid Ions: 189, Avg Length: 1886525396.8253968, Uncertainty: ± 256971744.04708222Density: 5e-06, Valid Ions: 187, Avg Length: 1705390374.3315508, Uncertainty: ± 220723620.61816213Density: 5.5e-06, Valid Ions: 185, Avg Length: 1556535675.6756756, Uncertainty: ± 192692532.91386172Density: 6e-06, Valid Ions: 178, Avg Length: 1443228089.8876405, Uncertainty: ± 159036141.03334635Density: 7e-06, Valid Ions: 157, Avg Length: 1269254140.1273885, Uncertainty: ± 109841350.84507477Density: 8e-06, Valid Ions: 111, Avg Length: 1157503603.6036036, Uncertainty: ± 70697030.18588638
