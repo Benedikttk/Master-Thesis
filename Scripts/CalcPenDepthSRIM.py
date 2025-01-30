@@ -4,11 +4,11 @@ from scipy.stats import sem  # For standard error of the mean
 from scipy.optimize import curve_fit # For curve fitting
 from ReadingFromSRIMfile import process_file  
 
-#file_path_Be10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE_1400_ion_1000Be10.txt"
-#file_path_B10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE_1400_ion_1000B10.txt"
+file_path_Be10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE_1400_ion_1000Be10.txt"
+file_path_B10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE_1400_ion_1000B10.txt"
 
-file_path_Be10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE_2400_be.txt"
-file_path_B10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE.txt"
+#file_path_Be10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE_2400_be.txt"
+#file_path_B10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE.txt"
 
 
 
