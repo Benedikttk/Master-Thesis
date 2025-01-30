@@ -1,2 +1,2 @@
 # Master-Thesis
-This is the repository foir my master thesis and teh scripts that i have used for it.
+This repository is where I will be storing the scripts, figures, data, and information I have used for My analysis for my Master theisis for Composite SiN Foils for Suppression of 10B in Beryllium Accelerator Mass Spectrometry.
