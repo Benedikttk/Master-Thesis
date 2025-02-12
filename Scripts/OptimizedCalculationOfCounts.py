@@ -2,130 +2,116 @@ import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+
+# Define file path
 filepath = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'
 
-# Idea: https://www.w3schools.com/python/python_ml_getting_started.asp Evrything is bassed from here.
-# - We want to read the data from the files in the filepath.
-# - We want to construct a delta E E_res plot for the data.
-# - We want to calculate the counts of the Be10 ions within a reagon of interest
-# and see if we can distigguse between the B10 ions.
-# - We want to use k-neerest neighbour to predict the R_n value. and find the best k value. 
-# - We also want it to be ale to outline the region of interest.
-# - We want to be able to calculate the R_n value from the data.
-# - Finally we want to compare with the R_n value from the AARAMS model.
-
-#Task 1#
-# Check if the file is a AARAMS file 
-# and read values from the fil(s) in the directory get them into a dataframe.
-
-for file in os.listdir(filepath):
-    if file.startswith("Be"):
-        print(file)
-    else:
-        print("The other files: {}".format(file))
-finished = True
-print("\n")
-
-# Begining task 1 - Reading the data from the files
-# I think i just want to start with the first file and then see if i can make a function that can do it for all the files.
-# I will start by reading the first file.
-
-# We want the Name = dE and the Name = E final values.
-# So we will be looking for these lins and then searching for [Data] and then reading the data from there.
-
-list_of_raw_files = [file for file in os.listdir(filepath) if file.endswith(".txt.mpa")]
-print("These are the raw files", list_of_raw_files)
-
-# Now we want top open the file and read from it 
-
+# Subject headers for identifying data sections
+subject = "[CDAT0"
 names = ["dE", "E final"]
-with open(filepath + "\\" + list_of_raw_files[0], 'r') as file:
-    lines = file.readlines()
-    if lines ==[]:
-        print("The file is empty")
-    else:
-        print("The file is not empty")
 
-header_index = None
-header_index_list = []
-for idx, line in enumerate(lines):
-    for name in names:
-        if f"NAME={name}" in line and line.strip() == f"NAME={name}": #filters away stuff like NAME=dE + E final
-            header_index = idx
-            header_index_list.append(header_index)
-            print(f"Printing the header index of [NAME={name}]:", header_index)
+# List all relevant files
+list_of_raw_files = [file for file in os.listdir(filepath) if file.endswith(".txt.mpa")]
+if not list_of_raw_files:
+    raise ValueError("No valid data files found!")
+
+print("Found raw files:", list_of_raw_files)
+
+# Function to extract data from a file
+def extract_data(file_path):
+    with open(file_path, 'r') as file:
+        lines = file.readlines()
+
+    if not lines:
+        print(f"Warning: {file_path} is empty!")
+        return None, None, None
+
+    # Find header indices
+    header_indices = []
+    for idx, line in enumerate(lines):
+        if any(f"NAME={name}" in line and line.strip() == f"NAME={name}" for name in names):
+            header_indices.append(idx)
+
+    if len(header_indices) < 2:
+        print(f"Skipping {file_path} (missing headers)")
+        return None, None, None
+
+    # Extract dE data
+    dE_values, dE_counts = extract_section(lines, header_indices[0])
+
+    # Extract E_final data
+    E_final_values, E_final_counts = extract_section(lines, header_indices[1])
+
+    if dE_values is None or E_final_values is None:
+        print(f"Skipping {file_path} (incomplete data)")
+        return None, None, None
+
+    # Merge into a DataFrame
+    df = pd.DataFrame({'E_final': E_final_values, 'dE': dE_values, 'counts': dE_counts})
+    df_dE = pd.DataFrame({'dE': dE_values, 'counts': dE_counts})
+    df_E_final = pd.DataFrame({'E_final': E_final_values, 'counts': E_final_counts})
+
+    return df, df_dE, df_E_final
+
+# Function to extract a [DATA] section
+def extract_section(lines, start_idx):
+    section_lines = lines[start_idx:]
+    data_start = next((i for i, line in enumerate(section_lines) if "[DATA]" in line), None)
+
+    if data_start is None:
+        return None, None
+
+    # Read data, stopping at the first non-numeric line
+    data = []
+    for line in section_lines[data_start + 1:]:
+        if any(char.isalpha() for char in line):
             break
+        data.append(line.strip().split())
 
-# Print the specific line corresponding to header_index
-if header_index is not None:
-    print("The line corresponding to header_index is:", lines[header_index])
-else:
-    print("No matching header found.")
+    if not data:
+        return None, None
 
+    # Convert to numeric
+    df = pd.DataFrame(data, columns=["value", "counts"])
+    df["value"] = pd.to_numeric(df["value"], errors='coerce')
+    df["counts"] = pd.to_numeric(df["counts"], errors='coerce')
+    df.dropna(inplace=True)
+    
+    return df["value"].values, df["counts"].values
 
-# Now we want to find the [Data] line and read the data from there.
-# I think what i want to do is to read the data from the first header_index to the next header_index
-# this is going to be ugly!!
+# Process first valid file (for simplicity)
+for file in list_of_raw_files:
+    df, df_dE, df_E_final = extract_data(os.path.join(filepath, file))
+    if df is not None:
+        break  # Stop after first successful extraction
 
-#sorry 
+if df is None:
+    raise ValueError("No valid data extracted!")
 
-#thinking thinking, so i have the idx of wha???
+# 🔥 **Plot 1: Scatter plot (E_final vs. dE, colored by counts)**
+plt.figure(figsize=(12, 4))
+plt.subplot(1, 3, 1)
+plt.scatter(df["E_final"], df["dE"], c=df["counts"], cmap='viridis', s=1)
+plt.xlabel("E_final")
+plt.ylabel("dE")
+plt.colorbar(label="Counts")
+plt.title("Scatter: E_final vs dE")
 
-#print(lines[header_index_list[0]])
-#print(lines[header_index_list[1]])
+# 🔥 **Plot 2: dE vs. Counts**
+plt.subplot(1, 3, 2)
+plt.plot(df_dE["dE"], df_dE["counts"], label="dE", color="blue")
+plt.xlabel("dE")
+plt.ylabel("Counts")
+plt.title("dE vs Counts")
+plt.legend()
 
-# Extract the data between the header indices
-dummy_list_one_dE = lines[header_index_list[0]:header_index_list[1]]
+# 🔥 **Plot 3: E_final vs. Counts**
+plt.subplot(1, 3, 3)
+plt.plot(df_E_final["E_final"], df_E_final["counts"], label="E_final", color="red")
+plt.xlabel("E_final")
+plt.ylabel("Counts")
+plt.title("E_final vs Counts")
+plt.legend()
 
-# Find the [DATA] line and read the data from there for dE
-data_start_index_dE = None
-for idx, line in enumerate(dummy_list_one_dE):
-    if "[DATA]" in line:
-        data_start_index_dE = idx + 1
-        break
-
-if data_start_index_dE is not None:
-    data_lines_dE = dummy_list_one_dE[data_start_index_dE:]
-    data_dE = [line.strip().split() for line in data_lines_dE]
-    df_dE = pd.DataFrame(data_dE, columns=["dE", "Counts"])
-    df_dE["dE"] = pd.to_numeric(df_dE["dE"], errors='coerce')
-    df_dE["Counts"] = pd.to_numeric(df_dE["Counts"], errors='coerce')
-    df_dE = df_dE.dropna()  # Drop rows with NaN values
-
-    print(df_dE.head())
-else:
-    print("No [DATA] section found in the file for dE.")
-
-
-dummy_list_two_E_final = lines[header_index_list[1]:header_index_list[1]+(header_index_list[1] - header_index_list[0])]
-data_start_index_E_final = None
-for idx, line in enumerate(dummy_list_two_E_final):
-    if "[DATA]" in line:
-        data_start_index_E_final = idx + 1
-        break
-print("idx of E Final", data_start_index_E_final)
-
-if data_start_index_E_final is not None:
-    data_lines_E_final = dummy_list_two_E_final[data_start_index_E_final:]
-    data_E_final = [line.strip().split() for line in data_lines_E_final]
-    df_E_final = pd.DataFrame(data_E_final, columns=["E final", "Counts"])
-    df_E_final["E final"] = pd.to_numeric(df_E_final["E final"], errors='coerce')
-    df_E_final["Counts"] = pd.to_numeric(df_E_final["Counts"], errors='coerce')
-    df_E_final = df_E_final.dropna()  # Drop rows with NaN values
-
-    print(df_E_final.head())
-else:
-    print("No [DATA] section found in the file for E final.")
-
-# Now we have the data from the first file.
-# We want to plot the data.
-# We want to make a function that can do this for all the files.
-# But first we want to check if we can plot these two dataframes.
-
-plt.plot(df_dE["dE"], df_dE["Counts"], label="dE")  
-plt.plot(df_E_final["E final"], df_E_final["Counts"], label="E final")
+plt.tight_layout()
 plt.show()
-
-print("leanght of dE", len(df_dE))
-print("leanght of E final", len(df_E_final))
-
