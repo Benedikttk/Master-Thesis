@@ -149,7 +149,7 @@ for cluster_id in data['Cluster_KMeans'].unique():
 ax.add_patch(circle)
 
 # Plot the filtered points within the circle in red
-ax.scatter(filtered_cluster_2_points['E_final'], filtered_cluster_2_points['dE'], color='red', label='Filtered Cluster 2 Points', s=20)
+ax.scatter(filtered_cluster_2_points['E_final'], filtered_cluster_2_points['dE'], color='red', label='Filtered Cluster 2 Points', s=10)
 
 # Set labels and title
 ax.set_xlabel('E_final [keV]')
@@ -210,3 +210,11 @@ se_variance_filtered = np.sqrt((2 * variance_filtered ** 2) / (len(distances_fil
 # Output the values for filtered cluster
 print(f"Mean Distance to Centroid (Filtered): {mean_distance_filtered:.4f} ± {se_mean_distance_filtered:.4f}")
 print(f"Variance of Distances (Filtered): {variance_filtered:.4f} ± {se_variance_filtered:.4f}")
+
+#Now i have the points that i want, now i have to count them.
+
+N_filtered = filtered_cluster_2_points["counts"].sum()
+uncertainty_filtered = np.sqrt(N_filtered)
+
+print(f"The sum of the filtered_cluster_2_points for Be10 is: {N_filtered} ± {uncertainty_filtered}")
+print(len(filtered_cluster_2_points))
