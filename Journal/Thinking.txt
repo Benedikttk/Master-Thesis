@@ -1,0 +1,17 @@
+Date: 19-02-2025:
+- I need to clean up in my code. I want to do this this week.
+- I am not sure if the file that Im looking at reads as following dE|E_final|counts|....|, 
+reasoning is that when i find the area where the Be10 should be using KNN, the when I sum the counts bellonging 
+to this group it is and order higher then it should be. cant explane or understand as to why!!!!
+- I also need to argue for why I am removing the outliers, i think i can use the average distance from the KNN
+with optimal K values after K sillouete analysis.
+Other option would be:
+1. Outlier detection with Local Outlier Factor (LOF) ->https://scikit-learn.org/stable/auto_examples/neighbors/plot_lof_outlier_detection.html
+2. Novelty detection with Local Outlier Factor (LOF) -> https://scikit-learn.org/stable/auto_examples/neighbors/plot_lof_novelty_detection.html#sphx-glr-auto-examples-neighbors-plot-lof-novelty-detection-py
+3. Average energy of cluster compaired to energy of the "assumed" outliers
+4. Detecting Outliers with Angle-based Techniques in Python -> https://blog.paperspace.com/outlier-detection-with-abod/
+
+--- 2 DoDo ---
+* Code cleanup.                                         Status(Not finished)
+* impliment outlier detection method.                   Status(Not finished)
+* Questions for supervisor.                             Status(Not finished)
