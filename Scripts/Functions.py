@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+#Mostely for AArAMS_dE_Efinal.py
 def FileCheck(filepath, endswith=None):
     """
     Check files in the given directory and return a list of files ending with the specified condition.

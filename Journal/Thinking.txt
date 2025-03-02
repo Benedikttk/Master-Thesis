@@ -12,6 +12,12 @@ Other option would be:
 4. Detecting Outliers with Angle-based Techniques in Python -> https://blog.paperspace.com/outlier-detection-with-abod/
 
 --- 2 DoDo ---
-* Code cleanup.                                         Status(Not finished)
+* Code cleanup.                                         Status(Not finished -> in progres)
 * impliment outlier detection method.                   Status(Not finished)
 * Questions for supervisor.                             Status(Not finished)
+
+Date: 21-02-2025:
+- Starting on cleanup, and what i mean is making tasks that need to be repatative as def functions
+this also makes it easier to loop over and just automate, no?
+
+- AARAMS_dE_Efinal functions made.

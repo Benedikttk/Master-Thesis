@@ -12,12 +12,6 @@ Subject = "[CDAT0"
 files = [i for i in FileCheck(filepath=Filepath, endswith=".txt.mpa")]
 data = deltE_Efinal(filepath=Filepath, subject=Subject, filename=files[0]) 
 
-"""# Now we want to put the data into a dataframe
-data["dE"] = pd.to_numeric(data["dE"])
-data["E_final"] = pd.to_numeric(data["E_final"])
-data["counts"] = pd.to_numeric(data["counts"])
-print(data.head())"""
-
 #-------PLOTTTTINGGG-----
 fig = plt.figure(figsize=(8, 8))
 gs = fig.add_gridspec(2, 2, width_ratios=[4, 1], height_ratios=[1, 4], hspace=0.12, wspace=0.12)
@@ -73,7 +67,7 @@ for ax in [ax_main, ax_top, ax_right]:
     ax.tick_params(direction="in", length=3, which="minor")  # Shorter minor ticks
 
 billeder_path = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Billeder'
-plt.savefig(f'{billeder_path}\\deltaE_Efinal.pdf')
+#plt.savefig(f'{billeder_path}\\deltaE_Efinal.pdf')
 
 plt.tight_layout()
 plt.show()
