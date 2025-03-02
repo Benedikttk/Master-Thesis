@@ -12,7 +12,7 @@ Other option would be:
 4. Detecting Outliers with Angle-based Techniques in Python -> https://blog.paperspace.com/outlier-detection-with-abod/
 
 --- 2 DoDo ---
-* Code cleanup.                                         Status(Not finished -> in progres)
+* Code cleanup.                                         Status(Not finished -> in progres -> Finished)
 * impliment outlier detection method.                   Status(Not finished)
 * Questions for supervisor.                             Status(Not finished)
 
@@ -28,3 +28,19 @@ Date: 02-03-2025:
 - ReadingEfficiencyFromAARAMS functions made 
 - CalcPenDepthSRIM functioins made
 - OptimizedGadDensity functions made
+
+- Most files should be optimized now.
+
+-Next step, should now be to optimized the KNN and start by simplifying it and implimenting the outlier detection methoid.
+ ****SMALLPLAN****
+ Perhabs tomorrow, 03-03-2025 I should impkiment what i have into my thesis paper, and look at the comments made by supervisor, thisn should help with "2 DoDo -> Questions for supervisor." Sooo->
+ 
+ --- 2 DoDo ---                                                                                     Priority(* ** ***)
+* Fix/clean up in KNNAARAMS                             Status(Not finished)                        ***
+* impliment outlier detection method.                   Status(Not finished -> in progres)          ***
+* Master thesis correction + add what i have now.       Status(Not finished)                        **
+* Questions for supervisor.                             Status(Not finished)                        *
+
+
+
+ Date: 03-03-2025:
