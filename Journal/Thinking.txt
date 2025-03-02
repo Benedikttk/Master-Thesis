@@ -21,3 +21,8 @@ Date: 21-02-2025:
 this also makes it easier to loop over and just automate, no?
 
 - AARAMS_dE_Efinal functions made.
+
+Date: 02-03-2025:
+- Still doing cleanup of code, trying to just make what can be made into functions as def functions in Function.py file.
+- ReadingEfficiencyFromAARAMS functions made 
+- CalcPenDepthSRIM functioins made
