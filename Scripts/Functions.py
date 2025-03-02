@@ -83,3 +83,206 @@ def deltE_Efinal(filepath, subject, filename):
     data_df = data_df.apply(pd.to_numeric)
     return data_df
 
+#This is for the CalcPenDepthSRIM.py file extraction
+# Function to process a file and return the DataFrame
+def process_file(file_path, ion_type):
+    """
+    Processes a given file to extract and return depth and ion data.
+
+    Parameters:
+    file_path (str): The path to the file to be processed.
+    ion_type (str): The type of ion (used in the DataFrame column name).
+
+    Returns:
+    pd.DataFrame: A DataFrame containing depth and ion data.
+    """
+    # Open and process the file
+    with open(file_path, 'r') as file:
+        lines = file.readlines()
+
+    # Locate the header line
+    for idx, line in enumerate(lines):
+        if line.strip().startswith("DEPTH"):
+            header_index = idx
+            break
+
+    # Extract data lines after the header
+    data_lines = lines[header_index + 1:]
+    data = []
+
+    for line in data_lines:
+        if line.strip():  # Skip empty lines
+            try:
+                # Split columns and replace ',' with '.' for numeric parsing
+                depth, ions, _ = line.split()
+                data.append([float(depth.replace(',', '.')), float(ions.replace(',', '.'))])
+            except ValueError:
+                continue  # Ignore malformed lines
+
+    # Convert to DataFrame
+    df = pd.DataFrame(data, columns=['Depth (Angstrom)', f'{ion_type} Ions'])
+    return df
+    
+
+# Function to calculate the fraction of Be10 and B10 ions based on a given cutoff depth
+def calculate_fractions(cutoff_depth, df_SRIM_depth_Be10, df_SRIM_depth_B10, total_ions_Be10, total_ions_B10):
+    """
+    Calculates the fraction of Be10 and B10 ions based on a specified cutoff depth.
+
+    Parameters:
+    cutoff_depth (float): The depth at which the ions are separated.
+    df_SRIM_depth_Be10 (pd.DataFrame): DataFrame containing the depth and Be10 ion data.
+    df_SRIM_depth_B10 (pd.DataFrame): DataFrame containing the depth and B10 ion data.
+    total_ions_Be10 (float): Total number of Be10 ions.
+    total_ions_B10 (float): Total number of B10 ions.
+
+    Returns:
+    tuple: The fraction of Be10 ions after the cutoff depth and the fraction of B10 ions before the cutoff depth.
+    """
+    Be10_after_cutoff = df_SRIM_depth_Be10[df_SRIM_depth_Be10['Depth (Angstrom)'] > cutoff_depth]['Be Ions'].sum()
+    B10_before_cutoff = df_SRIM_depth_B10[df_SRIM_depth_B10['Depth (Angstrom)'] <= cutoff_depth]['B Ions'].sum()
+    
+    Be10_fraction = Be10_after_cutoff / total_ions_Be10
+    B10_fraction = B10_before_cutoff / total_ions_B10
+    
+    return Be10_fraction, B10_fraction
+
+    
+
+#For ReadingEfficiencyfromAARAMS
+def get_txt_files(directory: str, extension: str = ".txt") -> list:
+    """
+    Returns a list of files with the specified extension in the given directory.
+
+    Parameters:
+    directory (str): The directory to search for the files.
+    extension (str): The file extension to look for. Default is ".txt".
+
+    Returns:
+    list: A list of filenames ending with the specified extension.
+    """
+    return [file for file in os.listdir(directory) if file.endswith(extension)]
+
+def read_block_data(filepath: str) -> list:
+    """
+    Reads a file and extracts data from the [BLOCK DATA] section.
+
+    Parameters:
+    filepath (str): The path to the file to be read.
+
+    Returns:
+    list: A list of lines containing the block data, or an empty list if no data found.
+    """
+    with open(filepath, 'r') as file:
+        lines = file.readlines()
+    
+    if not lines:
+        print("The file is empty")
+        return []
+    
+    for idx, line in enumerate(lines):
+        if line.strip().startswith("[BLOCK DATA]"):
+            return lines[idx + 1:]
+    
+    return []
+
+def parse_dataframe(data_lines: list, column_names: list) -> pd.DataFrame:
+    """
+    Converts raw data lines into a cleaned Pandas DataFrame.
+
+    Parameters:
+    data_lines (list): The raw lines of data to convert.
+    column_names (list): A list of column names for the DataFrame.
+
+    Returns:
+    pd.DataFrame: The cleaned DataFrame.
+    """
+    df = pd.DataFrame([line.split() for line in data_lines], columns=column_names)
+    df = df.apply(pd.to_numeric, errors='coerce')
+    return df.iloc[1:]  # Drop first row (potential header duplication)
+
+def calculate_Be10_statistics(df: pd.DataFrame) -> tuple:
+    """
+    Computes mean and standard deviation of Be10 counts.
+
+    Parameters:
+    df (pd.DataFrame): The DataFrame containing the Be10 data.
+
+    Returns:
+    tuple: The mean and standard deviation of Be10 counts.
+    """
+    Be10cnts = df["10Becnts"].astype(float)
+    return Be10cnts.mean(), Be10cnts.std()
+
+def calculate_Be10_current(avg_Be10cnts: float, avg_time: float, time_uncertainty: float) -> tuple:
+    """
+    Computes the current of Be10 and its uncertainty.
+
+    Parameters:
+    avg_Be10cnts (float): The average number of Be10 counts.
+    avg_time (float): The average time in seconds.
+    time_uncertainty (float): The uncertainty in the time.
+
+    Returns:
+    tuple: The Be10 current and its uncertainty.
+    """
+    Q_Be10 = 1.6e-19 * avg_Be10cnts
+    I_Be10 = Q_Be10 / avg_time * 1e6  # Convert to microamperes
+    I_Be10_uncertainty = (Q_Be10 / avg_time**2) * time_uncertainty
+    return I_Be10, I_Be10_uncertainty
+
+def extract_metadata(filepath: str, key_name: str) -> float:
+    """
+    Extracts a specific metadata value from a file.
+
+    Parameters:
+    filepath (str): The path to the file to be read.
+    key_name (str): The key name to search for in the file.
+
+    Returns:
+    float: The extracted metadata value, or None if not found or malformed.
+    """
+    with open(filepath, 'r') as file:
+        for line in file:
+            if line.strip().startswith(key_name):
+                try:
+                    return float(line.strip().split(":")[1])
+                except ValueError:
+                    return None
+    return None
+
+def calculate_Be9_ions(Be9_current: float, detector_live_time: float) -> float:
+    """
+    Computes the number of Be9 ions.
+
+    Parameters:
+    Be9_current (float): The Be9 current.
+    detector_live_time (float): The detector live time in seconds.
+
+    Returns:
+    float: The number of Be9 ions.
+    """
+    return (Be9_current * detector_live_time) / 1.6e-19
+
+def calculate_ratio_and_efficiency(avg_Be10cnts: float, Be9cnts: float, std_Be10cnts: float, R_nominiel: float, R_nominiel_uncertainty: float) -> tuple:
+    """
+    Computes the Be10/Be9 ratio and isotropic ratio efficiency with uncertainties.
+
+    Parameters:
+    avg_Be10cnts (float): The average Be10 counts.
+    Be9cnts (float): The Be9 counts.
+    std_Be10cnts (float): The standard deviation of Be10 counts.
+    R_nominiel (float): The nominal Be10/Be9 ratio.
+    R_nominiel_uncertainty (float): The uncertainty in the nominal Be10/Be9 ratio.
+
+    Returns:
+    tuple: The Be10/Be9 ratio, its uncertainty, isotropic ratio efficiency, and its uncertainty.
+    """
+    sumed_avg_Be10cnts = avg_Be10cnts * 10
+    R_n = sumed_avg_Be10cnts / Be9cnts
+    R_n_uncertainty = R_n * np.sqrt((std_Be10cnts / sumed_avg_Be10cnts)**2)
+    
+    iso_eff = (R_n / R_nominiel) * 100
+    iso_eff_uncertainty = iso_eff * np.sqrt((R_n_uncertainty / R_n)**2 + (R_nominiel_uncertainty / R_nominiel)**2)
+
+    return R_n, R_n_uncertainty, iso_eff, iso_eff_uncertainty
