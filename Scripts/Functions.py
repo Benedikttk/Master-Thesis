@@ -286,3 +286,117 @@ def calculate_ratio_and_efficiency(avg_Be10cnts: float, Be9cnts: float, std_Be10
     iso_eff_uncertainty = iso_eff * np.sqrt((R_n_uncertainty / R_n)**2 + (R_nominiel_uncertainty / R_nominiel)**2)
 
     return R_n, R_n_uncertainty, iso_eff, iso_eff_uncertainty
+
+
+#OptimizedGasDensity
+
+# Function to count valid ions and calculate average length
+def count_valid_ions(df, effective_length, anode_1_length):
+    """
+    Count the number of valid ions and calculate the average maximum length and uncertainty (standard deviation) of valid ions.
+    
+    A valid ion is defined as one that:
+    - Has a maximum X-position greater than or equal to the first anode length.
+    - Has a maximum X-position less than or equal to the effective length.
+    - Has a minimum X-position less than or equal to the first anode length.
+    
+    Parameters:
+    -----------
+    df : pandas.DataFrame
+        A DataFrame containing ion data, including 'Ion Number', 'Depth (X) (Angstrom)' columns for ion positions.
+    
+    effective_length : float
+        The maximum effective length (in Angstroms) that an ion can travel.
+    
+    anode_1_length : float
+        The length (in Angstroms) of the first anode.
+
+    Returns:
+    --------
+    valid_ions : int
+        The number of valid ions that meet the above criteria.
+    
+    avg_length : float
+        The average maximum X-position of valid ions (in Angstroms).
+    
+    uncertainty : float
+        The standard deviation of the maximum X-positions of valid ions (in Angstroms).
+    """
+    valid_ions = 0
+    max_lengths = []  # Store max lengths of valid ions
+    
+    for ion_number in range(1, max(df["Ion Number"]) + 1):
+        ion_data = df[df["Ion Number"] == ion_number]
+        x_positions = ion_data["Depth (X) (Angstrom)"]
+        
+        # Check if ion crosses first anode and reaches second anode without surpassing effective length
+        if (x_positions.max() >= anode_1_length and 
+            x_positions.max() <= effective_length and 
+            x_positions.min() <= anode_1_length):
+            valid_ions += 1
+            max_lengths.append(x_positions.max())  # Store max length of valid ion
+    
+    # Calculate average length and uncertainty (standard deviation)
+    if max_lengths:
+        avg_length = np.mean(max_lengths)
+        uncertainty = np.std(max_lengths)
+    else:
+        avg_length = 0
+        uncertainty = 0
+    
+    return valid_ions, avg_length, uncertainty
+
+#EXYZreader moved to here!!!
+def read_exyz_file(file_path):
+    """
+    Reads an EXYZ file and converts it into a Pandas DataFrame with properly named columns.
+
+    The function processes a file containing ion data, skips metadata and irrelevant header lines, 
+    and assigns custom column names. It also handles the conversion of numeric values, ensuring that 
+    commas in numeric entries are replaced with periods to ensure proper float conversion.
+
+    Parameters:
+    -----------
+    file_path : str
+        The path to the EXYZ file to be read.
+
+    Returns:
+    --------
+    pandas.DataFrame
+        A DataFrame containing the ion data with the following columns:
+        - "Ion Number": The ion number.
+        - "Energy (keV)": The energy of the ion in keV.
+        - "Depth (X) (Angstrom)": The depth of the ion in Angstroms (X position).
+        - "Y (Angstrom)": The Y position of the ion in Angstroms.
+        - "Z (Angstrom)": The Z position of the ion in Angstroms.
+        - "Electronic Stop.(eV/A)": The electronic stopping power (eV/Å).
+        - "Energy lost due to Last Recoil(eV)": The energy lost due to the last recoil event (eV).
+    
+    Notes:
+    ------
+    - The function assumes that the first 15 lines of the file contain metadata or header information 
+      that is to be skipped.
+    - Non-numeric values or errors encountered during the conversion of the columns are set to NaN 
+      (Not a Number).
+    - The function replaces commas with periods in numeric columns to ensure proper float conversion 
+      when the file uses commas as decimal separators (common in some regional settings).
+
+    Example:
+    --------
+    df = read_exyz_file('path/to/exyz_file.csv')
+    """
+    
+    # Define correct headers manually
+    column_names = [
+        "Ion Number", "Energy (keV)", "Depth (X) (Angstrom)", 
+        "Y (Angstrom)", "Z (Angstrom)", "Electronic Stop.(eV/A)", 
+        "Energy lost due to Last Recoil(eV)"
+    ]
+
+    # Read the file, skipping metadata and header separator line
+    df = pd.read_csv(file_path, delim_whitespace=True, skiprows=15, names=column_names)
+
+    # Convert numeric columns (replacing commas with dots for floats)
+    df = df.apply(lambda x: pd.to_numeric(x.astype(str).str.replace(',', '.'), errors='coerce'))
+
+    return df

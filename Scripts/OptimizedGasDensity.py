@@ -1,37 +1,10 @@
-from EXYZReader import read_exyz_file
 import numpy as np
 import matplotlib.pyplot as plt
 import os
-
-# Define constants
-effective_length = 3.15e9  # angstrom (315 mm)
-anode_1_length = effective_length / 3  # delta E
-anode_2_length = 2 * effective_length / 3  # E_res
+from Functions import count_valid_ions, read_exyz_file
 
 # Function to count valid ions and calculate average length
-def count_valid_ions(df):
-    valid_ions = 0
-    max_lengths = []  # Store max lengths of valid ions
-    for ion_number in range(1, max(df["Ion Number"]) + 1):
-        ion_data = df[df["Ion Number"] == ion_number]
-        x_positions = ion_data["Depth (X) (Angstrom)"]
-        
-        # Check if ion crosses first anode and reaches second anode without surpassing effective length
-        if (x_positions.max() >= anode_1_length and 
-            x_positions.max() <= effective_length and 
-            x_positions.min() <= anode_1_length):
-            valid_ions += 1
-            max_lengths.append(x_positions.max())  # Store max length of valid ion
-    
-    # Calculate average length and uncertainty (standard deviation)
-    if max_lengths:
-        avg_length = np.mean(max_lengths)
-        uncertainty = np.std(max_lengths)
-    else:
-        avg_length = 0
-        uncertainty = 0
-    
-    return valid_ions, avg_length, uncertainty
+# Modify count_valid_ions to accept effective_length and anode_1_length as parameters
 
 # Directory containing data files
 data_dir = r"C:\Users\benja\Desktop\Speciale\Data\EXYZs\Denistydata"
@@ -39,8 +12,9 @@ density_values = []
 valid_ion_counts = []
 avg_lengths = []
 uncertainties = []
+
 with open('OptimizedGadDensityInfo.txt', 'w') as file:
-# Loop over different density files
+    # Loop over different density files
     for file_name in os.listdir(data_dir):
         if file_name.startswith("GIC_detector_data_density_") and file_name.endswith(".csv.txt"):
             file_path = os.path.join(data_dir, file_name)
@@ -54,11 +28,17 @@ with open('OptimizedGadDensityInfo.txt', 'w') as file:
             # Read the data file
             df = read_exyz_file(file_path)
             
+            # Define constants for each file
+            effective_length = 3.15e9  # angstrom (315 mm)
+            anode_1_length = effective_length / 3  # delta E
+
             # Count valid ions and calculate average length
-            valid_ions, avg_length, uncertainty = count_valid_ions(df)
+            valid_ions, avg_length, uncertainty = count_valid_ions(df, effective_length, anode_1_length)
             valid_ion_counts.append(valid_ions)
             avg_lengths.append(avg_length)
             uncertainties.append(uncertainty)
+            
+            # Write results to file
             file.write(f"Density: {density}, Valid Ions: {valid_ions}, Avg Length: {avg_length}, Uncertainty: ±{uncertainty}\n")
 
 # Sort by density for plotting
@@ -90,8 +70,9 @@ if density_values:
 
     plt.tight_layout()
     plt.show()
-    billeder_path = r'C:\Users\benja\Desktop\Speciale\Billeder'
 
+    # Save plot to file
+    billeder_path = r'C:\Users\benja\Desktop\Speciale\Billeder'
     plt.savefig(f'{billeder_path}\\SRIM_OptimizedGasDensity_SIMS.pdf')
 else:
     print("No valid files found.")
