@@ -1,7 +1,8 @@
-from EXYZReader import read_exyz_file
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
+from Functions import read_exyz_file
+
 
 # Create a plot
 fig, axs = plt.subplots()
@@ -18,7 +19,6 @@ print(df)
 # Convert Depth X and Y from Angstroms to millimeters
 df['Depth (X) (mm)'] = df['Depth (X) (Angstrom)'] * 1e-7
 df['Y (mm)'] = df['Y (Angstrom)'] * 1e-7
-
 
 
 # Loop through all unique ion numbers
