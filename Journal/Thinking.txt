@@ -36,11 +36,17 @@ Date: 02-03-2025:
  Perhabs tomorrow, 03-03-2025 I should impkiment what i have into my thesis paper, and look at the comments made by supervisor, thisn should help with "2 DoDo -> Questions for supervisor." Sooo->
  
  --- 2 DoDo ---                                                                                     Priority(* ** ***)
-* Fix/clean up in KNNAARAMS                             Status(Not finished)                        ***
-* impliment outlier detection method.                   Status(Not finished -> in progres)          ***
+* Fix/clean up in KNNAARAMS                             Status(Finished)                            ***
+* impliment outlier detection method.                   Status(Finished)                            ***
 * Master thesis correction + add what i have now.       Status(Not finished)                        **
 * Questions for supervisor.                             Status(Not finished)                        *
 
 
 
  Date: 03-03-2025:
+ - I will start with the KNNAARAMS file today.
+ - The reading of the mpa files and parsing of data is made to a function in Functions.
+ - I did a small cleanup on it. I'l begin the outlier implimentation. (its okay for now)
+ - Before i begin i will make the plot prettier!!!
+ - I'll have to rethink the energy one.
+ - So yeh, implimenting the methodology for my algoritm and prepare results for first setup
