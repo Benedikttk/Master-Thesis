@@ -400,3 +400,80 @@ def read_exyz_file(file_path):
     df = df.apply(lambda x: pd.to_numeric(x.astype(str).str.replace(',', '.'), errors='coerce'))
 
     return df
+
+
+#KNNAARAMS functions
+
+def extract_data_from_mpa(filepath, subject, file_index=1, info=None):
+    """
+    Extracts numerical data from a `.txt.mpa` file in a specified directory.
+
+    This function:
+    - Lists all `.txt.mpa` files in the given directory.
+    - Reads the specified file (default is the second file).
+    - Finds the header line that matches the given subject.
+    - Identifies the start of the `[DATA]` section.
+    - Extracts numerical data and returns it as a pandas DataFrame.
+
+    Parameters:
+    filepath (str): The directory containing `.txt.mpa` files.
+    subject (str): The subject string used to locate the header within the file.
+    file_index (int): The index of the file to read (default is 1, the second file).
+    info (str or None): If set to None, no information will be printed.
+
+    Returns:
+    pd.DataFrame: A DataFrame containing extracted numerical data with columns ["E_final", "dE", "counts"].
+
+    Raises:
+    ValueError: If no `.txt.mpa` files are found, the file is empty, the subject header is missing, 
+                or the `[DATA]` section is not found.
+    """
+    # Get list of matching files
+    files = os.listdir(filepath)
+    raw_files = [file for file in files if file.endswith(".txt.mpa")]
+
+    if not raw_files:
+        raise ValueError("No raw files found.")
+
+    # If info is not None, print the files
+    if info is not None:
+        print("\n".join(raw_files))
+
+    # Check if the file_index is valid
+    if file_index < 1 or file_index > len(raw_files):
+        raise ValueError(f"Invalid file_index: {file_index}. The directory contains {len(raw_files)} files.")
+
+    # Read the specified file
+    file_path = os.path.join(filepath, raw_files[file_index - 1])
+
+    with open(file_path, 'r') as file:
+        lines = file.readlines()
+
+    if not lines:
+        raise ValueError("The file is empty")
+
+    # Find header index
+    header_index = next((idx for idx, line in enumerate(lines) if subject in line), None)
+    if header_index is None:
+        raise ValueError(f"No matching header found for {subject}")
+
+    # Find data index
+    data_start = next((header_index + idx + 1 for idx, line in enumerate(lines[header_index:]) if line.startswith("[DATA]")), None)
+    if data_start is None:
+        raise ValueError("No data section found.")
+
+    # Extract data
+    data = []
+    for line in lines[data_start:]:
+        if any(char.isalpha() for char in line):  # Stop when encountering a line with alphabetic characters
+            break
+        data.append(line.strip().split())
+
+    # Create DataFrame
+    data = pd.DataFrame(data, columns=["E_final", "dE", "counts"]).apply(pd.to_numeric)
+
+    return data
+
+def SilhouetteScore_to_Confidence(SilhouetteScore):
+    Confidence = (SilhouetteScore + 1)/2 *100
+    return Confidence
