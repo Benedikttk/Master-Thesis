@@ -10,8 +10,11 @@ from sklearn.neighbors import LocalOutlierFactor
 from matplotlib.legend_handler import HandlerPathCollection
 
 # Set file path and subject
-filepath = r'C:\Users\benja\Desktop\Speciale\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'
+#filepath = r'C:\Users\benja\Desktop\Speciale\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'
+filepath = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'
 subject = "[CDAT0"
+
+billeder_path = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Billeder'
 
 # Load and filter raw files
 files = os.listdir(filepath)
@@ -100,6 +103,8 @@ cbar.set_label("Counts")
 
 # Final layout
 plt.tight_layout()
+
+plt.savefig(f'{billeder_path}\\KNNScatterPlotGrouping.pdf')
 plt.show()
 
 # Re-cluster the filtered points from the ROI cluster
@@ -185,6 +190,8 @@ plt.title(f"Local Outlier Factor (LOF) for ROI Cluster ")
 plt.legend(
     handler_map={scatter: HandlerPathCollection(update_func=update_legend_marker_size)}
 )
+plt.savefig(f'{billeder_path}\\LOF10Beplot.pdf')
+
 plt.show()
 
 # Print outliers information
@@ -202,6 +209,14 @@ ax1.set_title(f"ROI Cluster - Silhouette Score: {roi_cluster_silhouette_score:.3
 ax1.set_xlabel(r"$E_{final} [keV]$")
 ax1.set_ylabel("dE [keV]")
 ax1.grid(True)
+# Adding the red circles for the outliers that are filtered out
+for outlier in outliers:
+    if not any(np.all(outlier == filtered_roi_cluster_data[['E_final', 'dE']].values, axis=1)):
+        radius = (X_scores.max() - clf.negative_outlier_factor_[np.all(X_roi_cluster == outlier, axis=1)]) / (X_scores.max() - X_scores.min())
+        ax1.add_patch(plt.Circle(outlier, 0.5 * radius, color='r', fill=False, linestyle='--', linewidth=2))
+ax1.scatter(outliers[:, 0], outliers[:, 1], color='red', marker='x', s=50, label='Outliers')
+ax1.legend(loc='upper right')
+
 
 # Plot the filtered ROI cluster (without outliers)
 ax2 = axes[1]
@@ -217,8 +232,16 @@ cbar1.set_label("Counts")
 cbar2 = plt.colorbar(scatter2, ax=ax2)
 cbar2.set_label("Counts")
 
+#extra for the visuals
+ax1.set_xlim([75, 190])
+ax2.set_xlim([75, 190])
+ax1.set_ylim([25, 300])
+ax2.set_ylim([25, 300])
+
+
 # Adjust layout
 plt.tight_layout()
+plt.savefig(f'{billeder_path}\\FilteringComparisonOf10BeGroups.pdf')
 plt.show()
 
 N_filtered = filtered_roi_cluster_data["counts"].sum()/10
