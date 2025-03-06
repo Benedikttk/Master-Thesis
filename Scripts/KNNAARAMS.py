@@ -10,11 +10,11 @@ from sklearn.neighbors import LocalOutlierFactor
 from matplotlib.legend_handler import HandlerPathCollection
 
 # Set file path and subject
-#filepath = r'C:\Users\benja\Desktop\Speciale\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'
-filepath = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'
+filepath = r'C:\Users\benja\Desktop\Speciale\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'
+#filepath = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'
 subject = "[CDAT0"
 
-billeder_path = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Billeder'
+#billeder_path = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Billeder'
 
 # Load and filter raw files
 files = os.listdir(filepath)
@@ -104,7 +104,7 @@ cbar.set_label("Counts")
 # Final layout
 plt.tight_layout()
 
-plt.savefig(f'{billeder_path}\\KNNScatterPlotGrouping.pdf')
+#plt.savefig(f'{billeder_path}\\KNNScatterPlotGrouping.pdf')
 plt.show()
 
 # Re-cluster the filtered points from the ROI cluster
@@ -183,6 +183,14 @@ scatter = plt.scatter(
     label="Outlier scores",
 )
 
+plt.grid(True, linestyle='--', alpha=0.6)  # Dashed grid with transparency
+plt.tick_params(direction="in", length=6, which="major")  # Major ticks longer
+plt.tick_params(direction="in", length=3, which="minor")  # Minor ticks shorter
+
+plt.minorticks_on()
+
+plt.xlim([75, 195])
+plt.ylim([25, 290])
 plt.axis("tight")
 plt.xlabel("E_final [keV]")
 plt.ylabel("dE [keV]")
@@ -190,7 +198,7 @@ plt.title(f"Local Outlier Factor (LOF) for ROI Cluster ")
 plt.legend(
     handler_map={scatter: HandlerPathCollection(update_func=update_legend_marker_size)}
 )
-plt.savefig(f'{billeder_path}\\LOF10Beplot.pdf')
+#plt.savefig(f'{billeder_path}\\LOF10Beplot.pdf')
 
 plt.show()
 
@@ -209,13 +217,32 @@ ax1.set_title(f"ROI Cluster - Silhouette Score: {roi_cluster_silhouette_score:.3
 ax1.set_xlabel(r"$E_{final} [keV]$")
 ax1.set_ylabel("dE [keV]")
 ax1.grid(True)
-# Adding the red circles for the outliers that are filtered out
+
+
+# Check if a legend exists
+legend_exists = ax1.get_legend() is not None
+
 for outlier in outliers:
-    if not any(np.all(outlier == filtered_roi_cluster_data[['E_final', 'dE']].values, axis=1)):
-        radius = (X_scores.max() - clf.negative_outlier_factor_[np.all(X_roi_cluster == outlier, axis=1)]) / (X_scores.max() - X_scores.min())
-        ax1.add_patch(plt.Circle(outlier, 0.5 * radius, color='r', fill=False, linestyle='--', linewidth=2))
-ax1.scatter(outliers[:, 0], outliers[:, 1], color='red', marker='x', s=50, label='Outliers')
-ax1.legend(loc='upper right')
+    # Check if outlier is NOT in the filtered dataset
+    if not np.any(np.all(outlier == filtered_roi_cluster_data[['E_final', 'dE']].values, axis=1)):
+        # Find index of this outlier in X_roi_cluster to get its LOF score
+        outlier_idx = np.where((X_roi_cluster == outlier).all(axis=1))[0][0]
+        
+        # Compute circle size based on LOF score
+        outlier_radius = (X_scores.max() - X_scores[outlier_idx]) / (X_scores.max() - X_scores.min())
+
+        # Determine if we need to add the legend label
+        label = "Outlier scores" if not legend_exists else ""
+
+        # Plot only this outlier
+        ax1.scatter(
+            outlier[0], outlier[1],
+            s=1000 * outlier_radius,  # Scale size based on LOF score
+            edgecolors="r",
+            facecolors="none",
+            label=label
+        )
+
 
 
 # Plot the filtered ROI cluster (without outliers)
@@ -233,15 +260,30 @@ cbar2 = plt.colorbar(scatter2, ax=ax2)
 cbar2.set_label("Counts")
 
 #extra for the visuals
-ax1.set_xlim([75, 190])
-ax2.set_xlim([75, 190])
-ax1.set_ylim([25, 300])
-ax2.set_ylim([25, 300])
+ax1.set_xlim([75, 195])
+ax2.set_xlim([75, 195])
+ax1.set_ylim([25, 290])
+ax2.set_ylim([25, 290])
+
+ax1.grid(True, linestyle='--', alpha=0.6)
+ax1.tick_params(direction="in", length=6, which="major")  # Major ticks longer
+ax1.tick_params(direction="in", length=3, which="minor")  # Minor ticks shorter
+ax1.xaxis.set_ticks_position("both")
+ax1.yaxis.set_ticks_position("both")
+ax1.minorticks_on()
+
+ax2.grid(True, linestyle='--', alpha=0.6)
+ax2.tick_params(direction="in", length=6, which="major")  # Major ticks longer
+ax2.tick_params(direction="in", length=3, which="minor")  # Minor ticks shorter
+ax2.xaxis.set_ticks_position("both")
+ax2.yaxis.set_ticks_position("both")
+ax2.minorticks_on()
+
 
 
 # Adjust layout
 plt.tight_layout()
-plt.savefig(f'{billeder_path}\\FilteringComparisonOf10BeGroups.pdf')
+#plt.savefig(f'{billeder_path}\\FilteringComparisonOf10BeGroups.pdf')
 plt.show()
 
 N_filtered = filtered_roi_cluster_data["counts"].sum()/10
