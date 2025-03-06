@@ -50,3 +50,9 @@ Date: 02-03-2025:
  - Before i begin i will make the plot prettier!!!
  - I'll have to rethink the energy one.
  - So yeh, implimenting the methodology for my algoritm and prepare results for first setup
+
+ Date: 06-03-2025:
+ - I will start by making the figures better. (starting with this in compination with 3rd point)
+ - Start with finishing methodology chapter -> I feel like this is done for now.
+ - Implimenting results and figures
+ 
