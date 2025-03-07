@@ -10,11 +10,11 @@ from sklearn.neighbors import LocalOutlierFactor
 from matplotlib.legend_handler import HandlerPathCollection
 
 # Set file path and subject
-filepath = r'C:\Users\benja\Desktop\Speciale\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'
-#filepath = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'
+#filepath = r'C:\Users\benja\Desktop\Speciale\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'
+filepath = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'
 subject = "[CDAT0"
 
-#billeder_path = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Billeder'
+billeder_path = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Billeder'
 
 # Load and filter raw files
 files = os.listdir(filepath)
@@ -75,9 +75,10 @@ fig, ax = plt.subplots(figsize=(8, 8))
 
 # Main scatter plot
 sc = ax.scatter(data["E_final"], data["dE"], c=data["counts"], cmap='viridis', s=2)
-ax.set_ylabel("dE [keV]")
 ax.set_xlabel(r"$E_{final} [keV]$")
-
+ax.set_ylabel(r"$\Delta E [keV]$")
+#title for number of k and number of cluster
+ax.set_title(f"KMeans Clustering with {numberof_clusters} Clusters (k_eff = {numberof_clusters})")
 ax.grid(True, linestyle='--', alpha=0.6)
 ax.tick_params(direction="in", length=6, which="major")  # Major ticks longer
 ax.tick_params(direction="in", length=3, which="minor")  # Minor ticks shorter
@@ -93,7 +94,7 @@ for cluster_id in data['Cluster_KMeans'].unique():
         hull = ConvexHull(points)
         hull_points = points[hull.vertices]
         # Plot the shaded area for each cluster
-        ax.fill(hull_points[:, 0], hull_points[:, 1], color=sns.color_palette("viridis", n_colors=numberof_clusters)[cluster_id], alpha=0.3, label=f'Cluster {cluster_id}')
+        ax.fill(hull_points[:, 0], hull_points[:, 1], color=sns.color_palette("viridis", n_colors=numberof_clusters)[cluster_id], alpha=0.15, label=f'Cluster {cluster_id}')
 
 # Add legend
 plt.legend(loc='upper left')
@@ -104,7 +105,7 @@ cbar.set_label("Counts")
 # Final layout
 plt.tight_layout()
 
-#plt.savefig(f'{billeder_path}\\KNNScatterPlotGrouping.pdf')
+plt.savefig(f'{billeder_path}\\KNNScatterPlotGrouping.pdf')
 plt.show()
 
 # Re-cluster the filtered points from the ROI cluster
@@ -192,13 +193,13 @@ plt.minorticks_on()
 plt.xlim([75, 195])
 plt.ylim([25, 290])
 plt.axis("tight")
-plt.xlabel("E_final [keV]")
-plt.ylabel("dE [keV]")
+plt.xlabel(r"$E_{final} [keV]$")
+plt.ylabel(r"$\Delta E [keV]$")
 plt.title(f"Local Outlier Factor (LOF) for ROI Cluster ")
 plt.legend(
     handler_map={scatter: HandlerPathCollection(update_func=update_legend_marker_size)}
 )
-#plt.savefig(f'{billeder_path}\\LOF10Beplot.pdf')
+plt.savefig(f'{billeder_path}\\LOF10Beplot.pdf')
 
 plt.show()
 
@@ -215,7 +216,7 @@ ax1 = axes[0]
 scatter1 = ax1.scatter(roi_cluster_data['E_final'], roi_cluster_data['dE'], c=roi_cluster_data['counts'], cmap='viridis', s=20)
 ax1.set_title(f"ROI Cluster - Silhouette Score: {roi_cluster_silhouette_score:.3f}")
 ax1.set_xlabel(r"$E_{final} [keV]$")
-ax1.set_ylabel("dE [keV]")
+ax1.set_ylabel(r"$\Delta E [keV]$")
 ax1.grid(True)
 
 
@@ -250,7 +251,7 @@ ax2 = axes[1]
 scatter2 = ax2.scatter(filtered_roi_cluster_data['E_final'], filtered_roi_cluster_data['dE'], c=filtered_roi_cluster_data['counts'], cmap='viridis', s=20)
 ax2.set_title(f"Filtered ROI Cluster - Silhouette Score: {filtered_silhouette_score:.3f}")
 ax2.set_xlabel(r"$E_{final} [keV]$")
-ax2.set_ylabel("dE [keV]")
+ax2.set_ylabel(r"$\Delta E [keV]$")
 ax2.grid(True)
 print(f"Filtered ROI Cluster - Silhouette Score: {filtered_silhouette_score:.3f}")
 # Add colorbars
@@ -283,7 +284,7 @@ ax2.minorticks_on()
 
 # Adjust layout
 plt.tight_layout()
-#plt.savefig(f'{billeder_path}\\FilteringComparisonOf10BeGroups.pdf')
+plt.savefig(f'{billeder_path}\\FilteringComparisonOf10BeGroups.pdf')
 plt.show()
 
 N_filtered = filtered_roi_cluster_data["counts"].sum()/10

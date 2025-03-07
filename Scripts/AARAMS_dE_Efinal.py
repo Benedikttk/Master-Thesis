@@ -6,7 +6,7 @@ import seaborn as sns
 from Functions import FileCheck, deltE_Efinal
 
 # 
-Filepath = r'C:\Users\benja\Desktop\Speciale\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'
+Filepath = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'
 Subject = "[CDAT0"
 
 files = [i for i in FileCheck(filepath=Filepath, endswith=".txt.mpa")]
@@ -19,7 +19,7 @@ gs = fig.add_gridspec(2, 2, width_ratios=[4, 1], height_ratios=[1, 4], hspace=0.
 # Main scatter plot (center)
 ax_main = fig.add_subplot(gs[1, 0])
 sc = ax_main.scatter(data["E_final"], data["dE"], c=data["counts"], cmap='viridis', s=2)
-ax_main.set_ylabel("dE [keV]")
+ax_main.set_ylabel(r"$\Delta E [keV]$")
 ax_main.set_xlabel(r"$E_{final} [keV]$")
 
 ax_main.grid(True, linestyle='--', alpha=0.6)
@@ -67,7 +67,7 @@ for ax in [ax_main, ax_top, ax_right]:
     ax.tick_params(direction="in", length=3, which="minor")  # Shorter minor ticks
 
 billeder_path = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Billeder'
-#plt.savefig(f'{billeder_path}\\deltaE_Efinal.pdf')
+plt.savefig(f'{billeder_path}\\deltaE_Efinal.pdf')
 
 plt.tight_layout()
 plt.show()

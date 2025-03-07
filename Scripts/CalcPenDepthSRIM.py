@@ -4,8 +4,8 @@ from scipy.stats import sem  # For standard error of the mean
 from scipy.optimize import curve_fit  # For curve fitting
 from Functions import process_file, calculate_fractions  # Import calculate_fractions
 
-file_path_Be10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE_1400_ion_1000Be10.txt"
-file_path_B10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE_1400_ion_1000B10.txt"
+file_path_Be10 = r"C:\Users\benja\Desktop\Speciale\Master-Thesis\Data\RANGE_1400_ion_1000Be10.txt"
+file_path_B10 = r"C:\Users\benja\Desktop\Speciale\Master-Thesis\Data\RANGE_1400_ion_1000B10.txt"
 
 df_SRIM_depth_Be10 = process_file(file_path_Be10, 'Be')
 df_SRIM_depth_B10 = process_file(file_path_B10, 'B')
@@ -25,18 +25,18 @@ plt.figure(figsize=(10, 6))
 plt.hist(df_SRIM_depth_Be10['Depth (Angstrom)'], 
          bins=len(df_SRIM_depth_Be10['Depth (Angstrom)']),
          weights=df_SRIM_depth_Be10['Be Ions'],
-         color='red', alpha=0.6, histtype='stepfilled', label='Be10')
+         color='red', alpha=0.6, histtype='stepfilled', label=r'$\mathrm{^{10}Be}$')
 
 plt.hist(df_SRIM_depth_B10['Depth (Angstrom)'],
          bins=len(df_SRIM_depth_B10['Depth (Angstrom)']),
          weights=df_SRIM_depth_B10['B Ions'],
-         color='blue', alpha=0.4, histtype='stepfilled', label='B10')
+         color='blue', alpha=0.4, histtype='stepfilled', label=r'$\mathrm{^{10}B}$')
 
 # Making the cutoff for B10
 mask = df_SRIM_depth_B10['B Ions'] > 0
 df_SRIM_depth_B10 = df_SRIM_depth_B10[mask]
 cutoff_depth = df_SRIM_depth_B10['Depth (Angstrom)'].max()
-plt.axvline(x=cutoff_depth, color='black', linestyle='--', label='Cutoff for B10')
+plt.axvline(x=cutoff_depth, color='black', linestyle='--', label=r'Cutoff for $\mathrm{^{10}B}$')
 
 # Calculate the fraction of Be10 and B10 that penetrates the cutoff
 total_ions_Be10 = df_SRIM_depth_Be10['Be Ions'].sum()
@@ -63,10 +63,17 @@ Be10_fraction, B10_fraction = calculate_fractions(best_cutoff_depth, df_SRIM_dep
 # Plot the optimized cutoff
 plt.axvline(x=best_cutoff_depth, color='green', linestyle='--', label='Optimized Cutoff')
 
+plt.grid(True, linestyle='--', alpha=0.6)
+plt.tick_params(direction="in", length=6, which="major")  # Major ticks longer
+plt.tick_params(direction="in", length=3, which="minor")  # Minor ticks shorter
+plt.minorticks_on()
+billeder_path = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Billeder'
+
+
 # Plotting the two distributions
 plt.xlabel('Depth (Angstrom)')
 plt.ylabel('Ion Count')
-plt.title('Depth Distribution of Be10 and B10 Ions')
+plt.title(r'Simulated Depth Distribution of $\mathrm{^{10}Be}$ and $\mathrm{^{10}B}$ Ions in SiN (SRIM/TRIM)')
 plt.legend()
 plt.tight_layout()
 
@@ -101,6 +108,24 @@ with open('BoronsupressionDepthIndo.txt', 'w') as file:
     file.write(f"Fraction of particles to the right of the optimized cutoff that are Be10: {Be10_after_cutoff_fraction*100:.2f}%\n")
     file.write(f"Fraction of particles to the right of the optimized cutoff that are B10: {B10_after_cutoff_fraction*100:.2f}%\n")
 
-billeder_path = r'C:\Users\benja\Desktop\Speciale\Billeder'
+
+
+plt.text(18630, 30000, 'B10 Cutoff (18600 Å)', rotation=90, verticalalignment='bottom')
+plt.text(17245, 30000, 'Optimized Cutoff (17215 Å)', rotation=90, color='green', verticalalignment='bottom')
+
+textstr = '\n'.join((
+    r'$^{10}Be$ penetration: 98.7%',
+    r'$^{10}B$ stopped: 92.9%',
+    'Optimized cutoff: 93.29% $^{10}Be$, 6.71% $^{10}B$'
+))
+
+plt.annotate(textstr, xy=(500, 42000), fontsize=10, bbox=dict(boxstyle="round,pad=0.3", edgecolor='black', facecolor='white'))
+
+
+
+
+
+#billeder_path = r'C:\Users\benja\Desktop\Speciale\Billeder'
+billeder_path = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Billeder'
 plt.savefig(f'{billeder_path}\\BoronSupressionDepth.pdf')
 plt.show()

@@ -7,12 +7,12 @@ from Functions import read_exyz_file
 # Create a plot
 fig, axs = plt.subplots()
 
-img = mpimg.imread(r'C:\Users\benja\Desktop\Speciale\Billeder\DetectorFigure.png')
+img = mpimg.imread(r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Billeder\DetectorFigure.png')
 
 axs.imshow(img, extent=[-190,410,-300,300]) #[x højre, , y ned, y op]
 
 #trajectories of ions
-file_path = r"C:\Users\benja\Desktop\Speciale\Data\EXYZs\EXYZ1.txt"  
+file_path = r"C:\Users\benja\Desktop\Speciale\Master-Thesis\Data\EXYZs\EXYZ1.txt"  
 df = read_exyz_file(file_path)
 print(df)
 
@@ -37,7 +37,7 @@ plt.ylabel('Depth Y (mm)')
 plt.tight_layout()
 plt.axis('off')
 
-billeder_path = r'C:\Users\benja\Desktop\Speciale\Billeder'
+billeder_path = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Billeder'
 
 plt.savefig(f'{billeder_path}\\SRIM_Detector_SIMS.pdf')
 plt.show()
