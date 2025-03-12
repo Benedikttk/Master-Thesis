@@ -4,8 +4,8 @@ from scipy.stats import sem  # For standard error of the mean
 from scipy.optimize import curve_fit  # For curve fitting
 from Functions import process_file, calculate_fractions  # Import calculate_fractions
 
-file_path_Be10 = r"C:\Users\benja\Desktop\Speciale\Master-Thesis\Data\RANGE_1400_ion_1000Be10.txt"
-file_path_B10 = r"C:\Users\benja\Desktop\Speciale\Master-Thesis\Data\RANGE_1400_ion_1000B10.txt"
+file_path_Be10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE_1400_ion_1000Be10.txt"
+file_path_B10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE_1400_ion_1000B10.txt"
 
 df_SRIM_depth_Be10 = process_file(file_path_Be10, 'Be')
 df_SRIM_depth_B10 = process_file(file_path_B10, 'B')
@@ -126,6 +126,6 @@ plt.annotate(textstr, xy=(500, 42000), fontsize=10, bbox=dict(boxstyle="round,pa
 
 
 #billeder_path = r'C:\Users\benja\Desktop\Speciale\Billeder'
-billeder_path = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Billeder'
-plt.savefig(f'{billeder_path}\\BoronSupressionDepth.pdf')
+#billeder_path = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Billeder'
+#plt.savefig(f'{billeder_path}\\BoronSupressionDepth.pdf')
 plt.show()

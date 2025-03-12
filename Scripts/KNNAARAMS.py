@@ -10,18 +10,18 @@ from sklearn.neighbors import LocalOutlierFactor
 from matplotlib.legend_handler import HandlerPathCollection
 
 # Set file path and subject
-#filepath = r'C:\Users\benja\Desktop\Speciale\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'
-filepath = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'
+filepath = r'C:\Users\benja\Desktop\Speciale\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'
+#filepath = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'
 subject = "[CDAT0"
 
-billeder_path = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Billeder'
+billeder_path = r'C:\Users\benja\Desktop\Speciale\Billeder'
 
 # Load and filter raw files
 files = os.listdir(filepath)
 raw_files = [file for file in files if file.endswith(".txt.mpa")]
 
 # Extract data from MPA files
-data = extract_data_from_mpa(filepath, subject, file_index=1, info=None )
+data = extract_data_from_mpa(filepath, subject, file_index=2, info=None )
 
 # KMeans clustering parameters
 numberof_clusters = 4  # Optimal number of clusters
@@ -71,14 +71,16 @@ distances = np.linalg.norm(roi_cluster_data[['E_final', 'dE']].values - roi_clus
 filtered_roi_cluster_data = roi_cluster_data[distances <= roi_cluster_radius]
 
 # Plot the data without the marginal plots
-fig, ax = plt.subplots(figsize=(8, 8))
+fig, ax = plt.subplots(figsize=(12, 8))
 
+ax.set_xlim(0,580)
+ax.set_ylim(0,600)
 # Main scatter plot
 sc = ax.scatter(data["E_final"], data["dE"], c=data["counts"], cmap='viridis', s=2)
-ax.set_xlabel(r"$E_{final} [keV]$")
-ax.set_ylabel(r"$\Delta E [keV]$")
+ax.set_xlabel(r"$E_{final} [Channel]$")
+ax.set_ylabel(r"$\Delta E [Channel]$")
 #title for number of k and number of cluster
-ax.set_title(f"KMeans Clustering with {numberof_clusters} Clusters (k_eff = {numberof_clusters})")
+ax.set_title(f"KMeans Clustering with {numberof_clusters} Clusters" r"($ k_{eff}$ =" f"{numberof_clusters})")
 ax.grid(True, linestyle='--', alpha=0.6)
 ax.tick_params(direction="in", length=6, which="major")  # Major ticks longer
 ax.tick_params(direction="in", length=3, which="minor")  # Minor ticks shorter
@@ -171,37 +173,66 @@ def update_legend_marker_size(handle, orig):
     handle.update_from(orig)
     handle.set_sizes([20])
 
-plt.scatter(X_roi_cluster[:, 0], X_roi_cluster[:, 1], color="k", s=3.0, label="Data points")
+
+clf = LocalOutlierFactor(n_neighbors=20, contamination=0.1)
+y_pred = clf.fit_predict(X_roi_cluster)  # Apply LOF to the ROI cluster data
+
+# Get the LOF scores (negative_outlier_factor_)
+lof_scores = clf.negative_outlier_factor_
+
+# The threshold is the value at which 10% of points are considered outliers
+lof_threshold = np.percentile(lof_scores, 100 * 0.05)
+
+# Print the cutoff value for the outlier score
+print(f"Outlier score cutoff value: {lof_threshold:.3f}")
+
+
+
+fig, ax = plt.subplots(figsize=(12, 8))
+
+# Plot the data points (without LOF circles)
+ax.scatter(X_roi_cluster[:, 0], X_roi_cluster[:, 1], color="k", s=3.0, label="Data points")
+
+# Disable autoscale and set axis limits
+ax.set_autoscale_on(True)
+
 
 # Plot circles with radius proportional to the outlier scores
 radius = (X_scores.max() - X_scores) / (X_scores.max() - X_scores.min())
-scatter = plt.scatter(
+scatter = ax.scatter(
     X_roi_cluster[:, 0],
     X_roi_cluster[:, 1],
-    s=1000 * radius,
+    s=1000 * radius,  # Size of the points based on LOF score
     edgecolors="r",
     facecolors="none",
     label="Outlier scores",
 )
 
-plt.grid(True, linestyle='--', alpha=0.6)  # Dashed grid with transparency
-plt.tick_params(direction="in", length=6, which="major")  # Major ticks longer
-plt.tick_params(direction="in", length=3, which="minor")  # Minor ticks shorter
+# Add grid with dashed lines and adjust tick parameters
+ax.grid(True, linestyle='--', alpha=0.6)
+ax.tick_params(direction="in", length=6, which="major")  # Major ticks longer
+ax.tick_params(direction="in", length=3, which="minor")  # Minor ticks shorter
+ax.minorticks_on()
 
-plt.minorticks_on()
+# Set axis labels and title
+ax.set_xlabel(r"$E_{final} [Channel]$")
+ax.set_ylabel(r"$\Delta E [Channel]$")
+ax.set_title(f"Local Outlier Factor (LOF) for ROI Cluster")
 
-plt.xlim([75, 195])
-plt.ylim([25, 290])
-plt.axis("tight")
-plt.xlabel(r"$E_{final} [keV]$")
-plt.ylabel(r"$\Delta E [keV]$")
-plt.title(f"Local Outlier Factor (LOF) for ROI Cluster ")
-plt.legend(
+# Add a legend
+ax.legend(
     handler_map={scatter: HandlerPathCollection(update_func=update_legend_marker_size)}
 )
+
+# Save the plot to a file
+plt.tight_layout()
 plt.savefig(f'{billeder_path}\\LOF10Beplot.pdf')
 
+# Show the plot
 plt.show()
+
+
+
 
 # Print outliers information
 outliers = X_roi_cluster[y_pred == -1]
@@ -209,14 +240,14 @@ print(f"Outliers detected: {len(outliers)} points")
 print(f"Outliers indices: {np.where(y_pred == -1)}")
 
 
-fig, axes = plt.subplots(1, 2, figsize=(16, 8))
+fig, axes = plt.subplots(2,1, figsize=(12, 8), sharex=True)
 
 # Plot the full ROI cluster
 ax1 = axes[0]
 scatter1 = ax1.scatter(roi_cluster_data['E_final'], roi_cluster_data['dE'], c=roi_cluster_data['counts'], cmap='viridis', s=20)
 ax1.set_title(f"ROI Cluster - Silhouette Score: {roi_cluster_silhouette_score:.3f}")
-ax1.set_xlabel(r"$E_{final} [keV]$")
-ax1.set_ylabel(r"$\Delta E [keV]$")
+ax1.set_xlabel(r"$E_{final} [Channel]$")
+ax1.set_ylabel(r"$\Delta E [Channel]$")
 ax1.grid(True)
 
 
@@ -250,8 +281,8 @@ for outlier in outliers:
 ax2 = axes[1]
 scatter2 = ax2.scatter(filtered_roi_cluster_data['E_final'], filtered_roi_cluster_data['dE'], c=filtered_roi_cluster_data['counts'], cmap='viridis', s=20)
 ax2.set_title(f"Filtered ROI Cluster - Silhouette Score: {filtered_silhouette_score:.3f}")
-ax2.set_xlabel(r"$E_{final} [keV]$")
-ax2.set_ylabel(r"$\Delta E [keV]$")
+ax2.set_xlabel(r"$E_{final} [Channel]$")
+ax2.set_ylabel(r"$\Delta E [Channel]$")
 ax2.grid(True)
 print(f"Filtered ROI Cluster - Silhouette Score: {filtered_silhouette_score:.3f}")
 # Add colorbars
@@ -261,10 +292,10 @@ cbar2 = plt.colorbar(scatter2, ax=ax2)
 cbar2.set_label("Counts")
 
 #extra for the visuals
-ax1.set_xlim([75, 195])
-ax2.set_xlim([75, 195])
-ax1.set_ylim([25, 290])
-ax2.set_ylim([25, 290])
+ax1.set_xlim([50, 200])
+ax2.set_xlim([50, 200])
+ax1.set_ylim([0, 300])
+ax2.set_ylim([0, 300])
 
 ax1.grid(True, linestyle='--', alpha=0.6)
 ax1.tick_params(direction="in", length=6, which="major")  # Major ticks longer
@@ -272,6 +303,7 @@ ax1.tick_params(direction="in", length=3, which="minor")  # Minor ticks shorter
 ax1.xaxis.set_ticks_position("both")
 ax1.yaxis.set_ticks_position("both")
 ax1.minorticks_on()
+ax1.set_autoscale_on(True)
 
 ax2.grid(True, linestyle='--', alpha=0.6)
 ax2.tick_params(direction="in", length=6, which="major")  # Major ticks longer
@@ -279,6 +311,7 @@ ax2.tick_params(direction="in", length=3, which="minor")  # Minor ticks shorter
 ax2.xaxis.set_ticks_position("both")
 ax2.yaxis.set_ticks_position("both")
 ax2.minorticks_on()
+ax2.set_autoscale_on(True)
 
 
 
@@ -296,3 +329,8 @@ uncertainty_filtered = np.sqrt(N_filtered)
 print(f"The sum of the filtered_roi_cluster_points for Be10 is: {N_filtered} ± {uncertainty_filtered}")
 print(F"Confidence of the Silhouette Score of ROI: {SilhouetteScore_to_Confidence(filtered_silhouette_score)}")
 
+
+for cluster_id in range(numberof_clusters):
+    cluster_data = data[data['Cluster_KMeans'] == cluster_id]
+    cluster_silhouette_score = cluster_data['silhouette_score'].mean()
+    print(f"Group {cluster_id} --- Silhouette score {cluster_silhouette_score:.3f}")

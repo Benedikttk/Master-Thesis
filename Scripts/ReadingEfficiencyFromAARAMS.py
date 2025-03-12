@@ -4,14 +4,14 @@ import numpy as np
 from Functions import get_txt_files, read_block_data, parse_dataframe, calculate_Be10_statistics, calculate_Be10_current, extract_metadata, calculate_Be9_ions, calculate_ratio_and_efficiency
 
 #path
-filepath = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'
+filepath = r'C:\Users\benja\Desktop\Speciale\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'
 
 list_of_files = get_txt_files(filepath, ".txt")
 
 if not list_of_files:
     print("No .txt files found.")
 else:
-    data_lines = read_block_data(filepath + "\\" + list_of_files[1])
+    data_lines = read_block_data(filepath + "\\" + list_of_files[0])
     
     column_names = [
         "Blk", "10Becnts", "Totalcnts", "10Bcnts", "cnts", "cnts",
