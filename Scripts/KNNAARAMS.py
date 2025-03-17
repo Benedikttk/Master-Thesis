@@ -334,3 +334,57 @@ for cluster_id in range(numberof_clusters):
     cluster_data = data[data['Cluster_KMeans'] == cluster_id]
     cluster_silhouette_score = cluster_data['silhouette_score'].mean()
     print(f"Group {cluster_id} --- Silhouette score {cluster_silhouette_score:.3f}")
+
+
+
+silhouette_vals = silhouette_samples(X, data['Cluster_KMeans'])
+y_lower, y_upper = 0, 0
+
+plt.figure(figsize=(10, 6))
+for i in range(numberof_clusters): 
+    cluster_silhouette_vals = silhouette_vals[data['Cluster_KMeans'] == i]
+    cluster_silhouette_vals.sort()
+    y_upper += len(cluster_silhouette_vals)
+    plt.fill_betweenx(np.arange(y_lower, y_upper), 0, cluster_silhouette_vals, alpha=0.7, label=f"Cluster {i}")
+    y_lower = y_upper
+
+plt.axvline(x=np.mean(silhouette_vals), color="red", linestyle="--")
+plt.xlabel("Silhouette Score")
+plt.ylabel("Cluster Samples")
+plt.title("Silhouette Plot for KMeans Clustering")
+plt.legend()
+plt.show()
+
+
+num_runs = 100  # For each k value, we will run the clustering 'num_runs' times and average the inertia
+
+# Range of clusters to test
+k_range = range(1, 11)  # Test between 1 and 10 clusters
+inertia_values = []
+std_devs = []
+
+# Run KMeans clustering for each k value
+for k in k_range:
+    inertia_list = []
+    for _ in range(num_runs):
+        kmeans = KMeans(n_clusters=k, n_init=10, random_state=None)
+        kmeans.fit(X)
+        inertia_list.append(kmeans.inertia_)
+    
+    # Average inertia over multiple runs
+    avg_inertia = np.mean(inertia_list)
+    inertia_values.append(avg_inertia)
+    
+    # Calculate standard deviation (uncertainty) for each k
+    std_dev = np.std(inertia_list)
+    std_devs.append(std_dev)
+
+# Plot the Elbow Curve with error bars
+plt.figure(figsize=(8, 6))
+plt.errorbar(k_range, inertia_values, yerr=std_devs, marker='o', linestyle='--', color='b', capsize=5)
+plt.title("Elbow Method for Optimal k")
+plt.xlabel("Number of Clusters (k)")
+plt.ylabel("Inertia (Sum of Squared Distances)")
+plt.xticks(k_range)
+plt.grid(True)
+plt.show()
