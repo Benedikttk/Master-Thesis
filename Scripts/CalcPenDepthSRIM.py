@@ -4,6 +4,8 @@ from scipy.stats import sem  # For standard error of the mean
 from scipy.optimize import curve_fit  # For curve fitting
 from Functions import process_file, calculate_fractions  # Import calculate_fractions
 
+
+
 file_path_Be10 = r"C:\Users\benja\Desktop\Speciale\Master-Thesis\Data\RANGE_1400_ion_1000Be10.txt"
 file_path_B10 = r"C:\Users\benja\Desktop\Speciale\Master-Thesis\Data\RANGE_1400_ion_1000B10.txt"
 
@@ -110,22 +112,17 @@ with open('BoronsupressionDepthIndo.txt', 'w') as file:
 
 
 
-plt.text(18630, 30000, 'B10 Cutoff (18600 Å)', rotation=90, verticalalignment='bottom')
-plt.text(17245, 30000, 'Optimized Cutoff (17215 Å)', rotation=90, color='green', verticalalignment='bottom')
 
-textstr = '\n'.join((
-    r'$^{10}Be$ penetration: 98.7%',
-    r'$^{10}B$ stopped: 92.9%',
-    'Optimized cutoff: 93.29% $^{10}Be$, 6.71% $^{10}B$'
-))
-
-plt.annotate(textstr, xy=(500, 42000), fontsize=10, bbox=dict(boxstyle="round,pad=0.3", edgecolor='black', facecolor='white'))
+plt.show()
 
 
-
-
-
-#billeder_path = r'C:\Users\benja\Desktop\Speciale\Billeder'
-billeder_path = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Billeder'
-plt.savefig(f'{billeder_path}\\BoronSupressionDepth.pdf')
+l = [16068.75, 15900.00, 16350.00, 15985.72, 16114.29, 16671.43, 16478.57, 16600.00, 16800.00, 16800.00, 17053.85]
+energy = [900, 910, 920, 930, 940, 950, 960, 970, 980, 990, 1000]
+plt.figure(figsize=(10, 6))
+j = [17215.39]
+mev = [1011.1]
+plt.plot(energy, l, marker='o', linestyle='-', color='red')
+plt.plot(mev, j, marker='o', linestyle='-', color='blue')
+plt.xlabel('Energy (keV)')
+plt.ylabel('Penetration Depth (Angstrom)')
 plt.show()
