@@ -31,8 +31,8 @@ else:
     I_Be10, I_Be10_uncertainty = calculate_Be10_current(avg_Be10cnts, avg_time, time_uncertainty)
     print(f"The current of Be10 is {I_Be10} ± {I_Be10_uncertainty} [micro A]")
     
-    detector_live_time = extract_metadata(filepath + "\\" + list_of_files[0], "Detector live time [s]")
-    Be9_current = extract_metadata(filepath + "\\" + list_of_files[0], "9Be current [A]")
+    detector_live_time = extract_metadata(filepath + "\\" + list_of_files[1], "Detector live time [s]")
+    Be9_current = extract_metadata(filepath + "\\" + list_of_files[1], "9Be current [A]")
     
     print(f"The detector live time is: {detector_live_time} [s]")
     print(f"The current of Be9 is: {Be9_current} [A]")

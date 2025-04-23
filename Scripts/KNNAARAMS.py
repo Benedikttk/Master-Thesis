@@ -21,7 +21,7 @@ files = os.listdir(filepath)
 raw_files = [file for file in files if file.endswith(".txt.mpa")]
 
 # Extract data from MPA files
-data = extract_data_from_mpa(filepath, subject, file_index=1, info=None )
+data = extract_data_from_mpa(filepath, subject, file_index=2, info=None )
 
 # KMeans clustering parameters
 numberof_clusters = 4  # Optimal number of clusters
