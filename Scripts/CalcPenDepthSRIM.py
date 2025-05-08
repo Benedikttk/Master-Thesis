@@ -4,11 +4,32 @@ from scipy.stats import sem  # For standard error of the mean
 from scipy.optimize import curve_fit  # For curve fitting
 from Functions import process_file, calculate_fractions  # Import calculate_fractions
 
-file_path_Be10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE_1400_ion_1000Be10.txt"
-file_path_B10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE_1400_ion_1000B10.txt"
+
+#test
+import matplotlib as mpl
+
+# Example: match LaTeX document font size of 12pt
+mpl.rcParams.update({
+    'font.size': 16,
+    'axes.titlesize': 16,
+    'axes.labelsize': 16,
+    'xtick.labelsize': 16,
+    'ytick.labelsize': 16,
+    'legend.fontsize': 16,
+    'figure.titlesize': 16
+})
+
+
+
+#file_path_Be10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE_1400_ion_1000Be10.txt"
+#file_path_B10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE_1400_ion_1000B10.txt"
+
+file_path_Be10 = r"C:\Users\benja\Desktop\noge\10000.txt"
+file_path_100B10 = r"C:\Users\benja\Desktop\noge\b100k.txt"
+
 
 df_SRIM_depth_Be10 = process_file(file_path_Be10, 'Be')
-df_SRIM_depth_B10 = process_file(file_path_B10, 'B')
+df_SRIM_depth_B10 = process_file(file_path_100B10, 'B')
 
 # Calculate histograms
 hist_Be10, bins_Be10 = np.histogram(df_SRIM_depth_Be10['Depth (Angstrom)'], 
@@ -20,7 +41,7 @@ hist_B10, bins_B10 = np.histogram(df_SRIM_depth_B10['Depth (Angstrom)'],
                                   weights=df_SRIM_depth_B10['B Ions'])
 
 # Plotting the two distributions
-plt.figure(figsize=(10, 6))
+plt.figure(figsize=(10, 6), )
 
 plt.hist(df_SRIM_depth_Be10['Depth (Angstrom)'], 
          bins=len(df_SRIM_depth_Be10['Depth (Angstrom)']),
@@ -73,7 +94,7 @@ billeder_path = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Billeder'
 # Plotting the two distributions
 plt.xlabel('Depth (Angstrom)')
 plt.ylabel('Ion Count')
-plt.title(r'Simulated Depth Distribution of $\mathrm{^{10}Be}$ and $\mathrm{^{10}B}$ Ions in SiN (SRIM/TRIM)')
+plt.title(r'Simulated Depth Distribution of $\mathrm{^{10}Be}$ and $\mathrm{^{10}B}$ Ions in $Si_{3}N_{4}$ TRIM')
 plt.legend()
 plt.tight_layout()
 
@@ -110,8 +131,8 @@ with open('BoronsupressionDepthIndo.txt', 'w') as file:
 
 
 
-plt.text(18630, 30000, 'B10 Cutoff (18600 Å)', rotation=90, verticalalignment='bottom')
-plt.text(17245, 30000, 'Optimized Cutoff (17215 Å)', rotation=90, color='green', verticalalignment='bottom')
+plt.text(18630, 20000, 'B10 Cutoff (18600 Å)', rotation=90, verticalalignment='bottom')
+plt.text(17245, 20000, 'Optimized Cutoff (17215 Å)', rotation=90, color='green', verticalalignment='bottom')
 
 textstr = '\n'.join((
     r'$^{10}Be$ penetration: 98.7%',
@@ -119,13 +140,19 @@ textstr = '\n'.join((
     'Optimized cutoff: 93.29% $^{10}Be$, 6.71% $^{10}B$'
 ))
 
-plt.annotate(textstr, xy=(500, 42000), fontsize=10, bbox=dict(boxstyle="round,pad=0.3", edgecolor='black', facecolor='white'))
+plt.annotate(textstr, xy=(500, 35000), fontsize=10, bbox=dict(boxstyle="round,pad=0.3", edgecolor='black', facecolor='white'))
 
 
+#extra stuff
+maximumdepthB10 = np.max(df_SRIM_depth_B10['Depth (Angstrom)'])
+print("test", maximumdepthB10)
 
+B_max_sep = [17400.0, 18300.0, 18300.0, 18300.0, 18300.0, 18300.0]
+B10be10_ratio = [1, 2000/100, 4000/100, 6000/100, 8000/100, 10000/100]
 
+plt.plot(B10be10_ratio, B_max_sep)
 
-#billeder_path = r'C:\Users\benja\Desktop\Speciale\Billeder'
+billeder_path = r'C:\Users\benja\Desktop\Speciale\Billeder'
 #billeder_path = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Billeder'
-#plt.savefig(f'{billeder_path}\\BoronSupressionDepth.pdf')
+plt.savefig(f'{billeder_path}\\BoronSupressionDepth.pdf')
 plt.show()

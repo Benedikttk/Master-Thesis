@@ -9,6 +9,22 @@ from Functions import extract_data_from_mpa, SilhouetteScore_to_Confidence
 from sklearn.neighbors import LocalOutlierFactor
 from matplotlib.legend_handler import HandlerPathCollection
 
+
+import matplotlib as mpl
+
+# Example: match LaTeX document font size of 12pt
+mpl.rcParams.update({
+    'font.size': 16,
+    'axes.titlesize': 16,
+    'axes.labelsize': 16,
+    'xtick.labelsize': 16,
+    'ytick.labelsize': 16,
+    'legend.fontsize': 16,
+    'figure.titlesize': 16
+})
+
+
+
 # Set file path and subject
 filepath = r'C:\Users\benja\Desktop\Speciale\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'
 #filepath = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'

@@ -3,8 +3,24 @@ import matplotlib.pyplot as plt
 import os
 from Functions import count_valid_ions, read_exyz_file
 
+#test
+import matplotlib as mpl
+
+# Example: match LaTeX document font size of 12pt
+mpl.rcParams.update({
+    'font.size': 16,
+    'axes.titlesize': 16,
+    'axes.labelsize': 16,
+    'xtick.labelsize': 16,
+    'ytick.labelsize': 16,
+    'legend.fontsize': 16,
+    'figure.titlesize': 16
+})
+
+
+
 # Directory containing data files
-data_dir = r"C:\Users\benja\Desktop\Speciale\Master-Thesis\Data\EXYZs\Denistydata"
+data_dir = r"C:\Users\benja\Desktop\Speciale\Data\EXYZs\Denistydata"
 density_values = []
 valid_ion_counts = []
 avg_lengths = []
@@ -54,7 +70,7 @@ if density_values:
     ax1.plot(density_values, valid_ion_counts, 'o--', markersize=4, label='Valid Ions')
     ax1.set_xlabel(r'Gas Density ($g/cm^{3}$)')
     ax1.set_ylabel('Number of Valid Ions')
-    ax1.set_title(r'Number of Valid $\mathrm{^{10}Be}$ Ions vs. Gas Density (GIC Detector)')
+    ax1.set_title(r'Number of Valid $\mathrm{^{10}Be}$ Ions vs. Gas Density')
     ax1.grid(True)
     ax1.legend()
     ax1.grid(True, linestyle='--', alpha=0.6)
@@ -67,7 +83,7 @@ if density_values:
     ax2.errorbar(density_values, avg_lengths, yerr=uncertainties, fmt='o--', markersize=4, capsize=5, capthick=2, label='Average Ion Length')
     ax2.set_xlabel(r'Gas Density ($g/cm^{3}$)')
     ax2.set_ylabel('Average Ion Length (Å)')
-    ax2.set_title('Average Ion Track Length vs. Gas Density (GIC Detector)')
+    ax2.set_title('Average Ion Track Length vs. Gas Density')
     ax2.grid(True)
     ax2.legend()
 
@@ -77,7 +93,8 @@ if density_values:
     ax2.minorticks_on()
 
     # Save plot to file before showing it
-    billeder_path = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Billeder'
+    #billeder_path = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Billeder'
+    billeder_path = r'C:\Users\benja\Desktop\Speciale\Billeder'
     plt.tight_layout()
     plt.savefig(f'{billeder_path}\\SRIM_OptimizedGasDensity_SIMS.pdf')
 
