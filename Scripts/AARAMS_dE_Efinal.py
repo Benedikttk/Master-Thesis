@@ -17,15 +17,33 @@ mpl.rcParams.update({
     'legend.fontsize': 16,
     'figure.titlesize': 16
 })
+#small fix
+#folder = r'C:\Users\benja\Desktop\Speciale\Ny data'
+folder = r'C:\Users\benja\Desktop\Speciale\Ny data\1000kV'
 
+for filename in os.listdir(folder):
+    if filename.endswith(".mpa") and not filename.endswith(".txt.mpa"):
+        #print(filename)
+        base_name = filename[:-4]
+        new_name = base_name + ".txt.mpa"
+        old_path = os.path.join(folder, filename)
+        new_path = os.path.join(folder, new_name)
+        os.rename(old_path, new_path)
+        #print(f"{filename} -> {new_name}")
 
 
 # 
-Filepath = r'C:\Users\benja\Desktop\Speciale\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'
+#Filepath = r'C:\Users\benja\Desktop\Speciale\Ny data'
+Filepath = folder
 Subject = "[CDAT0"
 
+number = 3
+
 files = [i for i in FileCheck(filepath=Filepath, endswith=".txt.mpa")]
-data = deltE_Efinal(filepath=Filepath, subject=Subject, filename=files[0]) 
+print(f"Lenght of file list: {len(files)}")
+data = deltE_Efinal(filepath=Filepath, subject=Subject, filename=files[number]) 
+print(files[number])
+
 
 #-------PLOTTTTINGGG-----
 fig = plt.figure(figsize=(12, 8))
