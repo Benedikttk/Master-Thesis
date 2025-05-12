@@ -20,7 +20,7 @@ mpl.rcParams.update({
 
 
 # Directory containing data files
-data_dir = r"C:\Users\benja\Desktop\Speciale\Data\EXYZs\Denistydata"
+data_dir = r"C:\Users\benja\Desktop\Speciale\Ny data\Be(1.38)@SiN(1.86)"
 density_values = []
 valid_ion_counts = []
 avg_lengths = []
@@ -54,12 +54,21 @@ with open('OptimizedGadDensityInfo.txt', 'w') as file:
             # Write results to file
             file.write(f"Density: {density}, Valid Ions: {valid_ions}, Avg Length: {avg_length}, Uncertainty: ±{uncertainty}\n")
 
+# Convert density (g/cm³) → pressure (Pa)
+T = 293.15  # Kelvin
+R = 8.3145  # J/mol·K
+M = 0.05812  # kg/mol (isobutane)
+density_values_kg_m3 = np.array(density_values) * 1000  # g/cm³ → kg/m³
+pressure_values = (density_values_kg_m3 * R * T) / M  # Pressure in Pascals
+pressure_values /= 100  # Convert to mbar
+
+
 # Sort by density for plotting
 if density_values:
     sorted_indices = np.argsort(density_values)
     density_values = np.array(density_values)[sorted_indices]
     valid_ion_counts = np.array(valid_ion_counts)[sorted_indices]
-    avg_lengths = np.array(avg_lengths)[sorted_indices]
+    avg_lengths = np.array(avg_lengths)[sorted_indices] #
     uncertainties = np.array(uncertainties)[sorted_indices]
 
     # Create the figure and axes
@@ -67,8 +76,11 @@ if density_values:
 
     # Plot 1: Number of Valid Ions vs. Gas Density
     ax1 = axs[0]
-    ax1.plot(density_values, valid_ion_counts, 'o--', markersize=4, label='Valid Ions')
-    ax1.set_xlabel(r'Gas Density ($g/cm^{3}$)')
+     #ax1.plot(pressure_values, valid_ion_counts, 'o--', markersize=4, label='Valid Ions')
+    ax1.errorbar(pressure_values, valid_ion_counts, yerr=np.sqrt(valid_ion_counts), fmt='o--', markersize=4, capsize=5, capthick=2)
+    ax1.set_xlabel(r'Gas Pressure (mbar)')
+    #ax1.plot(density_values, valid_ion_counts, 'o--', markersize=4, label='Valid Ions')
+    #ax1.set_xlabel(r'Gas Density ($g/cm^{3}$)')
     ax1.set_ylabel('Number of Valid Ions')
     ax1.set_title(r'Number of Valid $\mathrm{^{10}Be}$ Ions vs. Gas Density')
     ax1.grid(True)
@@ -80,9 +92,12 @@ if density_values:
 
     # Plot 2: Average Ion Length vs. Gas Density with Error Bars
     ax2 = axs[1]
-    ax2.errorbar(density_values, avg_lengths, yerr=uncertainties, fmt='o--', markersize=4, capsize=5, capthick=2, label='Average Ion Length')
-    ax2.set_xlabel(r'Gas Density ($g/cm^{3}$)')
-    ax2.set_ylabel('Average Ion Length (Å)')
+    #ax2.errorbar(density_values, avg_lengths, yerr=uncertainties, fmt='o--', markersize=4, capsize=5, capthick=2, label='Average Ion Length')
+    #ax2.set_xlabel(r'Gas Density ($g/cm^{3}$)')
+    # Plot 2
+    ax2.errorbar(pressure_values, avg_lengths*1/1e8, yerr=uncertainties*1/1e8, fmt='o--', markersize=4, capsize=5, capthick=2) #Å->cm
+    ax2.set_xlabel(r'Gas Pressure (mbar)')
+    ax2.set_ylabel('Average Ion Length (cm)')
     ax2.set_title('Average Ion Track Length vs. Gas Density')
     ax2.grid(True)
     ax2.legend()
@@ -103,3 +118,5 @@ if density_values:
 
 else:
     print("No valid files found.")
+
+print(avg_lengths/1e8)
