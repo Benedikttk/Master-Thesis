@@ -1,0 +1,17 @@
+FSI Batch started at        : 2025-04-25 15:07:26
+ 
+[1]
+Id                          : BeB-138
+Description                 : *
+10Be counts                 : 14192
+Total counts                : 14196
+9Be current [A]             : 3.00930e-007
+none current [A]            : 0.00000e+000
+9BeO current [A]            : 5.38462e-007
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 3.43619e-011
+10Be / none                 : 0.00000e+000
+9Be / none                  : 0.00000e+000
+9Be / 9BeO                  : 5.58871e-001
+9BeO / none                 : 0.00000e+000
+
