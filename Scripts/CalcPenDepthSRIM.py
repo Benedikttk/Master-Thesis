@@ -157,4 +157,4 @@ billeder_path = r'C:\Users\benja\Desktop\Speciale\Billeder'
 plt.savefig(f'{billeder_path}\\BoronSupressionDepth.pdf')
 plt.show()
 
-print(np.mean(df_SRIM_depth_Be10['Depth (Angstrom)']))
+print(np.mean(df_SRIM_depth_B10['Depth (Angstrom)'])/1e4)
