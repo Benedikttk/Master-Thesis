@@ -80,16 +80,16 @@ ax.yaxis.set_ticks_position("both")
 ax.minorticks_on()
 
 # Plot the data
-#ax.plot(df2["dE/dx elec."]+df2['dE/dx Nuclear'], df2["Projected Range"], label = r'$^{10}B$')
+ax.plot(df2["dE/dx elec."]+df2['dE/dx Nuclear'], df2["Projected Range"], label = r'$^{10}B$')
 #ax.plot(df2["dE/dx elec."], df2["Projected Range"], label = r'$^{10}B$')
 #ax.plot(df2['dE/dx Nuclear'], df2["Projected Range"], label = r'$^{10}B$')
 
-#ax.plot(df["dE/dx elec."]+df['dE/dx Nuclear'], df["Projected Range"], label = r'$^{10}Be$')
+ax.plot(df["dE/dx elec."]+df['dE/dx Nuclear'], df["Projected Range"], label = r'$^{10}Be$')
 #ax.plot(df["dE/dx elec."], df["Projected Range"], label = r'$^{10}Be$')
 #ax.plot(df['dE/dx Nuclear'], df["Projected Range"], label = r'$^{10}Be$')
 
-ax.plot(df2["Ion Energy"], df2["Projected Range"], label=r'$^{10}B$')
-ax.plot(df["Ion Energy"], df["Projected Range"], label=r'$^{10}Be$')
+#ax.plot(df2["Ion Energy"], df2["Projected Range"], label=r'$^{10}B$')
+#ax.plot(df["Ion Energy"], df["Projected Range"], label=r'$^{10}Be$')
 
 # Label axes
 ax.set_xlabel(r"Total Stopping Power (dE/dx) [$\mathrm{eV}/\langle \mathrm{\AA} \rangle$]")
@@ -103,7 +103,7 @@ ax.legend()
 #billeder_path = r'C:\Users\benja\Desktop\Speciale\Billeder'
 #plt.savefig(f'{billeder_path}\\dE_dx_plot_for_stoping_power_per_average_range.pdf')
 #plt.savefig(f'{billeder_path}\\Ion_energy_per_avg_AA')
-plt.show()
+#plt.show()
 
 E_i = 1398.6 #kev
 
@@ -135,4 +135,85 @@ def exit_energy(initial_energy, data, max_range):
 
     return E_i-(E_x-E_0)/1000 * 10000#this is in ev/Å * mu m so we need to divide with 1000 to go from ev ->KeV and and multiply with 10.000 to go from å-> mu m
 
-print(exit_energy(E_i, df,1.5))
+print(exit_energy(E_i, df,1.5150003300000001))
+
+from scipy.integrate import cumulative_trapezoid
+
+def exit_energy_fixed(initial_energy_keV, data, max_range_microns):
+    df = data.copy()
+    df = df[df["Projected Range"] <= max_range_microns]
+    
+    if df.empty:
+        return initial_energy_keV  # No data within range, no loss assumed
+    
+    df["dE/dx_total"] = df["dE/dx elec."] + df["dE/dx Nuclear"]  # eV/Å
+    df["dE/dx_total"] *= 1e4  # Convert to eV/μm
+    
+    # Integrate dE/dx over range (μm)
+    energy_loss_eV = cumulative_trapezoid(df["dE/dx_total"], df["Projected Range"], initial=0)[-1]  # in eV
+    energy_loss_keV = energy_loss_eV / 1000
+
+    remaining_energy_keV = initial_energy_keV - energy_loss_keV
+
+    return max(remaining_energy_keV, 0)
+print(exit_energy_fixed(1398.6, df, 1.5150003300000001))
+print(exit_energy_fixed(1398.6, df2, 1.5150003300000001))
+
+
+from scipy.integrate import cumulative_trapezoid
+
+def compute_energy_vs_depth(initial_energy_keV, data):
+    df = data.copy()
+    df["dE/dx_total"] = (df["dE/dx elec."] + df["dE/dx Nuclear"]) * 1e4  # eV/μm
+
+    # Numerical integration of stopping power over depth
+    energy_loss_eV = cumulative_trapezoid(df["dE/dx_total"], df["Projected Range"], initial=0)
+    energy_loss_keV = energy_loss_eV / 1000
+
+    # Exit energy at each depth
+    exit_energy = initial_energy_keV - energy_loss_keV
+    exit_energy = np.clip(exit_energy, 0, None)  # Prevent negative energy
+
+    return df["Projected Range"], exit_energy
+
+# Use the function for Boron or Beryllium
+depths, energies = compute_energy_vs_depth(E_i, df2)  # df2 = Boron
+
+# Plot
+fig, ax = plt.subplots()
+ax.plot(depths, energies, label=r'Exit Energy of $^{10}B$', color='darkred')
+ax.set_xlabel(r"Depth [$\mu$m]")
+ax.set_ylabel(r"Exit Energy [keV]")
+ax.set_title("Ion Energy vs. Penetration Depth")
+ax.grid(True, linestyle='--', alpha=0.6)
+ax.legend()
+plt.tight_layout()
+# plt.savefig("exit_energy_vs_depth.pdf")
+plt.show()
+
+
+
+from numpy import gradient
+
+# 1. Get dE/dx from SRIM
+df2["dE/dx_total"] = (df2["dE/dx elec."] + df2["dE/dx Nuclear"]) * 1e4  # eV/μm
+
+# 2. Compute energy vs. depth
+depths, energies = compute_energy_vs_depth(E_i, df2)
+
+# 3. Compute -dE/dx from the energy-depth curve
+# Since E(x) decreases, dE/dx = -d(E)/dx
+dE_dx_from_energy = -gradient(energies, depths) * 1000  # convert keV/μm to eV/μm for matching units
+
+# 4. Plot both
+fig, ax = plt.subplots()
+ax.plot(df2["Projected Range"], df2["dE/dx_total"], label="SRIM: dE/dx", color="blue")
+ax.plot(depths, dE_dx_from_energy, '--', label="Numerical dE/dx (from E(x))", color="orange")
+
+ax.set_xlabel(r"Depth [$\mu$m]")
+ax.set_ylabel(r"Total Stopping Power [eV/$\mu$m]")
+ax.set_title("Comparison of SRIM dE/dx and Numerical dE/dx")
+ax.legend()
+ax.grid(True, linestyle="--", alpha=0.5)
+plt.tight_layout()
+plt.show()
