@@ -264,7 +264,7 @@ def calculate_Be9_ions(Be9_current: float, detector_live_time: float) -> float:
     """
     return (Be9_current * detector_live_time) / 1.6e-19
 
-def calculate_ratio_and_efficiency(avg_Be10cnts: float, Be9cnts: float, std_Be10cnts: float, R_nominiel: float, R_nominiel_uncertainty: float) -> tuple:
+def calculate_ratio_and_efficiency(avg_Be10cnts: float, Be9cnts: float, std_Be10cnts: float, R_nominiel: float, R_nominiel_uncertainty: float, runs) -> tuple:
     """
     Computes the Be10/Be9 ratio and isotropic ratio efficiency with uncertainties.
 
@@ -278,7 +278,7 @@ def calculate_ratio_and_efficiency(avg_Be10cnts: float, Be9cnts: float, std_Be10
     Returns:
     tuple: The Be10/Be9 ratio, its uncertainty, isotropic ratio efficiency, and its uncertainty.
     """
-    sumed_avg_Be10cnts = avg_Be10cnts * 10
+    sumed_avg_Be10cnts = avg_Be10cnts * runs 
     R_n = sumed_avg_Be10cnts / Be9cnts
     R_n_uncertainty = R_n * np.sqrt((std_Be10cnts / sumed_avg_Be10cnts)**2)
     
@@ -430,7 +430,7 @@ def extract_data_from_mpa(filepath, subject, file_index=1, info=None):
     """
     # Get list of matching files
     files = os.listdir(filepath)
-    raw_files = [file for file in files if file.endswith(".txt.mpa")]
+    raw_files = [file for file in files if file.endswith(".txt.mpa")] #hardcoded
 
     if not raw_files:
         raise ValueError("No raw files found.")

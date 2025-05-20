@@ -26,8 +26,9 @@ mpl.rcParams.update({
 
 
 # Set file path and subject
-filepath = r'C:\Users\benja\Desktop\Speciale\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'
+#filepath = r'C:\Users\benja\Desktop\Speciale\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'
 #filepath = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'
+filepath = r'C:\Users\benja\Desktop\Speciale\NyBeeffdata\foralg'
 subject = "[CDAT0"
 
 billeder_path = r'C:\Users\benja\Desktop\Speciale\Billeder'
@@ -35,9 +36,9 @@ billeder_path = r'C:\Users\benja\Desktop\Speciale\Billeder'
 # Load and filter raw files
 files = os.listdir(filepath)
 raw_files = [file for file in files if file.endswith(".txt.mpa")]
-
+print(raw_files)
 # Extract data from MPA files
-data = extract_data_from_mpa(filepath, subject, file_index=2, info=None )
+data = extract_data_from_mpa(filepath, subject, file_index=1, info=None )
 
 # KMeans clustering parameters
 numberof_clusters = 4  # Optimal number of clusters
@@ -335,8 +336,8 @@ ax2.set_autoscale_on(True)
 plt.tight_layout()
 plt.savefig(f'{billeder_path}\\FilteringComparisonOf10BeGroups.pdf')
 plt.show()
-
-N_filtered = filtered_roi_cluster_data["counts"].sum()/10
+runs = 120
+N_filtered = filtered_roi_cluster_data["counts"].sum()/runs
 
 # Calculate the uncertainty as the square root of the sum of counts
 uncertainty_filtered = np.sqrt(N_filtered)

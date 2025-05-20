@@ -1,92 +1,52 @@
 import numpy as np
+from Functions import get_txt_files, read_block_data, parse_dataframe, calculate_Be10_statistics, calculate_Be10_current, extract_metadata, calculate_Be9_ions, calculate_ratio_and_efficiency
 import matplotlib.pyplot as plt
-from scipy.stats import sem  # For standard error of the mean
-from scipy.optimize import curve_fit  # For curve fitting
-from Functions import process_file, calculate_fractions  # Import calculate_fractions
-import matplotlib as mpl
-
-avg_exit_energy = 146.43147567476717 #KeV @ avg_range 1.5150003300000001
-# Example: match LaTeX document font size of 12pt
-mpl.rcParams.update({
-    'font.size': 16,
-    'axes.titlesize': 16,
-    'axes.labelsize': 16,
-    'xtick.labelsize': 16,
-    'ytick.labelsize': 16,
-    'legend.fontsize': 16,
-    'figure.titlesize': 16
-})
+import seaborn as sns
 
 
+#path
+#filepath = r'C:\Users\benja\Desktop\Speciale\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'
+filepath = r'C:\Users\benja\Desktop\Speciale\NyBeeffdata'
 
-#file_path_Be10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE_1400_ion_1000Be10.txt"
-#file_path_B10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE_1400_ion_1000B10.txt"
+list_of_files = get_txt_files(filepath, ".txt")
 
-file_path_Be10 = r"C:\Users\benja\Desktop\noge\10000.txt"
-file_path_100B10 = r"C:\Users\benja\Desktop\noge\b100k.txt"
+number_of_index = 1
 
-
-df_SRIM_depth_Be10 = process_file(file_path_Be10, 'Be')
-df_SRIM_depth_Be10['Depth (micro)'] = df_SRIM_depth_Be10['Depth (Angstrom)']/1e4
-
-df_SRIM_depth_B10 = process_file(file_path_100B10, 'B')
-df_SRIM_depth_B10['Depth (micro)'] = df_SRIM_depth_B10['Depth (Angstrom)']/1e4
-
-# Calculate histograms
-hist_Be10, bins_Be10 = np.histogram(df_SRIM_depth_Be10['Depth (micro)'], 
-                                    bins=len(df_SRIM_depth_Be10['Depth (micro)']), 
-                                    weights=df_SRIM_depth_Be10['Be Ions'])
-
-hist_B10, bins_B10 = np.histogram(df_SRIM_depth_B10['Depth (micro)'], 
-                                    bins=len(df_SRIM_depth_B10['Depth (micro)']), 
-                                    weights=df_SRIM_depth_B10['B Ions'])
-
-
-
-# 1. Define a Gaussian function
-def gaussian(x, A, mu, sigma):
-    return A * np.exp(-(x - mu)**2 / (2 * sigma**2))
-
-# 2. Prepare histogram data for fitting
-bin_centers = 0.5 * (bins_B10[:-1] + bins_B10[1:])  # Compute bin centers
-
-# Remove bins with zero counts for fitting (optional but can help)
-nonzero = hist_B10 > 0
-x_fit = bin_centers[nonzero]
-y_fit = hist_B10[nonzero]
-
-# 3. Initial guess for parameters: A, mu, sigma
-initial_guess = [np.max(y_fit), np.mean(x_fit), np.std(x_fit)]
-
-# 4. Fit the Gaussian to the data
-popt, pcov = curve_fit(gaussian, x_fit, y_fit, p0=initial_guess)
-
-# Extract fitted parameters
-A_fit, mu_fit, sigma_fit = popt
-print(f"Fitted parameters:\n  A = {A_fit:.2f}\n  mu = {mu_fit:.2f} Å\n  sigma = {sigma_fit:.2f} Å")
-
-# 5. Plot the histogram and the fitted Gaussian
-plt.figure(figsize=(10, 6))
-
-plt.hist(df_SRIM_depth_B10['Depth (micro)'], 
-         bins=len(df_SRIM_depth_B10['Depth (micro)']),
-         weights=df_SRIM_depth_B10['B Ions'],
-         color='red', alpha=0.4, histtype='stepfilled', label=r'$\mathrm{^{10}B}$ data')
-
-x_smooth = np.linspace(min(x_fit), max(x_fit), 1000)
-plt.plot(x_smooth, gaussian(x_smooth, *popt), 'k--', label='Gaussian fit')
-
-plt.xlabel('Depth (my m)')
-plt.ylabel('Ion Count (weighted)')
-plt.title('Gaussian Fit to Ion Depth Distribution')
-plt.legend()
-plt.grid(True)
-plt.tight_layout()
-plt.show()
-
-dE_dx = 1286.65 #KeV/mym
-total_ions = df_SRIM_depth_B10['B Ions'].sum()
-
-print(f'Spread in avg energy {abs(dE_dx)*sigma_fit/(np.sqrt(total_ions))}')
-
-print(f'Exit energy of B @ 1.38 MeV in {np.mean(df_SRIM_depth_Be10['Depth (micro)'])} my m of SiN: {245.65} +- {abs(dE_dx)*sigma_fit/(np.sqrt(total_ions))}')
+if not list_of_files:
+    print("No .txt files found.")
+else:
+    data_lines = read_block_data(filepath + "\\" + list_of_files[number_of_index])
+    
+    column_names = [
+        "Blk", "10Becnts", "Totalcnts", "10Bcnts", "cnts", "cnts",
+        "LiveTime", "10Becps", "9Becur", "nonecur", "9BeOcur", "nonecur",
+        "10Be/9Be", "10Be/none", "9Be/none", "9Be/9BeO", "none/none",
+        "9BeO/none", "TargetCur", "Flags"
+    ]
+    
+    df = parse_dataframe(data_lines, column_names)
+    
+    avg_Be10cnts, std_Be10cnts = calculate_Be10_statistics(df)
+    print(f"The average Be10 counts is {avg_Be10cnts} and the standard deviation is ± {std_Be10cnts}")
+    
+    avg_time = df["LiveTime"].astype(float).mean()
+    time_uncertainty = df["LiveTime"].astype(float).std()
+    
+    I_Be10, I_Be10_uncertainty = calculate_Be10_current(avg_Be10cnts, avg_time, time_uncertainty)
+    print(f"The current of Be10 is {I_Be10} ± {I_Be10_uncertainty} [micro A]")
+    
+    detector_live_time = extract_metadata(filepath + "\\" + list_of_files[number_of_index], "Detector live time [s]")
+    Be9_current = extract_metadata(filepath + "\\" + list_of_files[number_of_index], "9Be current [A]")
+    
+    print(f"The detector live time is: {detector_live_time} [s]")
+    print(f"The current of Be9 is: {Be9_current} [A]")
+    
+    Be9cnts = calculate_Be9_ions(Be9_current, detector_live_time)
+    print(f"The number of Be9 ions is {Be9cnts}")
+    
+    R_n, R_n_uncertainty, iso_eff, iso_eff_uncertainty = calculate_ratio_and_efficiency(
+        avg_Be10cnts, Be9cnts, std_Be10cnts, 27.1e-12, 0.3e-12, runs=120)
+    
+    print(f"The ratio of Be10/Be9 is {R_n} ± {R_n_uncertainty}")
+    print(f"The isotropic ratio efficiency is {round(iso_eff, 3)} ± {round(iso_eff_uncertainty, 3)} %")
+    
