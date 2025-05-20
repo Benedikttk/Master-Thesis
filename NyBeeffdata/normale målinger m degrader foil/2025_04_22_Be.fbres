@@ -1,0 +1,32 @@
+FSI Batch started at        : 2025-04-22 18:10:44
+ 
+[1]
+Id                          : Be54-292
+Description                 : 
+10Be counts                 : 17852
+Total counts                : 39876
+9Be current [A]             : 2.22449e-006
+none current [A]            : 1.30269e-008
+9BeO current [A]            : 3.86475e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 3.89375e-013
+10Be / none                 : 6.64900e-011
+9Be / none                  : 1.70761e+002
+9Be / 9BeO                  : 5.75584e-001
+9BeO / none                 : 0.00000e+000
+
+[2]
+Id                          : Be51-73
+Description                 : 
+10Be counts                 : 126293
+Total counts                : 195328
+9Be current [A]             : 1.75053e-006
+none current [A]            : 1.28659e-008
+9BeO current [A]            : 2.97934e-006
+none current [A]            : 0.00000e+000
+10Be / 9Be                  : 3.50282e-012
+10Be / none                 : 4.76594e-010
+9Be / none                  : 1.36060e+002
+9Be / 9BeO                  : 5.87555e-001
+9BeO / none                 : 0.00000e+000
+
