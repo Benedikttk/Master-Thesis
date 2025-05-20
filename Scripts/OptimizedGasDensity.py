@@ -20,7 +20,7 @@ mpl.rcParams.update({
 
 
 # Directory containing data files
-data_dir = r"C:\Users\benja\Desktop\Speciale\Ny data\Be(1.38)@SiN(1.86)"
+data_dir = r"C:\Users\benja\Desktop\Speciale\Nydata\Be(1.38)@SiN(1.86)"
 density_values = []
 valid_ion_counts = []
 avg_lengths = []
