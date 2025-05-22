@@ -31,32 +31,36 @@ file_path_100B10 = r"C:\Users\benja\Desktop\noge\b100k.txt"
 df_SRIM_depth_Be10 = process_file(file_path_Be10, 'Be')
 df_SRIM_depth_B10 = process_file(file_path_100B10, 'B')
 
+
+df_SRIM_depth_Be10['Depth (µm)'] = df_SRIM_depth_Be10['Depth (Angstrom)'] / 1e4
+df_SRIM_depth_B10['Depth (µm)'] = df_SRIM_depth_B10['Depth (Angstrom)'] / 1e4
+
 # Calculate histograms
-hist_Be10, bins_Be10 = np.histogram(df_SRIM_depth_Be10['Depth (Angstrom)'], 
-                                    bins=len(df_SRIM_depth_Be10['Depth (Angstrom)']), 
+hist_Be10, bins_Be10 = np.histogram(df_SRIM_depth_Be10['Depth (µm)'], 
+                                    bins=len(df_SRIM_depth_Be10['Depth (µm)']), 
                                     weights=df_SRIM_depth_Be10['Be Ions'])
 
-hist_B10, bins_B10 = np.histogram(df_SRIM_depth_B10['Depth (Angstrom)'], 
-                                  bins=len(df_SRIM_depth_B10['Depth (Angstrom)']), 
+hist_B10, bins_B10 = np.histogram(df_SRIM_depth_B10['Depth (µm)'], 
+                                  bins=len(df_SRIM_depth_B10['Depth (µm)']), 
                                   weights=df_SRIM_depth_B10['B Ions'])
 
 # Plotting the two distributions
 plt.figure(figsize=(10, 6), )
 
-plt.hist(df_SRIM_depth_Be10['Depth (Angstrom)'], 
-         bins=len(df_SRIM_depth_Be10['Depth (Angstrom)']),
+plt.hist(df_SRIM_depth_Be10['Depth (µm)'], 
+         bins=len(df_SRIM_depth_Be10['Depth (µm)']),
          weights=df_SRIM_depth_Be10['Be Ions'],
          color='red', alpha=0.6, histtype='stepfilled', label=r'$\mathrm{^{10}Be}$')
 
-plt.hist(df_SRIM_depth_B10['Depth (Angstrom)'],
-         bins=len(df_SRIM_depth_B10['Depth (Angstrom)']),
+plt.hist(df_SRIM_depth_B10['Depth (µm)'],
+         bins=len(df_SRIM_depth_B10['Depth (µm)']),
          weights=df_SRIM_depth_B10['B Ions'],
          color='blue', alpha=0.4, histtype='stepfilled', label=r'$\mathrm{^{10}B}$')
 
 # Making the cutoff for B10
 mask = df_SRIM_depth_B10['B Ions'] > 0
 df_SRIM_depth_B10 = df_SRIM_depth_B10[mask]
-cutoff_depth = df_SRIM_depth_B10['Depth (Angstrom)'].max()
+cutoff_depth = df_SRIM_depth_B10['Depth (µm)'].max()
 plt.axvline(x=cutoff_depth, color='black', linestyle='--', label=r'Cutoff for $\mathrm{^{10}B}$')
 
 # Calculate the fraction of Be10 and B10 that penetrates the cutoff
@@ -82,7 +86,7 @@ for depth in np.linspace(df_SRIM_depth_B10['Depth (Angstrom)'].min(), df_SRIM_de
 Be10_fraction, B10_fraction = calculate_fractions(best_cutoff_depth, df_SRIM_depth_Be10, df_SRIM_depth_B10, total_ions_Be10, total_ions_B10)
 
 # Plot the optimized cutoff
-plt.axvline(x=best_cutoff_depth, color='green', linestyle='--', label='Optimized Cutoff')
+plt.axvline(x=best_cutoff_depth/10000, color='green', linestyle='--', label='Optimised Cutoff')
 
 plt.grid(True, linestyle='--', alpha=0.6)
 plt.tick_params(direction="in", length=6, which="major")  # Major ticks longer
@@ -92,9 +96,10 @@ billeder_path = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Billeder'
 
 
 # Plotting the two distributions
-plt.xlabel('Depth (Angstrom)')
+plt.xlabel(r'Depth ($\mu$m)')
 plt.ylabel('Ion Count')
 plt.title(r'Simulated Depth Distribution of $\mathrm{^{10}Be}$ and $\mathrm{^{10}B}$ Ions in $Si_{3}N_{4}$ TRIM')
+plt.yscale('log')
 plt.legend()
 plt.tight_layout()
 
@@ -131,26 +136,23 @@ with open('BoronsupressionDepthIndo.txt', 'w') as file:
 
 
 
-plt.text(18630, 20000, 'B10 Cutoff (18600 Å)', rotation=90, verticalalignment='bottom')
-plt.text(17245, 20000, 'Optimized Cutoff (17215 Å)', rotation=90, color='green', verticalalignment='bottom')
+#plt.text(18630, 20000, 'B10 Cutoff (18600 Å)', rotation=90, verticalalignment='bottom')
+#plt.text(17245, 20000, 'Optimised Cutoff (17215 Å)', rotation=90, color='green', verticalalignment='bottom')
 
-textstr = '\n'.join((
+'''textstr = '\n'.join((
     r'$^{10}Be$ penetration: 98.7%',
     r'$^{10}B$ stopped: 92.9%',
-    'Optimized cutoff: 93.29% $^{10}Be$, 6.71% $^{10}B$'
+    'Optimised cutoff: 93.29% $^{10}Be$, 6.71% $^{10}B$'
 ))
 
-plt.annotate(textstr, xy=(500, 35000), fontsize=10, bbox=dict(boxstyle="round,pad=0.3", edgecolor='black', facecolor='white'))
+plt.annotate(textstr, xy=(500/10000, 35000), fontsize=10, bbox=dict(boxstyle="round,pad=0.3", edgecolor='black', facecolor='white'))
 
-
+'''
 #extra stuff
 maximumdepthB10 = np.max(df_SRIM_depth_B10['Depth (Angstrom)'])
 print("test", maximumdepthB10)
 
-B_max_sep = [17400.0, 18300.0, 18300.0, 18300.0, 18300.0, 18300.0]
-B10be10_ratio = [1, 2000/100, 4000/100, 6000/100, 8000/100, 10000/100]
 
-plt.plot(B10be10_ratio, B_max_sep)
 
 billeder_path = r'C:\Users\benja\Desktop\Speciale\Billeder'
 #billeder_path = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Billeder'
@@ -158,3 +160,17 @@ plt.savefig(f'{billeder_path}\\BoronSupressionDepth.pdf')
 plt.show()
 
 print(np.mean(df_SRIM_depth_B10['Depth (Angstrom)'])/1e4)
+
+
+B_max_sep = [17400.0, 18300.0, 18300.0, 18300.0, 18300.0, 18300.0]
+B_optimal_sep = []
+#B10be10_ratio = ["1:1", 2000/100, 4000/100, 6000/100, 8000/100, 10000/100]
+B10be10_ratio = ["1:10", "1:100", "1:1000", "1:2000", "1:4000", "1:6000"]
+
+plt.grid(True, linestyle='--', alpha=0.6)
+plt.tick_params(direction="in", length=6, which="major")  # Major ticks longer
+plt.tick_params(direction="in", length=3, which="minor")  # Minor ticks shorter
+plt.minorticks_on()
+plt.scatter(B10be10_ratio, B_max_sep)
+
+plt.show()
