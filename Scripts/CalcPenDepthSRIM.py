@@ -21,11 +21,12 @@ mpl.rcParams.update({
 
 
 
-#file_path_Be10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE_1400_ion_1000Be10.txt"
-#file_path_B10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE_1400_ion_1000B10.txt"
+file_path_Be10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE_1400_ion_1000Be10.txt"
+file_path_B10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE_1400_ion_1000B10.txt"
 
-file_path_Be10 = r"C:\Users\benja\Desktop\noge\10000.txt"
-file_path_100B10 = r"C:\Users\benja\Desktop\noge\b100k.txt"
+#file_path_Be10 = r"C:\Users\benja\Desktop\noge\10000.txt"
+file_path_100B10 = r"C:\Users\benja\Desktop\Speciale\noge\B100.txt"
+#file_path_100B10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE_1400_ion_1000B10.txt"
 
 
 df_SRIM_depth_Be10 = process_file(file_path_Be10, 'Be')
@@ -159,6 +160,7 @@ billeder_path = r'C:\Users\benja\Desktop\Speciale\Billeder'
 plt.savefig(f'{billeder_path}\\BoronSupressionDepth.pdf')
 plt.show()
 
+print(np.mean(df_SRIM_depth_Be10['Depth (Angstrom)'])/1e4)
 print(np.mean(df_SRIM_depth_B10['Depth (Angstrom)'])/1e4)
 
 
