@@ -62,7 +62,7 @@ density_values_kg_m3 = np.array(density_values) * 1000  # g/cm³ → kg/m³
 pressure_values = (density_values_kg_m3 * R * T) / M  # Pressure in Pascals
 pressure_values /= 100  # Convert to mbar
 
-
+print(f'Presure values {pressure_values}')
 # Sort by density for plotting
 if density_values:
     sorted_indices = np.argsort(density_values)

@@ -19,7 +19,8 @@ mpl.rcParams.update({
 })
 #small fix
 #folder = r'C:\Users\benja\Desktop\Speciale\Ny data'
-folder = r'C:\Users\benja\Desktop\Speciale\Ny data\1000kV'
+#folder = r'C:\Users\benja\Desktop\Speciale\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'
+folder = r'C:\Users\benja\Desktop\Speciale\NyBeeffdata\foralg'
 
 for filename in os.listdir(folder):
     if filename.endswith(".mpa") and not filename.endswith(".txt.mpa"):
@@ -29,7 +30,7 @@ for filename in os.listdir(folder):
         old_path = os.path.join(folder, filename)
         new_path = os.path.join(folder, new_name)
         os.rename(old_path, new_path)
-        #print(f"{filename} -> {new_name}")
+        print(f"{filename} -> {new_name}")
 
 
 # 
@@ -37,16 +38,17 @@ for filename in os.listdir(folder):
 Filepath = folder
 Subject = "[CDAT0"
 
-number = 3
+number = 1
 
 files = [i for i in FileCheck(filepath=Filepath, endswith=".txt.mpa")]
+print(files)
 print(f"Lenght of file list: {len(files)}")
 data = deltE_Efinal(filepath=Filepath, subject=Subject, filename=files[number]) 
 print(files[number])
 
 
 #-------PLOTTTTINGGG-----
-fig = plt.figure(figsize=(12, 8))
+fig = plt.figure(figsize=(10, 5))
 gs = fig.add_gridspec(2, 2, width_ratios=[4, 1], height_ratios=[1, 4], hspace=0.12, wspace=0.12)
 
 # Main scatter plot (center)
@@ -55,8 +57,8 @@ sc = ax_main.scatter(data["E_final"], data["dE"], c=data["counts"], cmap='viridi
 ax_main.set_ylabel(r"$\Delta E [Channel]$")
 ax_main.set_xlabel(r"$E_{final} [Channel]$")
 
-ax_main.set_xlim(0,580)
-ax_main.set_ylim(0,600)
+#ax_main.set_xlim(0,200)
+#ax_main.set_ylim(0,150)
 
 
 ax_main.grid(True, linestyle='--', alpha=0.6)
@@ -104,8 +106,9 @@ for ax in [ax_main, ax_top, ax_right]:
     ax.tick_params(direction="in", length=3, which="minor")  # Shorter minor ticks
 
 billeder_path = r'C:\Users\benja\Desktop\Speciale\Billeder'
-plt.savefig(f'{billeder_path}\\deltaE_Efinal.pdf')
+plt.savefig(f'{billeder_path}\\BeDEGRADER1.pdf')
 
+print(f'number of count {data["counts"].sum()}')
 plt.tight_layout()
 plt.show()
 

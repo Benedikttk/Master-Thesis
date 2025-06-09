@@ -110,3 +110,72 @@ uncertainty_B = (dEdx_B * std_B10) / np.sqrt(N_B)
 
 print(f"Be uncertainty = {uncertainty_Be:.4f}")
 print(f"B uncertainty = {uncertainty_B:.4f}")
+
+
+import os
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from Functions import FileCheck, deltE_Efinal
+import matplotlib as mpl
+
+# Set font sizes to match LaTeX doc
+mpl.rcParams.update({
+    'font.size': 16,
+    'axes.titlesize': 16,
+    'axes.labelsize': 16,
+    'xtick.labelsize': 16,
+    'ytick.labelsize': 16,
+    'legend.fontsize': 16,
+    'figure.titlesize': 16
+})
+
+# Folder path
+folder = r'C:\Users\benja\Desktop\Speciale\Nydata'
+
+# Rename .mpa files
+for filename in os.listdir(folder):
+    if filename.endswith(".mpa") and not filename.endswith(".txt.mpa"):
+        base_name = filename[:-4]
+        new_name = base_name + ".txt.mpa"
+        os.rename(os.path.join(folder, filename), os.path.join(folder, new_name))
+
+# Load data
+Filepath = folder
+Subject = "[CDAT0"
+number =12
+
+files = [i for i in FileCheck(filepath=Filepath, endswith=".txt.mpa")]
+print(f"Length of file list: {len(files)}")
+print(f"all files {files}")
+data = deltE_Efinal(filepath=Filepath, subject=Subject, filename=files[number])
+print(files[number])
+
+# PLOT ONLY CENTER
+fig, ax_main = plt.subplots(figsize=(10, 6))
+
+sc = ax_main.scatter(data["E_final"], data["dE"], c=data["counts"], cmap='viridis', s=2)
+ax_main.set_ylabel(r"$\Delta E\ [Channel]$")
+ax_main.set_xlabel(r"$E_{final}\ [Channel]$")
+
+ax_main.set_xlim(0, 580)
+ax_main.set_ylim(0, 600)
+
+ax_main.grid(True, linestyle='--', alpha=0.6)
+ax_main.tick_params(direction="in", length=6, which="major")
+ax_main.tick_params(direction="in", length=3, which="minor")
+ax_main.xaxis.set_ticks_position("both")
+ax_main.yaxis.set_ticks_position("both")
+ax_main.minorticks_on()
+
+# Colorbar
+cbar = plt.colorbar(sc, ax=ax_main)
+cbar.set_label("Counts")
+
+# Save or show
+billeder_path = r'C:\Users\benja\Desktop\Speciale\Billeder'
+plt.savefig(f'{billeder_path}\\4.pdf')
+
+plt.tight_layout()
+plt.show()

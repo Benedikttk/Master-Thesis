@@ -2,9 +2,20 @@ import numpy as np
 from Functions import get_txt_files, read_block_data, parse_dataframe, calculate_Be10_statistics, calculate_Be10_current, extract_metadata, calculate_Be9_ions, calculate_ratio_and_efficiency
 import matplotlib.pyplot as plt
 import seaborn as sns
+import matplotlib as mpl
+
+mpl.rcParams.update({
+    'font.size': 16,
+    'axes.titlesize': 16,
+    'axes.labelsize': 16,
+    'xtick.labelsize': 16,
+    'ytick.labelsize': 16,
+    'legend.fontsize': 16,
+    'figure.titlesize': 16
+})
 
 # Path
-filepath = r'C:\Users\benja\Desktop\Speciale\NyBeeffdata'
+filepath = r'C:\Users\benja\Desktop\Speciale\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'
 list_of_files = get_txt_files(filepath, ".txt")
 number_of_index = 0
 
@@ -41,7 +52,7 @@ else:
     print(f"The number of Be9 ions is {Be9cnts}")
 
     R_n, R_n_uncertainty, iso_eff, iso_eff_uncertainty = calculate_ratio_and_efficiency(
-        avg_Be10cnts, Be9cnts, std_Be10cnts, 27.1e-12, 0.3e-12, runs=120)
+        avg_Be10cnts, Be9cnts, std_Be10cnts, 27.1e-12, 0.3e-12, runs=10)
 
     print(f"The ratio of Be10/Be9 is {R_n} ± {R_n_uncertainty}")
     print(f"The isotropic ratio efficiency is {round(iso_eff, 3)} ± {round(iso_eff_uncertainty, 3)} %")
@@ -51,7 +62,7 @@ avg_Be10cnts = 1891.4
 
 # Original measured data
 counting_algorithm = np.array([1404.9, 1891.4, 1056.783, 149.341])
-counting_algorithm_err = np.array([43.49, 37.48, 32.5082,12.2])
+counting_algorithm_err = np.array([43.49, 37.48, 32.5082, 12.2])
 
 counting_normal = np.array([1400.5, 1886.4, 1052.44, 148.76])
 counting_normal_err = np.array([108.33, 57.80, 194.381, 12.98])
@@ -65,14 +76,22 @@ n_samples = 10000
 simulated_algorithm = np.random.poisson(lam=lambda_algorithm, size=n_samples)
 simulated_normal = np.random.poisson(lam=lambda_normal, size=n_samples)
 
-# Create figure and axis
-fig, ax = plt.subplots(figsize=(10, 6))
+# Create figure with 2 subplots side-by-side
+fig, axs = plt.subplots(1, 2, figsize=(16, 6))
+plt.subplots_adjust(wspace=0.3)  # spacing between plots
 
-# Define positions
+# === Left subplot: Box + Violin plot ===
+ax = axs[0]
+ax.grid(True, linestyle='--', alpha=0.6)
+ax.tick_params(direction="in", length=6, which="major")
+ax.tick_params(direction="in", length=3, which="minor")
+ax.minorticks_on()
+
+# Positions
 box_positions = [1, 2]
 violin_positions = [1.3, 2.3]
 
-# Create box plot (updated tick_labels parameter)
+# Box plot
 ax.boxplot([counting_algorithm, counting_normal], positions=box_positions, widths=0.3,
            patch_artist=True, tick_labels=["Algorithm", "Normal"],
            boxprops=dict(facecolor='skyblue', color='black', alpha=0.6),
@@ -80,66 +99,49 @@ ax.boxplot([counting_algorithm, counting_normal], positions=box_positions, width
            capprops=dict(color='black'),
            medianprops=dict(color='black', linewidth=2))
 
-# Create x positions for error bars
+# Error bars
 x_algorithm = np.full_like(counting_algorithm, 1, dtype=float)
 x_normal = np.full_like(counting_normal, 2, dtype=float)
 
-# Add error bars (fixed)
 ax.errorbar(x_algorithm, counting_algorithm, yerr=counting_algorithm_err, fmt='o', color='red',
             label='Algorithm Errors', markersize=6, capsize=5, elinewidth=2)
 ax.errorbar(x_normal, counting_normal, yerr=counting_normal_err, fmt='o', color='blue',
             label='Normal Errors', markersize=6, capsize=5, elinewidth=2)
 
 # Violin plots
-parts = ax.violinplot([simulated_algorithm, simulated_normal], positions=violin_positions, widths=0.2, showmeans=False, showmedians=True)
-
-# Customize violin plots
+parts = ax.violinplot([simulated_algorithm, simulated_normal], positions=violin_positions, widths=0.2,
+                      showmeans=False, showmedians=True)
 for pc in parts['bodies']:
     pc.set_facecolor('gray')
     pc.set_alpha(0.4)
 
-# Labels and title
-ax.set_ylabel('Counting Values', fontsize=14)
-ax.set_title('Box Plot with Simulated Distributions', fontsize=16)
-
-# Update x-axis ticks
+# Labels
+ax.set_ylabel('Counting Values')
+ax.set_title('Comparison of Measured and Simulated Data')
 ax.set_xticks([1, 1.3, 2, 2.3])
 ax.set_xticklabels(["Algorithm", "Sim. Algorithm", "Normal", "Sim. Normal"], rotation=15)
-
-# Grid and styling
-ax.grid(True, which='both', axis='y', linestyle='--', linewidth=0.5)
-ax.minorticks_on()
-ax.tick_params(axis='y', which='both', direction='in', length=6, width=1, colors='black', grid_color='gray', grid_alpha=0.5)
-ax.tick_params(axis='y', which='minor', direction='in', length=4, width=1, colors='black')
-
-# Legend
 ax.legend(loc='best')
+
+# === Right subplot: Histogram + KDE ===
+ax = axs[1]
+sns.histplot(simulated_algorithm, kde=True, color='red', stat='density', label='Simulated Algorithm',
+             bins=30, alpha=0.6, ax=ax)
+sns.histplot(simulated_normal, kde=True, color='blue', stat='density', label='Simulated Normal',
+             bins=30, alpha=0.6, ax=ax)
+
+# Mean lines
+ax.axvline(np.mean(counting_algorithm), color='darkred', linestyle='--', label='Algorithm Mean')
+ax.axvline(np.mean(counting_normal), color='darkblue', linestyle='--', label='Normal Mean')
+
+ax.set_xlabel('Count Values')
+ax.set_ylabel('Density')
+ax.set_title('Simulated Distributions')
+ax.legend()
+ax.grid(True)
 
 # Save figure
 billeder_path = r'C:\Users\benja\Desktop\Speciale\Billeder'
-plt.savefig(f'{billeder_path}\\comparisonofalgorithms.pdf', dpi=300, bbox_inches='tight')
+plt.savefig(f'{billeder_path}\\combined_plot.pdf', dpi=300, bbox_inches='tight')
 
 # Show plot
-plt.show()
-
-
-plt.figure(figsize=(10, 6))
-
-# Histogram (or KDE)
-sns.histplot(simulated_algorithm, kde=True, color='red', stat='density', label='Simulated Algorithm', bins=30, alpha=0.6)
-sns.histplot(simulated_normal, kde=True, color='blue', stat='density', label='Simulated Normal', bins=30, alpha=0.6)
-
-# Optional: Mean lines
-plt.axvline(np.mean(counting_algorithm), color='darkred', linestyle='--', label='Algorithm Mean')
-plt.axvline(np.mean(counting_normal), color='darkblue', linestyle='--', label='Normal Mean')
-
-plt.xlabel('Count Values')
-plt.ylabel('Density')
-plt.title('Simulated Distributions of Counting Methods')
-plt.legend()
-plt.grid(True)
-
-# Save if needed
-# plt.savefig(f'{billeder_path}\\simulated_distributions.pdf', dpi=300, bbox_inches='tight')
-
 plt.show()

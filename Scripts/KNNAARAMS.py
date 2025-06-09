@@ -28,6 +28,7 @@ mpl.rcParams.update({
 # Set file path and subject
 #filepath = r'C:\Users\benja\Desktop\Speciale\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'
 #filepath = r'C:\Users\benja\Desktop\Speciale\Master-Thesis\Data\Første måling af Be10\2025_01_16_Benedikt\2025_01_16_Benedikt'
+#filepath = r'C:\Users\benja\Desktop\Speciale\Nydata'
 filepath = r'C:\Users\benja\Desktop\Speciale\NyBeeffdata\foralg'
 subject = "[CDAT0"
 
@@ -41,14 +42,14 @@ print(raw_files)
 data = extract_data_from_mpa(filepath, subject, file_index=1, info=None )
 
 # KMeans clustering parameters
-numberof_clusters = 4  # Optimal number of clusters
+numberof_clusters = 4 #4  # Optimal number of clusters
 
 # Perform KMeans clustering
 X = data[['E_final', 'dE']]
 kmeans = KMeans(n_clusters=numberof_clusters, random_state=30, init='k-means++')
 data['Cluster_KMeans'] = kmeans.fit_predict(X)
 print(data[['E_final', 'dE', 'Cluster_KMeans']].head())
-
+print(f"Total counts {data["counts"].sum()}")
 # Calculate Silhouette scores for each point
 data['silhouette_score'] = silhouette_samples(X, data['Cluster_KMeans'])
 
@@ -166,8 +167,14 @@ se_variance_filtered = np.sqrt((2 * variance_filtered ** 2) / (len(distances_fil
 print(f"Mean Distance to Centroid (Filtered): {mean_distance_filtered:.4f} ± {se_mean_distance_filtered:.4f}")
 print(f"Variance of Distances (Filtered): {variance_filtered:.4f} ± {se_variance_filtered:.4f}")
 
+N_unfilt =roi_cluster_data['counts'].sum()/10
+uncertainty_unfilt = np.sqrt(N_unfilt)
+print(f"The sum of the unfiltered_roi_cluster_points for Be10 is: {N_unfilt} ± {uncertainty_unfilt}")
+
+
+
 # Count the filtered data points
-N_filtered = filtered_roi_cluster_data["counts"].sum()
+N_filtered = filtered_roi_cluster_data["counts"].sum()/10
 uncertainty_filtered = np.sqrt(N_filtered)
 print(f"The sum of the filtered_roi_cluster_points for Be10 is: {N_filtered} ± {uncertainty_filtered}")
 
@@ -344,6 +351,12 @@ uncertainty_filtered = np.sqrt(N_filtered)
 
 # Print the counts and uncertainty
 print(f"The sum of the filtered_roi_cluster_points for Be10 is: {N_filtered} ± {uncertainty_filtered}")
+# Compute the sum of counts and uncertainty for the unfiltered ROI cluster
+N_unfiltered = roi_cluster_data["counts"].sum() / runs
+uncertainty_unfiltered = np.sqrt(N_unfiltered)
+
+print(f"The sum of the unfiltered ROI cluster points for Be10 is: {N_unfiltered:.1f} ± {uncertainty_unfiltered:.1f}")
+
 print(F"Confidence of the Silhouette Score of ROI: {SilhouetteScore_to_Confidence(filtered_silhouette_score)}")
 
 
@@ -380,7 +393,7 @@ k_range = range(1, 11)  # Test between 1 and 10 clusters
 inertia_values = []
 std_devs = []
 
-# Run KMeans clustering for each k value
+'''# Run KMeans clustering for each k value
 for k in k_range:
     inertia_list = []
     for _ in range(num_runs):
@@ -397,7 +410,7 @@ for k in k_range:
     std_devs.append(std_dev)
 
 # Plot the Elbow Curve with error bars
-plt.figure(figsize=(8, 6))
+plt.figure(figsize=(10, 4))
 plt.errorbar(k_range, inertia_values, yerr=std_devs, marker='o', linestyle='--', color='b', capsize=5)
 plt.title("Elbow Method for Optimal k")
 plt.xlabel("Number of Clusters (k)")
@@ -405,3 +418,4 @@ plt.ylabel("Inertia (Sum of Squared Distances)")
 plt.xticks(k_range)
 plt.grid(True)
 plt.show()
+'''

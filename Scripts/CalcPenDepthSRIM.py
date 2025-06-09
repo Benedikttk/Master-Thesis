@@ -22,10 +22,10 @@ mpl.rcParams.update({
 
 
 file_path_Be10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE_1400_ion_1000Be10.txt"
-file_path_B10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE_1400_ion_1000B10.txt"
+file_path_100B10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE_1400_ion_1000B10.txt"
 
 #file_path_Be10 = r"C:\Users\benja\Desktop\noge\10000.txt"
-file_path_100B10 = r"C:\Users\benja\Desktop\Speciale\noge\B100.txt"
+#file_path_100B10 = r"C:\Users\benja\Desktop\Speciale\noge\B100.txt"
 #file_path_100B10 = r"C:\Users\benja\Desktop\Speciale\Data\RANGE_1400_ion_1000B10.txt"
 
 
@@ -46,7 +46,7 @@ hist_B10, bins_B10 = np.histogram(df_SRIM_depth_B10['Depth (µm)'],
                                   weights=df_SRIM_depth_B10['B Ions'])
 
 # Plotting the two distributions
-plt.figure(figsize=(10, 6), )
+plt.figure(figsize=(10, 4), )
 
 plt.hist(df_SRIM_depth_Be10['Depth (µm)'], 
          bins=len(df_SRIM_depth_Be10['Depth (µm)']),
