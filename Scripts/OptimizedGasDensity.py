@@ -54,11 +54,11 @@ with open('OptimizedGadDensityInfo.txt', 'w') as file:
             # Write results to file
             file.write(f"Density: {density}, Valid Ions: {valid_ions}, Avg Length: {avg_length}, Uncertainty: ±{uncertainty}\n")
 
-# Convert density (g/cm³) → pressure (Pa)
+# Convert density (g/cm3) → pressure (Pa)
 T = 293.15  # Kelvin
 R = 8.3145  # J/mol·K
 M = 0.05812  # kg/mol (isobutane)
-density_values_kg_m3 = np.array(density_values) * 1000  # g/cm³ → kg/m³
+density_values_kg_m3 = np.array(density_values) * 1000  # g/cm3 → kg/m3
 pressure_values = (density_values_kg_m3 * R * T) / M  # Pressure in Pascals
 pressure_values /= 100  # Convert to mbar
 
@@ -77,7 +77,17 @@ if density_values:
     # Plot 1: Number of Valid Ions vs. Gas Density
     ax1 = axs[0]
      #ax1.plot(pressure_values, valid_ion_counts, 'o--', markersize=4, label='Valid Ions')
-    ax1.errorbar(pressure_values, valid_ion_counts, yerr=np.sqrt(valid_ion_counts), fmt='o--', markersize=4, capsize=5, capthick=2)
+    ion_count_err = np.array([1.7378657930901624, 1.8986314748727977, 1.8819139193916392, 1.7829983188274505, 1.7654908735791748, 1.7728073654651202, 1.7788735197353829, 1.7578781912535688, 1.7398971064448292, 1.7428403716347065, 1.7257552817583977, 1.657036733454687, 1.6469407967875742, 1.213644419963388, 1.3093073414159542])
+
+    ax1.errorbar(pressure_values, valid_ion_counts, yerr=ion_count_err, fmt='o--', markersize=4, capsize=5, capthick=2, label = "SIM Data")
+    ax1.fill_between(
+    pressure_values,
+    valid_ion_counts - ion_count_err,
+    valid_ion_counts + ion_count_err,
+    color='red',
+    alpha=0.2,  # adjust transparency
+    label='±1 sigma band'
+)
     ax1.set_xlabel(r'Gas Pressure (mbar)')
     #ax1.plot(density_values, valid_ion_counts, 'o--', markersize=4, label='Valid Ions')
     #ax1.set_xlabel(r'Gas Density ($g/cm^{3}$)')
@@ -95,7 +105,32 @@ if density_values:
     #ax2.errorbar(density_values, avg_lengths, yerr=uncertainties, fmt='o--', markersize=4, capsize=5, capthick=2, label='Average Ion Length')
     #ax2.set_xlabel(r'Gas Density ($g/cm^{3}$)')
     # Plot 2
-    ax2.errorbar(pressure_values, avg_lengths*1/1e8, yerr=uncertainties*1/1e8, fmt='o--', markersize=4, capsize=5, capthick=2) #Å->cm
+    range_err = np.array([
+  430478453.1131315,
+  477001284.9570629,
+  471396912.4410977,
+  470724207.4572427,
+  444749715.7419476,
+  417180622.5556163,
+  378808906.5866653,
+  343125837.43529594,
+  315061703.4409201,
+  291454343.69137007,
+  270631092.8517649,
+  187055701.8559745,
+  112290053.59049739,
+  65324963.001870245,
+  28605337.0216547
+])*1/1e9
+    ax2.errorbar(pressure_values, avg_lengths*1/1e8, yerr=range_err, fmt='o--', markersize=4, capsize=5, capthick=2, label = "SIM Data") #Å->cm
+    ax2.fill_between(
+    pressure_values,
+    (avg_lengths*1/1e8) - range_err,
+    (avg_lengths*1/1e8) + range_err,
+    color='red',
+    alpha=0.2,  # adjust transparency
+    label='±1 sigma band'
+    )
     ax2.set_xlabel(r'Gas Pressure (mbar)')
     ax2.set_ylabel('Average Ion Length (cm)')
     ax2.set_title('Average Ion Track Length vs. Gas Density')
@@ -120,3 +155,4 @@ else:
     print("No valid files found.")
 
 print(avg_lengths/1e8)
+

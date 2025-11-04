@@ -3,7 +3,6 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from Functions import process_file, calculate_fractions
-
 data_folder = r'C:\Users\benja\Desktop\Speciale\FilesForUnc'
 
 # Create empty lists to store full file paths
@@ -79,7 +78,7 @@ for be10_file, b10_file in zip(be10_files, b10_files):
     total_ions_Be10 = df_Be10['Be Ions'].sum()
     total_ions_B10 = df_B10['B Ions'].sum()
 
-    # Optimization
+    # Optimisation
     best_cutoff_depth = df_B10[df_B10['B Ions'] > 0]['Depth (Angstrom)'].max()
     best_ratio = 0
 
@@ -101,10 +100,10 @@ for be10_file, b10_file in zip(be10_files, b10_files):
 
     # Print result for this pair
     print(f"Processed:\n  Be10 file: {os.path.basename(be10_file)}\n  B10 file:  {os.path.basename(b10_file)}")
-    print(f"  → Best cutoff depth: {best_cutoff_depth:.2f} Å\n")
+    print(f"  -> Best cutoff depth: {best_cutoff_depth:.2f} Å\n")
 
 # Summary
-print("✔ Finished processing all files.")
+print("✔Finished processing all files.")
 
 
 
@@ -116,10 +115,7 @@ sem_cutoff = std_cutoff / np.sqrt(len(cutoff_array))
 print(f"Optimized cutoff depth (mean ± SEM): {mean_cutoff:.4f} µm ± {sem_cutoff:.4f} µm")
 
 
-import os
-import numpy as np
-import matplotlib.pyplot as plt
-from Functions import process_file
+
 
 folder_unc = r"C:\Users\benja\Desktop\Speciale\FilesForUnc"
 

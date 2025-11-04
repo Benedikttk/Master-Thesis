@@ -3,9 +3,11 @@ import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 from math import sqrt, log
 from Functions import process_file
+import os
+from Functions import FileCheck, deltE_Efinal
+import matplotlib as mpl
 
 # --- Plot settings ---
-import matplotlib as mpl
 mpl.rcParams.update({
     'font.size': 16,
     'axes.titlesize': 16,
@@ -112,13 +114,7 @@ print(f"Be uncertainty = {uncertainty_Be:.4f}")
 print(f"B uncertainty = {uncertainty_B:.4f}")
 
 
-import os
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-from Functions import FileCheck, deltE_Efinal
-import matplotlib as mpl
+
 
 # Set font sizes to match LaTeX doc
 mpl.rcParams.update({
